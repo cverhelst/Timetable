@@ -1,0 +1,12 @@
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Tests\bin\Debug\Tests.exe
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Tests\bin\Debug\Tests.pdb
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Tests\bin\Debug\nunit-console-runner.dll
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Tests\bin\Debug\nunit.framework.dll
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Tests\bin\Debug\Timetable.exe
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Tests\bin\Debug\nunit.util.dll
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Tests\bin\Debug\nunit.core.interfaces.dll
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Tests\bin\Debug\nunit.core.dll
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Tests\bin\Debug\Timetable.pdb
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Tests\obj\x86\Debug\ResolveAssemblyReference.cache
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Tests\obj\x86\Debug\Tests.exe
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Tests\obj\x86\Debug\Tests.pdb

@@ -1,0 +1,26 @@
+C:\Users\Cameron\AppData\Local\Temporary Projects\Timetable\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Cameron\AppData\Local\Temporary Projects\Timetable\obj\x86\Release\MainWindow.baml
+C:\Users\Cameron\AppData\Local\Temporary Projects\Timetable\obj\x86\Release\MainWindow.g.cs
+C:\Users\Cameron\AppData\Local\Temporary Projects\Timetable\obj\x86\Release\App.g.cs
+C:\Users\Cameron\AppData\Local\Temporary Projects\Timetable\obj\x86\Release\Timetable_MarkupCompile.cache
+C:\Users\Cameron\AppData\Local\Temporary Projects\Timetable\obj\x86\Release\Timetable.g.resources
+C:\Users\Cameron\AppData\Local\Temporary Projects\Timetable\obj\x86\Release\Timetable.Properties.Resources.resources
+C:\Users\Cameron\AppData\Local\Temporary Projects\Timetable\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Users\Cameron\AppData\Local\Temporary Projects\Timetable\obj\x86\Release\GenerateResource.write.1.tlog
+C:\Users\Cameron\AppData\Local\Temporary Projects\Timetable\bin\Release\Timetable.exe
+C:\Users\Cameron\AppData\Local\Temporary Projects\Timetable\bin\Release\Timetable.pdb
+C:\Users\Cameron\AppData\Local\Temporary Projects\Timetable\obj\x86\Release\Timetable.exe
+C:\Users\Cameron\AppData\Local\Temporary Projects\Timetable\obj\x86\Release\Timetable.pdb
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\obj\x86\Release\Timetable.exe
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\obj\x86\Release\Timetable.pdb
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\obj\x86\Release\ResolveAssemblyReference.cache
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\obj\x86\Release\MainWindow.baml
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\obj\x86\Release\MainWindow.g.cs
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\obj\x86\Release\App.g.cs
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\obj\x86\Release\Timetable_MarkupCompile.cache
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\obj\x86\Release\Timetable.g.resources
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\obj\x86\Release\Timetable.Properties.Resources.resources
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\obj\x86\Release\GenerateResource.read.1.tlog
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\obj\x86\Release\GenerateResource.write.1.tlog
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\bin\Release\Timetable.exe
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\bin\Release\Timetable.pdb

@@ -1,0 +1,5 @@
+D:\Users\Cameron\Documents\Visual Studio 2010\Projects\Timetable\ConsoleApplication1\bin\Release\ConsoleApplication1.exe
+D:\Users\Cameron\Documents\Visual Studio 2010\Projects\Timetable\ConsoleApplication1\bin\Release\ConsoleApplication1.pdb
+D:\Users\Cameron\Documents\Visual Studio 2010\Projects\Timetable\ConsoleApplication1\obj\x86\Release\ResolveAssemblyReference.cache
+D:\Users\Cameron\Documents\Visual Studio 2010\Projects\Timetable\ConsoleApplication1\obj\x86\Release\ConsoleApplication1.exe
+D:\Users\Cameron\Documents\Visual Studio 2010\Projects\Timetable\ConsoleApplication1\obj\x86\Release\ConsoleApplication1.pdb

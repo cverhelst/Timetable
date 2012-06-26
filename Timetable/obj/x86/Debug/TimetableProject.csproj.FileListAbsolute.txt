@@ -1,0 +1,13 @@
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\bin\Debug\Timetable.exe
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\bin\Debug\Timetable.pdb
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\obj\x86\Debug\ResolveAssemblyReference.cache
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\obj\x86\Debug\MainWindow.baml
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\obj\x86\Debug\MainWindow.g.cs
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\obj\x86\Debug\App.g.cs
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\obj\x86\Debug\Timetable_MarkupCompile.cache
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\obj\x86\Debug\Timetable.g.resources
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\obj\x86\Debug\GenerateResource.read.1.tlog
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\obj\x86\Debug\GenerateResource.write.1.tlog
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\obj\x86\Debug\Timetable.exe
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\obj\x86\Debug\Timetable.pdb
+d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\obj\x86\Debug\Model.Properties.Resources.resources
