@@ -10,8 +10,13 @@ namespace Model
         // Perhaps make a sorted list on start date ? 
         private Stack<TimeUnit> _freeTime;
         private Stack<TimeUnit> _takenTime;
+        private Room _room;
 
-        public Room Room { get; set; }
+        public Room Room
+        {
+            get { return (Room)_room.Clone(); }
+            private set { _room = value == null ? new Room() : value; }
+        }
 
         public Stack<TimeUnit> FreeTime
         {
@@ -25,7 +30,8 @@ namespace Model
             set { _takenTime = value == null ? new Stack<TimeUnit>() : value; }
         }
 
-        public BookableRoom(DateTime start, DateTime end, Room room) : this()
+        public BookableRoom(DateTime start, DateTime end, Room room)
+            : this()
         {
             FreeTime.Push(new TimeUnit(start, end));
             Room = room;
@@ -35,11 +41,16 @@ namespace Model
         {
             _freeTime = new Stack<TimeUnit>();
             _takenTime = new Stack<TimeUnit>();
+            Room = new Room();
         }
 
         public bool CanFit(Course course)
         {
             if (!Room.CanFit(course))
+            {
+                return false;
+            }
+            if (!FreeTime.Any())
             {
                 return false;
             }
@@ -66,19 +77,33 @@ namespace Model
                 taken.AssignedCourse = course;
 
                 TakenTime.Push(taken);
-                FreeTime.Push(free);
+                if (free != null)
+                {
+                    FreeTime.Push(free);
+                }
 
                 result = true;
             }
             return result;
         }
 
+        public bool IsCourseBooked(Course course)
+        {
+            foreach(TimeUnit unit in TakenTime)
+            {
+                if(unit.AssignedCourse.Equals(course)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public object Clone()
         {
             BookableRoom clone = new BookableRoom();
-            clone.FreeTime = new Stack<TimeUnit>(FreeTime);
-            clone.TakenTime = new Stack<TimeUnit>(TakenTime);
-            clone.Room = Room;
+            clone.FreeTime = FreeTime.Clone();
+            clone.TakenTime = TakenTime.Clone();
+            clone.Room = (Room)Room.Clone();
             return clone;
         }
     }

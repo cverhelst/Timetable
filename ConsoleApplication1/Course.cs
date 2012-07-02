@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Model
 {
-    public class Course
+    public class Course : ICloneable
     {
         #region Members
         private int _duration;
@@ -49,6 +49,45 @@ namespace Model
             Duration = duration;
             Students = students;
             RequiredResources = requiredResources;
+        }
+
+        public bool Equals(object other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+            Course c = other as Course;
+            if (c == null)
+            {
+                return false;
+            }
+            return Equals(c);
+        }
+
+        public bool Equals(Course other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+            if (Students == other.Students
+                && Duration == other.Duration
+                && RequiredResources.SequenceEqual(other.RequiredResources))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return Students.GetHashCode() ^ Duration.GetHashCode() ^ RequiredResources.GetHashCode();
+        }
+
+        public object Clone()
+        {
+            return new Course(Duration, Students, (List<Resource>) RequiredResources.Clone());
         }
     }
 }

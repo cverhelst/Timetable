@@ -54,7 +54,7 @@ namespace Model
         {
             Room clone = new Room();
             clone.Seats = Seats;
-            clone.Resources = Resources;
+            clone.Resources = (List<Resource>) Resources.Clone();
             return clone;
         }
     }

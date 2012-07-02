@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Model
 {
-    public struct TimeUnit
+    public class TimeUnit : ICloneable
     {
         private DateTime _start;
         private DateTime _end;
@@ -16,7 +16,7 @@ namespace Model
             get { return _start; }
             set
             {
-                if (End != null && End.CompareTo(value) >= 0)
+                if (End.CompareTo(value) >= 0)
                 {
                     _start = value;
                 }
@@ -26,9 +26,8 @@ namespace Model
         public DateTime End
         {
             get { return _end; }
-            set
-            {
-                if (Start != null && Start.CompareTo(value) <= 0)
+            set {
+                if (Start.CompareTo(value) <= 0)
                 {
                     _end = value;
                 }
@@ -43,12 +42,20 @@ namespace Model
 
         public TimeUnit(DateTime start, DateTime end)
         {
+            init(start, end);
+        }
 
-            _start = DateTime.Now;
-            _end = DateTime.Now;
-            _assignedCourse = null;
-            Start = start;
-            End = end;
+        private void init(DateTime start, DateTime end)
+        {
+            if (end.CompareTo(start) < 0)
+            {
+                throw new ArgumentException("End must be higher or equal to Start");
+            }
+            else
+            {
+                _start = start;
+                _end = end;
+            }
         }
 
         // Overlaps with other TimeUnit (end or start dates may be equal)
@@ -83,21 +90,36 @@ namespace Model
             return result;
         }
 
+        // Splits the TimeUnit to return two other TimeUnits of which the first is equal to the requested duration
+        // and the second is the remainder
         public SplitResult Split(int duration)
         {
-            TimeUnit first = new TimeUnit(Start, Start.AddMinutes(duration));
-            TimeUnit second = new TimeUnit(first.End, End);
-            return new SplitResult(first, second);
+            if (duration > Duration())
+            {
+                throw new ArgumentException("parameter must be lower than or equal than the TimeUnit's duration");
+            }
+            else if (duration < Duration())
+            {
+                TimeUnit first = new TimeUnit(Start, Start.AddMinutes(duration));
+                TimeUnit second = new TimeUnit(first.End, End);
+                return new SplitResult(first, second);
+            }
+            else
+            {
+                return new SplitResult(this, null);
+            }
         }
 
         public int Duration()
         {
-            int result = 0;
-            if (Start != null && End != null)
-            {
-                result = End.Subtract(Start).Minutes;
-            }
-            return result;
+            return (int) End.Subtract(Start).TotalMinutes;
+        }
+
+        public object Clone()
+        {
+            TimeUnit unit = new TimeUnit(Start, End);
+            unit.AssignedCourse = AssignedCourse == null ? null : (Course) AssignedCourse.Clone();
+            return unit;
         }
     }
 

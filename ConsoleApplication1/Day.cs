@@ -17,10 +17,7 @@ namespace Model
 
         public Day(List<BookableRoom> rooms)
         {
-
-            _rooms = new List<BookableRoom>();
             Rooms = rooms;
-            
         }
 
         public bool CanFit(Course course)
@@ -49,9 +46,22 @@ namespace Model
             return result;
         }
 
+        public bool IsCourseBooked(Course course)
+        {
+            bool result = false;
+            foreach (BookableRoom room in Rooms)
+            {
+                if(room.IsCourseBooked(course)) {
+                    result = true;
+                    break;
+                }
+            }
+            return result;
+        }
+
         public object Clone()
         {
-            Day clone = new Day((List<BookableRoom>) Rooms.Clone());
+            Day clone = new Day((List<BookableRoom>)Rooms.Clone());
             return clone;
         }
     }

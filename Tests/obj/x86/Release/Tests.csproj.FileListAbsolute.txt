@@ -1,1 +1,13 @@
 d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Tests\obj\x86\Release\ResolveAssemblyReference.cache
+D:\Bestanden\Workspace\C#\Timetable\Tests\bin\Release\Tests.exe
+D:\Bestanden\Workspace\C#\Timetable\Tests\bin\Release\Tests.pdb
+D:\Bestanden\Workspace\C#\Timetable\Tests\bin\Release\nunit-console-runner.dll
+D:\Bestanden\Workspace\C#\Timetable\Tests\bin\Release\nunit.framework.dll
+D:\Bestanden\Workspace\C#\Timetable\Tests\bin\Release\nunit.util.dll
+D:\Bestanden\Workspace\C#\Timetable\Tests\bin\Release\nunit.core.interfaces.dll
+D:\Bestanden\Workspace\C#\Timetable\Tests\bin\Release\nunit.core.dll
+D:\Bestanden\Workspace\C#\Timetable\Tests\obj\x86\Release\ResolveAssemblyReference.cache
+D:\Bestanden\Workspace\C#\Timetable\Tests\obj\x86\Release\Tests.exe
+D:\Bestanden\Workspace\C#\Timetable\Tests\obj\x86\Release\Tests.pdb
+D:\Bestanden\Workspace\C#\Timetable\Tests\bin\Release\ConsoleApplication1.exe
+D:\Bestanden\Workspace\C#\Timetable\Tests\bin\Release\ConsoleApplication1.pdb

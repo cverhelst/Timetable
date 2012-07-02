@@ -12,3 +12,16 @@ d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\bin\R
 d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\bin\Release\Timetable.pdb
 d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\obj\x86\Release\Timetable.pdb
 d:\users\cameron\documents\visual studio 2010\Projects\Timetable\Timetable\obj\x86\Release\Model.Properties.Resources.resources
+D:\Bestanden\Workspace\C#\Timetable\Timetable\bin\Release\Timetable.exe
+D:\Bestanden\Workspace\C#\Timetable\Timetable\bin\Release\Timetable.pdb
+D:\Bestanden\Workspace\C#\Timetable\Timetable\obj\x86\Release\ResolveAssemblyReference.cache
+D:\Bestanden\Workspace\C#\Timetable\Timetable\obj\x86\Release\MainWindow.baml
+D:\Bestanden\Workspace\C#\Timetable\Timetable\obj\x86\Release\MainWindow.g.cs
+D:\Bestanden\Workspace\C#\Timetable\Timetable\obj\x86\Release\App.g.cs
+D:\Bestanden\Workspace\C#\Timetable\Timetable\obj\x86\Release\Timetable_MarkupCompile.cache
+D:\Bestanden\Workspace\C#\Timetable\Timetable\obj\x86\Release\Timetable.g.resources
+D:\Bestanden\Workspace\C#\Timetable\Timetable\obj\x86\Release\Model.Properties.Resources.resources
+D:\Bestanden\Workspace\C#\Timetable\Timetable\obj\x86\Release\GenerateResource.read.1.tlog
+D:\Bestanden\Workspace\C#\Timetable\Timetable\obj\x86\Release\GenerateResource.write.1.tlog
+D:\Bestanden\Workspace\C#\Timetable\Timetable\obj\x86\Release\Timetable.exe
+D:\Bestanden\Workspace\C#\Timetable\Timetable\obj\x86\Release\Timetable.pdb
