@@ -22,15 +22,23 @@ namespace Model
             set { _resources = value == null ? new List<Resource>() : value; }
         }
 
-        public Room(int seats, List<Resource> resources)
-        {
-            Seats = seats;
-            Resources = resources;
-        }
+        public string Name { get; set; }
 
         public Room()
             : this(10, new List<Resource>())
         {
+        }
+
+        public Room(int seats, List<Resource> resources)
+            : this("N/A", seats, resources)
+        {
+        }
+
+        public Room(string name, int seats, List<Resource> resources)
+        {
+            Name = name;
+            Seats = seats;
+            Resources = resources;
         }
 
         public bool CanFit(Course course)
@@ -54,7 +62,8 @@ namespace Model
         {
             Room clone = new Room();
             clone.Seats = Seats;
-            clone.Resources = (List<Resource>) Resources.Clone();
+            clone.Resources = (List<Resource>)Resources.Clone();
+            clone.Name = Name;
             return clone;
         }
     }

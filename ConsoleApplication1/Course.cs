@@ -11,7 +11,6 @@ namespace Model
         private int _duration;
         private int _students;
         private List<Resource> _requiredResources;
-        // private List<TimeUnit> _assignedtimeUnits;
 
         public int Duration
         {
@@ -32,11 +31,7 @@ namespace Model
             set { _requiredResources = value == null ? new List<Resource>() : value; }
         }
 
-        //public List<TimeUnit> AssignedTimeUnits
-        //{
-        //    get { return _assignedtimeUnits; }
-        //    set { _assignedtimeUnits = value == null ? new List<TimeUnit>() : value; }
-        //}
+        public String Name { get; set; }
         #endregion
 
         public Course()
@@ -45,13 +40,19 @@ namespace Model
         }
 
         public Course(int duration, int students, List<Resource> requiredResources)
+            : this("N/A", duration, students, requiredResources)
         {
+        }
+
+        public Course(String name, int duration, int students, List<Resource> requiredResources)
+        {
+            Name = name;
             Duration = duration;
             Students = students;
             RequiredResources = requiredResources;
         }
 
-        public bool Equals(object other)
+        public override bool Equals(object other)
         {
             if (other == null)
             {
@@ -87,7 +88,25 @@ namespace Model
 
         public object Clone()
         {
-            return new Course(Duration, Students, (List<Resource>) RequiredResources.Clone());
+            return new Course(Name, Duration, Students, (List<Resource>)RequiredResources.Clone());
+        }
+
+        public override string ToString()
+        {
+            return Name;
+        }
+
+        public string DetailedInfo()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.AppendFormat("Course {0} with {1} students and duration of {2} minutes that needs:   ", Name, Students, Duration);
+            foreach (Resource resource in RequiredResources)
+            {
+                builder.AppendFormat("{0} - ", resource.Name);
+            }
+            builder.Remove(builder.Length - 3, 3);
+            builder.Append("\n");
+            return builder.ToString();
         }
     }
 }

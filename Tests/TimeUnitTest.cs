@@ -51,6 +51,40 @@ namespace Tests
         }
 
         [Test]
+        public void OverlapsWith_Partly_Yes()
+        {
+            TimeUnit unit2 = new TimeUnit(start.AddMinutes(1), end.AddMinutes(1));
+            Assert.IsTrue(unit2.OverlapsWith(unit));
+            Assert.IsTrue(unit.OverlapsWith(unit2));
+        }
+
+        [Test]
+        public void OverlapsWith_Completely_Yes()
+        {
+            TimeUnit unit2 = new TimeUnit(start, end);
+            Assert.IsTrue(unit.OverlapsWith(unit2));
+            Assert.IsTrue(unit2.OverlapsWith(unit));
+        }
+
+        [Test]
+        public void OverlapsWith_ConsecutiveUnits_No()
+        {
+            TimeUnit unit2 = new TimeUnit(end, end.AddDays(1));
+
+            Assert.IsFalse(unit2.OverlapsWith(unit));
+            Assert.IsFalse(unit.OverlapsWith(unit2));
+        }
+
+        [Test]
+        public void OverlapsWith_GapBetweenUnits_No()
+        {
+            TimeUnit unit2 = new TimeUnit(end.AddHours(1), end.AddDays(1));
+
+            Assert.IsFalse(unit2.OverlapsWith(unit));
+            Assert.IsFalse(unit.OverlapsWith(unit2));
+        }
+
+        [Test]
         public void IsConsecutiveWith_Yes_ReturnTrue()
         {
             TimeUnit unit2 = new TimeUnit(end, end.AddDays(1));

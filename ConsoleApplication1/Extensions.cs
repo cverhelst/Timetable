@@ -18,10 +18,10 @@ namespace Model
             return new Stack<T>(stackToClone.Select(item => (T)item.Clone()).Reverse());
         }
 
-        public static DateTime DateTimeCreator(int hour, int minute)
+        public static DateTime DateTimeCreator(int day, int hour, int minute)
         {
             DateTime now = DateTime.Now;
-            DateTime to = new DateTime(now.Year, now.Month, now.Day, hour, minute, 0);
+            DateTime to = new DateTime(now.Year, now.Month, (day % 365) + 1, hour, minute, 0);
             return to;
         }
     }

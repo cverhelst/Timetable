@@ -64,5 +64,19 @@ namespace Model
             Day clone = new Day((List<BookableRoom>)Rooms.Clone());
             return clone;
         }
+
+        public override string ToString()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.AppendLine("Day");
+            for(int i = 0; i < Rooms.Count; i++)
+            {
+                BookableRoom room = Rooms[i];
+                builder.Append(i + " ");
+                String roomInfo = room.ToString().Replace("\n", "\n" + Format.TAB);
+                builder.Append("\t" + roomInfo);
+            }
+            return builder.ToString();
+        }
     }
 }

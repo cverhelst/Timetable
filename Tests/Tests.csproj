@@ -66,10 +66,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BookableRoomTest.cs" />
+    <Compile Include="CourseTest.cs" />
     <Compile Include="DayTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoomTest.cs" />
+    <Compile Include="TimetableTest.cs" />
     <Compile Include="TimeUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>

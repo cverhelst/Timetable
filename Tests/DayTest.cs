@@ -87,6 +87,7 @@ namespace Tests
         [Test]
         public void Fit_BusyDay_Yes()
         {
+            
             course1.Duration = 1;
             Course course3 = (Course) course1.Clone();
             Assert.IsTrue(day.Fit(course1));
@@ -98,6 +99,29 @@ namespace Tests
             Assert.IsTrue(day.Fit(course2));
             
             Assert.IsTrue(day.Rooms[1].IsCourseBooked(course2));
+        }
+
+        [Test]
+        public void Fit_ToFull_Yes()
+        {
+            end = start.AddMinutes(5);
+            broom1 = new BookableRoom(start,end,room);
+            broom2 = new BookableRoom(end.AddMinutes(60), end.AddMinutes(65), new Room(10,resources2));
+            course1.Duration = 1;
+            course2.Duration = 1;
+            course1.Students = 1;
+            course2.Students = 1;
+
+            day = new Day(new List<BookableRoom>() { broom1, broom2});
+
+            for(int i = 0; i<5; i++) {
+                Assert.IsTrue(day.Fit(course1));
+            }
+            Assert.IsFalse(day.Fit(course1));
+            for(int i = 0;i<5;i++) {
+                Assert.IsTrue(day.Fit(course2));
+            }
+            Assert.IsFalse(day.Fit(course2));
         }
 
         [Test]

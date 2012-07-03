@@ -38,6 +38,13 @@ namespace Tests
         }
 
         [Test]
+        public void Constructor_ResourcesNull_EmptyList()
+        {
+            room = new Room(10, null);
+            Assert.IsEmpty(room.Resources);
+        }
+
+        [Test]
         public void Seats_GreaterThanZero_Pass()
         {
             room.Seats = 5;
@@ -133,14 +140,17 @@ namespace Tests
             Resource resource = clone.Resources.First();
             // mutate resource in list
             resource.Name = "HighCeiling";
+            clone.Name = "001";
 
             Assert.AreEqual(5, room.Seats);
             Assert.AreEqual(1, room.Resources.Count);
             Assert.AreEqual("TV", room.Resources.First().Name);
+            Assert.AreEqual("N/A", room.Name);
 
             Assert.AreEqual(10, clone.Seats);
             Assert.AreEqual(2, clone.Resources.Count);
-            Assert.AreEqual("HighCeiling",clone.Resources.First().Name);
+            Assert.AreEqual("HighCeiling", clone.Resources.First().Name);
+            Assert.AreEqual("001", clone.Name);
 
         }
     }

@@ -106,5 +106,22 @@ namespace Model
             clone.Room = (Room)Room.Clone();
             return clone;
         }
+
+        public override string ToString()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.AppendFormat("Room {0}\n", GetHashCode());
+            builder.AppendFormat("\tSeats = {0}\n",Room.Seats);
+            builder.AppendLine("\tFree time =");
+            foreach(TimeUnit free in FreeTime) {
+                builder.AppendFormat("\t\t{0} - {1}\n", free.Start, free.End);
+            }
+            builder.AppendLine("\tTaken time=");
+            foreach (TimeUnit taken in TakenTime)
+            {
+                builder.AppendFormat("\t\t{0} - {1} booked course: {2}\n", taken.Start, taken.End, taken.AssignedCourse);
+            }
+            return builder.ToString();
+        }
     }
 }

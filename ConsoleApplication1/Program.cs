@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Model;
 
-namespace ConsoleApplication1
+namespace Model
 {
     class Program
     {
@@ -12,7 +11,12 @@ namespace ConsoleApplication1
         {
             TimetableFitter timeFitter = new TimetableFitter();
             timeFitter.FitCourses(timeFitter.generateDefaultCourses(), timeFitter.generateDefaultTimeTable());
-            //Console.Out.Write(timeFitter.GeneratedTables.ToString());
+
+            foreach (Timetable table in timeFitter.GeneratedTables)
+            {
+                Console.Out.Write(table.ToString());
+            }
+            Console.Out.WriteLine("Please press enter to continue");
             Console.In.ReadLine();
         }
     }
