@@ -117,5 +117,10 @@ namespace Model
             }
             return Equals(other);
         }
+
+        public override int GetHashCode()
+        {
+            return Rooms.GetAltHashCode();
+        }
     }
 }

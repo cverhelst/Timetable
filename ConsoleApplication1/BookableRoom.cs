@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Model
 {
-    public class BookableRoom : ICloneable
+    public class BookableRoom : ICloneable, IComparable
     {
         // Perhaps make a sorted list on start date ? 
         private Stack<TimeUnit> _freeTime;
@@ -187,6 +187,12 @@ namespace Model
             }
 
             return builder.ToString();
+        }
+
+        public int CompareTo(object obj)
+        {
+            BookableRoom other = obj as BookableRoom;
+            return Room.CompareTo(other.Room);
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Model
 {
-    public class Room : ICloneable
+    public class Room : ICloneable, IComparable
     {
         private int _seats;
         private List<Resource> _resources;
@@ -115,6 +115,12 @@ namespace Model
             }
             builder.AppendFormat("Room {0}: Seats({1}) | Resources({2})\n", Name, Seats, res);
             return builder.ToString();
+        }
+
+        public int CompareTo(Object obj)
+        {
+            Room room = obj as Room;
+            return Seats.CompareTo(room.Seats);
         }
     }
 }
