@@ -11,7 +11,8 @@ namespace Tests
     public class BookableRoomTest
     {
         private Room room;
-        private BookableRoom broom;
+        private BookableRoom broom1;
+        private BookableRoom broom2;
 
         private Resource resource1;
         private Resource resource2;
@@ -22,7 +23,7 @@ namespace Tests
         private Course course2;
         private DateTime start;
         private DateTime end;
-            
+
 
         [SetUp]
         public void init()
@@ -35,12 +36,13 @@ namespace Tests
             resources2 = new List<Resource>() { resource1, resource3 };
 
             room = new Room(10, resources1);
-            
+
             start = DateTime.Now;
             end = start.AddMinutes(60);
 
-            broom = new BookableRoom(start, end, room); 
-            
+            broom1 = new BookableRoom(start, end, room);
+            broom2 = new BookableRoom(start, end, room);
+
             course1 = new Course(1, 10, resources1);
             course2 = new Course(1, 20, resources2);
 
@@ -50,14 +52,14 @@ namespace Tests
         public void CanFit_RoomRequirementsFit_Yes()
         {
             // Course barely fits Room requirements
-            Assert.IsTrue(broom.CanFit(course1));
+            Assert.IsTrue(broom1.CanFit(course1));
         }
 
         [Test]
         public void CanFit_RoomRequirementsDontFit_No()
         {
             // Course doesn't fit Room requirements
-            Assert.IsFalse(broom.CanFit(course2));
+            Assert.IsFalse(broom1.CanFit(course2));
         }
 
         [Test]
@@ -66,7 +68,7 @@ namespace Tests
             course1.Duration = 1;
 
             // Course fits Room and Duration requirements
-            Assert.IsTrue(broom.CanFit(course1));
+            Assert.IsTrue(broom1.CanFit(course1));
         }
 
         [Test]
@@ -75,7 +77,7 @@ namespace Tests
             course1.Duration = 60;
 
             // Course barely fits Room and Duration requirements
-            Assert.IsTrue(broom.CanFit(course1));
+            Assert.IsTrue(broom1.CanFit(course1));
         }
 
         [Test]
@@ -84,16 +86,16 @@ namespace Tests
             course1.Duration = 120;
 
             // Course doesn't fit Time requirements
-            Assert.IsFalse(broom.CanFit(course1));
+            Assert.IsFalse(broom1.CanFit(course1));
         }
 
         [Test]
         public void CanFit_NoFreeTimeLeft_No()
         {
-            broom.FreeTime = new Stack<TimeUnit>();
+            broom1.FreeTime = new Stack<TimeUnit>();
 
             // There is no Free Time left to fit the course in
-            Assert.IsFalse(broom.CanFit(course1));
+            Assert.IsFalse(broom1.CanFit(course1));
         }
 
         [Test]
@@ -102,14 +104,14 @@ namespace Tests
             course1.Duration = 1;
 
             // BRoom has fitted the course
-            Assert.IsTrue(broom.Fit(course1));
+            Assert.IsTrue(broom1.Fit(course1));
 
             // This is reflected in the Free Time left of the BRoom
-            Assert.AreEqual(59, broom.FreeTime.Peek().Duration());
+            Assert.AreEqual(59, broom1.FreeTime.Peek().Duration());
             // As well as in the Taken Time
-            Assert.AreEqual(1, broom.TakenTime.Peek().Duration());
+            Assert.AreEqual(1, broom1.TakenTime.Peek().Duration());
             // Which has the appropriate course assigned
-            Assert.AreEqual(course1, broom.TakenTime.Peek().AssignedCourse);
+            Assert.AreEqual(course1, broom1.TakenTime.Peek().AssignedCourse);
         }
 
         [Test]
@@ -118,14 +120,14 @@ namespace Tests
             course1.Duration = 60;
 
             // BRoom has fitted the course
-            Assert.IsTrue(broom.Fit(course1));
+            Assert.IsTrue(broom1.Fit(course1));
 
             // But there is no Free Time left
-            Assert.IsEmpty(broom.FreeTime);
+            Assert.IsEmpty(broom1.FreeTime);
             // And the Taken Time reflects the fit
-            Assert.AreEqual(60, broom.TakenTime.Peek().Duration());
+            Assert.AreEqual(60, broom1.TakenTime.Peek().Duration());
             // And has the course assigned
-            Assert.AreEqual(course1, broom.TakenTime.Peek().AssignedCourse); 
+            Assert.AreEqual(course1, broom1.TakenTime.Peek().AssignedCourse);
         }
 
         [Test]
@@ -134,28 +136,57 @@ namespace Tests
             course1.Duration = 61;
 
             // The BRoom doesn't fit a course with too big duration
-            Assert.IsFalse(broom.Fit(course1));
+            Assert.IsFalse(broom1.Fit(course1));
 
             // Free Time stays equal
-            Assert.AreEqual(60, broom.FreeTime.Peek().Duration());
+            Assert.AreEqual(60, broom1.FreeTime.Peek().Duration());
             // As does the Taken Time
-            Assert.IsEmpty(broom.TakenTime);
+            Assert.IsEmpty(broom1.TakenTime);
         }
 
         [Test]
         public void IsCourseBooked_Yes()
         {
-            Assert.IsTrue(broom.Fit(course1));
+            Assert.IsTrue(broom1.Fit(course1));
 
-            Assert.IsTrue(broom.IsCourseBooked(course1));
-            Assert.IsFalse(broom.IsCourseBooked(course2));
+            Assert.IsTrue(broom1.IsCourseBooked(course1));
+            Assert.IsFalse(broom1.IsCourseBooked(course2));
 
-            Course course3 = new Course(1,1,new List<Resource>());
-            Assert.IsTrue(broom.Fit(course3));
+            Course course3 = new Course(1, 1, new List<Resource>());
+            Assert.IsTrue(broom1.Fit(course3));
 
-            Assert.IsTrue(broom.IsCourseBooked(course1));
-            Assert.IsTrue(broom.IsCourseBooked(course3));
-            Assert.IsFalse(broom.IsCourseBooked(course2));
+            Assert.IsTrue(broom1.IsCourseBooked(course1));
+            Assert.IsTrue(broom1.IsCourseBooked(course3));
+            Assert.IsFalse(broom1.IsCourseBooked(course2));
+        }
+
+        [Test]
+        public void Equals_Empty_Yes()
+        {
+            Assert.IsTrue(broom1.Equals(broom2));
+        }
+
+        [Test]
+        public void Equals_Booked_Yes()
+        {
+            Assert.IsTrue(broom1.Fit(course1));
+            Assert.IsTrue(broom2.Fit(course1));
+            
+            Assert.AreEqual(broom1, broom2);
+        }
+
+        [Test]
+        public void Equals_Empty_No()
+        {
+            broom2 = new BookableRoom(start,end, new Room(23, null));
+            Assert.IsFalse(broom1.Equals(broom2));
+        }
+
+        [Test]
+        public void Equals_Booked_No()
+        {
+            Assert.IsTrue(broom2.Fit(course1));
+            Assert.IsFalse(broom1.Equals(broom2));
         }
 
         [Test]
@@ -165,15 +196,17 @@ namespace Tests
             DateTime end2 = start2.AddHours(2);
             Room room2 = new Room(40, resources2);
 
-            BookableRoom clone = (BookableRoom) broom.Clone();
+            BookableRoom clone = (BookableRoom)broom1.Clone();
+            Assert.IsTrue(clone.Equals(broom1));
+
             BookableRoom helper = new BookableRoom(start2, end2, room2);
             // mutate 
             course1.Duration = 60;
             Assert.IsTrue(clone.Fit(course1));
 
             // Check original
-            Assert.AreEqual(60, broom.FreeTime.Peek().Duration());
-            Assert.IsEmpty(broom.TakenTime);
+            Assert.AreEqual(60, broom1.FreeTime.Peek().Duration());
+            Assert.IsEmpty(broom1.TakenTime);
 
             // Check clone
             Assert.IsEmpty(clone.FreeTime);

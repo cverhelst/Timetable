@@ -62,12 +62,10 @@ namespace Model
 
             builder.AppendLine(Format.DIVIDER);
             builder.AppendLine("Timetable");
-            for(int i = 0; i < Days.Count; i++)
+            foreach(Day day in Days)
             {
-                Day day = Days[i];
-                builder.Append(i + " ");
                 String dayInfo = day.ToString().Replace("\n", "\n" + Format.TAB);
-                builder.Append(dayInfo);
+                builder.AppendLine(Format.TAB + dayInfo);
             }
             return builder.ToString();
         }

@@ -20,5 +20,5 @@ D:\Bestanden\Workspace\C#\Timetable\Tests\bin\Debug\nunit.core.dll
 D:\Bestanden\Workspace\C#\Timetable\Tests\obj\x86\Debug\ResolveAssemblyReference.cache
 D:\Bestanden\Workspace\C#\Timetable\Tests\obj\x86\Debug\Tests.exe
 D:\Bestanden\Workspace\C#\Timetable\Tests\obj\x86\Debug\Tests.pdb
-D:\Bestanden\Workspace\C#\Timetable\Tests\bin\Debug\ConsoleApplication1.exe
-D:\Bestanden\Workspace\C#\Timetable\Tests\bin\Debug\ConsoleApplication1.pdb
+D:\Bestanden\Workspace\C#\Timetable\Tests\bin\Debug\Model.exe
+D:\Bestanden\Workspace\C#\Timetable\Tests\bin\Debug\Model.pdb

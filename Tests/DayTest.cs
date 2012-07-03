@@ -135,6 +135,9 @@ namespace Tests
             Assert.IsTrue(clone.Fit(course1));
             Assert.IsTrue(clone.IsCourseBooked(course1));
             Assert.IsFalse(day.IsCourseBooked(course1));
+            clone.Number = 1;
+            Assert.AreEqual(0, day.Number);
+            Assert.AreEqual(1, clone.Number);
 
             clone.Rooms.Add(broom3);
             Assert.IsTrue(clone.Rooms.Contains(broom3));

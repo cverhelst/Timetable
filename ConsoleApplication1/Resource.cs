@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Model
 {
-    public class Resource : ICloneable
+    public class Resource : ICloneable, IComparable
     {
         private string name;
 
@@ -56,6 +56,17 @@ namespace Model
         public override int GetHashCode()
         {
             return Name.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return Name;
+        }
+
+        public int CompareTo(Object obj)
+        {
+            Resource other = obj as Resource;
+            return Name.CompareTo(other.Name);
         }
     }
 }

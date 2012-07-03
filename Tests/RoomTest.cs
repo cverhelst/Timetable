@@ -11,7 +11,8 @@ namespace Tests
     public class RoomTest
     {
 
-        private Room room;
+        private Room room1;
+        private Room room2;
         private Resource resource1;
         private Resource resource2;
         private Resource resource3;
@@ -31,7 +32,8 @@ namespace Tests
             resources1 = new List<Resource>() { resource1, resource2 };
             resources2 = new List<Resource>() { resource1, resource3 };
 
-            room = new Room(10, resources1);
+            room1 = new Room(10, resources1);
+            room2 = new Room(10, new List<Resource>() { new Resource("Projector"), new Resource("TV") });
             course1 = new Course(10, 10, resources1);
             course2 = new Course(10, 10, resources2);
 
@@ -40,98 +42,99 @@ namespace Tests
         [Test]
         public void Constructor_ResourcesNull_EmptyList()
         {
-            room = new Room(10, null);
-            Assert.IsEmpty(room.Resources);
+            room1 = new Room(10, null);
+            Assert.IsEmpty(room1.Resources);
         }
 
         [Test]
         public void Seats_GreaterThanZero_Pass()
         {
-            room.Seats = 5;
-            Assert.IsTrue(room.Seats == 5);
+            room1.Seats = 5;
+            Assert.IsTrue(room1.Seats == 5);
         }
 
         [Test]
         public void Seats_EqualToZero_Pass()
         {
-            room.Seats = 0;
-            Assert.IsTrue(room.Seats == 0);
+            room1.Seats = 0;
+            Assert.IsTrue(room1.Seats == 0);
         }
 
         [Test]
         public void Seats_LowerThanZero_SetZero()
         {
-            room.Seats = -1;
-            Assert.IsTrue(room.Seats == 0);
+            room1.Seats = -1;
+            Assert.IsTrue(room1.Seats == 0);
         }
 
         [Test]
         public void CanFit_TightestRequirements_Yes()
         {
-            room.Seats = 10;
-            room.Resources = resources1;
+            room1.Seats = 10;
+            room1.Resources = resources1;
 
             course1.Students = 10;
             course1.RequiredResources = resources1;
 
-            Assert.IsTrue(room.CanFit(course1));
+            Assert.IsTrue(room1.CanFit(course1));
         }
 
         [Test]
         public void CanFit_LooseRequirementsStudents_Yes()
         {
-            room.Seats = 10;
-            room.Resources = resources1;
+            room1.Seats = 10;
+            room1.Resources = resources1;
 
             course1.Students = 1;
             course1.RequiredResources = resources1;
 
-            Assert.IsTrue(room.CanFit(course1));
+            Assert.IsTrue(room1.CanFit(course1));
         }
 
         [Test]
         public void CanFit_LooseRequirementsResources_Yes()
         {
-            room.Seats = 10;
-            room.Resources = resources1;
+            room1.Seats = 10;
+            room1.Resources = resources1;
 
             course1.Students = 10;
             course1.RequiredResources = new List<Resource>() { resources1.First() };
 
-            Assert.IsTrue(room.CanFit(course1));
+            Assert.IsTrue(room1.CanFit(course1));
         }
 
         [Test]
         public void CanFit_TooManyStudents_No()
         {
-            room.Seats = 10;
-            room.Resources = resources1;
+            room1.Seats = 10;
+            room1.Resources = resources1;
 
             course1.Students = 11;
             course1.RequiredResources = resources1;
 
-            Assert.IsFalse(room.CanFit(course1));
+            Assert.IsFalse(room1.CanFit(course1));
         }
 
         [Test]
         public void CanFit_DifferentResources_No()
         {
-            room.Seats = 10;
-            room.Resources = resources1;
+            room1.Seats = 10;
+            room1.Resources = resources1;
 
             course1.Students = 10;
             course1.RequiredResources = resources2;
 
-            Assert.IsFalse(room.CanFit(course1));
+            Assert.IsFalse(room1.CanFit(course1));
         }
 
         [Test]
         public void Clone_DeepCopy()
         {
-            room.Seats = 5;
-            room.Resources = new List<Resource>() { resource1 };
+            room1.Seats = 5;
+            room1.Resources = new List<Resource>() { resource1 };
 
-            Room clone = (Room)room.Clone();
+            Room clone = (Room)room1.Clone();
+            Assert.AreEqual(room1, clone);
 
             // mutate seats
             clone.Seats = 10;
@@ -142,16 +145,53 @@ namespace Tests
             resource.Name = "HighCeiling";
             clone.Name = "001";
 
-            Assert.AreEqual(5, room.Seats);
-            Assert.AreEqual(1, room.Resources.Count);
-            Assert.AreEqual("TV", room.Resources.First().Name);
-            Assert.AreEqual("N/A", room.Name);
+            Assert.AreEqual(5, room1.Seats);
+            Assert.AreEqual(1, room1.Resources.Count);
+            Assert.AreEqual("TV", room1.Resources.First().Name);
+            Assert.AreEqual("N/A", room1.Name);
 
             Assert.AreEqual(10, clone.Seats);
             Assert.AreEqual(2, clone.Resources.Count);
             Assert.AreEqual("HighCeiling", clone.Resources.First().Name);
             Assert.AreEqual("001", clone.Name);
 
+        }
+
+        [Test]
+        public void Equals_BasicStuffMatches_Yes()
+        {
+            room1.Resources = null;
+            room2.Resources = null;
+            Assert.IsTrue(room1.Equals(room2));
+        }
+
+        [Test]
+        public void Equals_BasicStuffDiffers_No()
+        {
+            room1.Resources = null;
+            room2.Resources = null;
+            room1.Seats = 200;
+            room1.Name = "thiswillnotmatch";
+            Assert.IsFalse(room1.Equals(room2));
+        }
+
+        [Test]
+        public void Equals_ResourcesMatch_Yes()
+        {
+            Assert.IsTrue(room1.Equals(room2));
+        }
+
+        [Test]
+        public void Equals_ResourcesDiffer_No()
+        {
+            room1.Resources = resources2;
+            Assert.IsFalse(room1.Equals(room2));
+        }
+
+        [Test]
+        public void GetHashCode_ResourcesListMixedOrder_Yes() 
+        {
+            Assert.AreEqual(room1.GetHashCode(), room2.GetHashCode());
         }
     }
 }

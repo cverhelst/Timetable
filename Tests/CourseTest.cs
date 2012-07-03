@@ -68,6 +68,7 @@ namespace Tests
         public void Clone_DeepCopy()
         {
             Course clone = (Course) course1.Clone();
+            Assert.AreEqual(course1, clone);
 
             // Mutate
             clone.Duration = 20;

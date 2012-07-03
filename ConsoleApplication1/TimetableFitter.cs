@@ -56,18 +56,18 @@ namespace Model
             List<Resource> resources = new List<Resource>() { resource1 };
 
             // Rooms
-            Room room1 = new Room(15, resources);
-            Room room2 = new Room(30, null);
+            Room room1 = new Room("001", 15, resources);
+            Room room2 = new Room("112", 30, null);
 
             // Set Room avalability
-            BookableRoom book1 = new BookableRoom(Extensions.DateTimeCreator(0, 8, 30), Extensions.DateTimeCreator(0 ,14, 0), room1);
+            BookableRoom book1 = new BookableRoom(Extensions.DateTimeCreator(0, 8, 30), Extensions.DateTimeCreator(0, 14, 0), room1);
             BookableRoom book2 = new BookableRoom(Extensions.DateTimeCreator(0, 10, 30), Extensions.DateTimeCreator(0, 16, 0), room2);
             List<BookableRoom> rooms1 = new List<BookableRoom>() { book1 };
             List<BookableRoom> rooms2 = new List<BookableRoom>() { book2 };
 
             // Days
-            Day day1 = new Day(rooms1);
-            Day day2 = new Day(rooms2);
+            Day day1 = new Day(1,rooms1);
+            Day day2 = new Day(2,rooms2);
 
             // Timetable
             Timetable timetable = new Timetable(new List<Day>() { day1, day2 });
@@ -98,7 +98,7 @@ namespace Model
                     if (timetable.CanFit(course))
                     {
                         // Clone the list of courses left to fit
-                        List<Course> coursesLeft = (List<Course>) courses.Clone();
+                        List<Course> coursesLeft = (List<Course>)courses.Clone();
                         // Remove the course that's going to be fitted from this cloned list
                         coursesLeft.Remove(course);
                         // Clone the timetable

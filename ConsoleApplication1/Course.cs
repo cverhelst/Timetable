@@ -93,19 +93,22 @@ namespace Model
 
         public override string ToString()
         {
-            return Name;
+            return DetailedInfo();
         }
 
         public string DetailedInfo()
         {
             StringBuilder builder = new StringBuilder();
-            builder.AppendFormat("Course {0} with {1} students and duration of {2} minutes that needs:   ", Name, Students, Duration);
-            foreach (Resource resource in RequiredResources)
+            StringBuilder requirements = new StringBuilder();
+            if (RequiredResources.Any())
             {
-                builder.AppendFormat("{0} - ", resource.Name);
+                foreach (Resource resource in RequiredResources)
+                {
+                    requirements.AppendFormat("{0} - ", resource);
+                }
+                requirements.Remove(requirements.Length - 3, 3);
             }
-            builder.Remove(builder.Length - 3, 3);
-            builder.Append("\n");
+            builder.AppendFormat("Course {0}: Students({1}) | Duration({2} minutes) | Requirements({3})\n", Name, Students, Duration, requirements);
             return builder.ToString();
         }
     }

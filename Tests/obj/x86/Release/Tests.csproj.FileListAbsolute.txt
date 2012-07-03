@@ -9,5 +9,5 @@ D:\Bestanden\Workspace\C#\Timetable\Tests\bin\Release\nunit.core.dll
 D:\Bestanden\Workspace\C#\Timetable\Tests\obj\x86\Release\ResolveAssemblyReference.cache
 D:\Bestanden\Workspace\C#\Timetable\Tests\obj\x86\Release\Tests.exe
 D:\Bestanden\Workspace\C#\Timetable\Tests\obj\x86\Release\Tests.pdb
-D:\Bestanden\Workspace\C#\Timetable\Tests\bin\Release\ConsoleApplication1.exe
-D:\Bestanden\Workspace\C#\Timetable\Tests\bin\Release\ConsoleApplication1.pdb
+D:\Bestanden\Workspace\C#\Timetable\Tests\bin\Release\Model.exe
+D:\Bestanden\Workspace\C#\Timetable\Tests\bin\Release\Model.pdb

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Model
 {
-    public class TimeUnit : ICloneable
+    public class TimeUnit : ICloneable, IComparable
     {
         private DateTime _start;
         private DateTime _end;
@@ -115,11 +115,53 @@ namespace Model
             return (int) End.Subtract(Start).TotalMinutes;
         }
 
+        public bool Equals(TimeUnit other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+            if (!Start.Equals(other.Start))
+            {
+                return false;
+            }
+            if (!End.Equals(other.End))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            TimeUnit other = obj as TimeUnit;
+            if (other == null)
+            {
+                return false;
+            }
+            return Equals(other);
+        }
+
+        public override int GetHashCode()
+        {
+            return Start.GetHashCode() ^ End.GetHashCode();
+        }
+
         public object Clone()
         {
             TimeUnit unit = new TimeUnit(Start, End);
             unit.AssignedCourse = AssignedCourse == null ? null : (Course) AssignedCourse.Clone();
             return unit;
+        }
+
+        public int CompareTo(object obj)
+        {
+            TimeUnit other = obj as TimeUnit;
+            return Start.CompareTo(other.Start);
         }
     }
 

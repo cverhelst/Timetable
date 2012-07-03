@@ -89,13 +89,75 @@ namespace Model
 
         public bool IsCourseBooked(Course course)
         {
-            foreach(TimeUnit unit in TakenTime)
+            foreach (TimeUnit unit in TakenTime)
             {
-                if(unit.AssignedCourse.Equals(course)) {
+                if (unit.AssignedCourse.Equals(course))
+                {
                     return true;
                 }
             }
             return false;
+        }
+
+        private bool AreStacksEqual(Stack<TimeUnit> first, Stack<TimeUnit> two)
+        {
+            Stack<TimeUnit> cloneThis = first.Clone();
+            Stack<TimeUnit> cloneOther = two.Clone();
+            while (cloneThis.Any())
+            {
+                if(!cloneThis.Pop().Equals(cloneOther.Pop())) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public bool Equals(BookableRoom other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+            if (!Room.Equals(other.Room))
+            {
+                return false;
+            }
+            if (other.FreeTime.Count != FreeTime.Count)
+            {
+                return false;
+            }
+            if (other.TakenTime.Count != TakenTime.Count)
+            {
+                return false;
+            }
+            if (!AreStacksEqual(FreeTime, other.FreeTime))
+            {
+                return false;
+            }
+            if (!AreStacksEqual(TakenTime, other.TakenTime))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            BookableRoom other = obj as BookableRoom;
+            if (other == null)
+            {
+                return false;
+            }
+            return Equals(other);
+        }
+
+        public override int GetHashCode()
+        {
+            return Room.GetHashCode() ^ FreeTime.GetAltHashCode() ^ TakenTime.GetAltHashCode();
         }
 
         public object Clone()
@@ -110,17 +172,20 @@ namespace Model
         public override string ToString()
         {
             StringBuilder builder = new StringBuilder();
-            builder.AppendFormat("Room {0}\n", GetHashCode());
-            builder.AppendFormat("\tSeats = {0}\n",Room.Seats);
+
+            builder.AppendLine(Format.TAB + Room);
             builder.AppendLine("\tFree time =");
-            foreach(TimeUnit free in FreeTime) {
+            foreach (TimeUnit free in FreeTime.Reverse())
+            {
                 builder.AppendFormat("\t\t{0} - {1}\n", free.Start, free.End);
             }
+
             builder.AppendLine("\tTaken time=");
-            foreach (TimeUnit taken in TakenTime)
+            foreach (TimeUnit taken in TakenTime.Reverse())
             {
                 builder.AppendFormat("\t\t{0} - {1} booked course: {2}\n", taken.Start, taken.End, taken.AssignedCourse);
             }
+
             return builder.ToString();
         }
     }

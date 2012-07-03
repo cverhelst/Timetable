@@ -15,10 +15,15 @@ namespace Model
             set { _rooms = value == null ? new List<BookableRoom>() : value; }
         }
 
-        public Day(List<BookableRoom> rooms)
+        public int Number { get; set; }
+
+        public Day(int number, List<BookableRoom> rooms)
         {
+            Number = number;
             Rooms = rooms;
         }
+
+        public Day(List<BookableRoom> rooms) : this(0, rooms) { }
 
         public bool CanFit(Course course)
         {
@@ -51,7 +56,8 @@ namespace Model
             bool result = false;
             foreach (BookableRoom room in Rooms)
             {
-                if(room.IsCourseBooked(course)) {
+                if (room.IsCourseBooked(course))
+                {
                     result = true;
                     break;
                 }
@@ -61,22 +67,55 @@ namespace Model
 
         public object Clone()
         {
-            Day clone = new Day((List<BookableRoom>)Rooms.Clone());
+            Day clone = new Day(Number, (List<BookableRoom>)Rooms.Clone());
             return clone;
         }
 
         public override string ToString()
         {
             StringBuilder builder = new StringBuilder();
-            builder.AppendLine("Day");
-            for(int i = 0; i < Rooms.Count; i++)
+            builder.AppendFormat("Day {0}\n", Number);
+            foreach(BookableRoom room in Rooms)
             {
-                BookableRoom room = Rooms[i];
-                builder.Append(i + " ");
                 String roomInfo = room.ToString().Replace("\n", "\n" + Format.TAB);
-                builder.Append("\t" + roomInfo);
+                builder.AppendLine(Format.TAB + roomInfo);
             }
             return builder.ToString();
+        }
+
+        public bool Equals(Day other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+            if (Number != other.Number)
+            {
+                return false;
+            }
+            if (Rooms.Count != other.Rooms.Count)
+            {
+                return false;
+            }
+            if (Rooms.Except(other.Rooms).Any())
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            Day other = obj as Day;
+            if (other == null)
+            {
+                return false;
+            }
+            return Equals(other);
         }
     }
 }
