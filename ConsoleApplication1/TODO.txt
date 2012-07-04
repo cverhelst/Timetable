@@ -1,0 +1,2 @@
+﻿Day : Is it good to allow duplicate rooms ?
+	-> Bookable room automatically contains all allowed hours to book it ( consecutive or not )
