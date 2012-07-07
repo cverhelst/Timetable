@@ -8,8 +8,7 @@ namespace Model
     public class BookableRoom : ICloneable, IComparable
     {
         // Perhaps make a sorted list on start date ? 
-        private Stack<TimeUnit> _freeTime;
-        private Stack<TimeUnit> _takenTime;
+        private SortedSet<TimeUnit> _time;
         private Room _room;
 
         public Room Room
@@ -18,29 +17,21 @@ namespace Model
             private set { _room = value == null ? new Room() : value; }
         }
 
-        public Stack<TimeUnit> FreeTime
+        public SortedSet<TimeUnit> Time
         {
-            get { return _freeTime; }
-            set { _freeTime = value == null ? new Stack<TimeUnit>() : value; }
+            get { return _time; }
+            set { _time = value == null ? new SortedSet<TimeUnit>() : value; }
         }
 
-        public Stack<TimeUnit> TakenTime
+        public BookableRoom(DateTime start, DateTime end, Room room) : this()
         {
-            get { return _takenTime; }
-            set { _takenTime = value == null ? new Stack<TimeUnit>() : value; }
-        }
-
-        public BookableRoom(DateTime start, DateTime end, Room room)
-            : this()
-        {
-            FreeTime.Push(new TimeUnit(start, end));
+            Time.Add(new TimeUnit(start, end));
             Room = room;
         }
 
         public BookableRoom()
         {
-            _freeTime = new Stack<TimeUnit>();
-            _takenTime = new Stack<TimeUnit>();
+            Time = new SortedSet<TimeUnit>();
             Room = new Room();
         }
 
@@ -50,12 +41,16 @@ namespace Model
             {
                 return false;
             }
-            if (!FreeTime.Any())
+            if (!Time.Any())
             {
                 return false;
             }
-            foreach (TimeUnit unit in FreeTime)
+            foreach (TimeUnit unit in Time)
             {
+                if (unit.AssignedCourse != null)
+                {
+                    return false;
+                }
                 if (unit.Duration() < course.Duration)
                 {
                     return false;
@@ -64,6 +59,7 @@ namespace Model
             return true;
         }
 
+        // TODO: REDO
         public bool Fit(Course course)
         {
 
@@ -89,7 +85,7 @@ namespace Model
 
         public bool IsCourseBooked(Course course)
         {
-            foreach (TimeUnit unit in TakenTime)
+            foreach (TimeUnit unit in Time)
             {
                 if (unit.AssignedCourse.Equals(course))
                 {
@@ -97,19 +93,6 @@ namespace Model
                 }
             }
             return false;
-        }
-
-        private bool AreStacksEqual(Stack<TimeUnit> first, Stack<TimeUnit> two)
-        {
-            Stack<TimeUnit> cloneThis = first.Clone();
-            Stack<TimeUnit> cloneOther = two.Clone();
-            while (cloneThis.Any())
-            {
-                if(!cloneThis.Pop().Equals(cloneOther.Pop())) {
-                    return false;
-                }
-            }
-            return true;
         }
 
         public bool Equals(BookableRoom other)
@@ -122,19 +105,11 @@ namespace Model
             {
                 return false;
             }
-            if (other.FreeTime.Count != FreeTime.Count)
+            if (other.Time.Count != Time.Count)
             {
                 return false;
             }
-            if (other.TakenTime.Count != TakenTime.Count)
-            {
-                return false;
-            }
-            if (!AreStacksEqual(FreeTime, other.FreeTime))
-            {
-                return false;
-            }
-            if (!AreStacksEqual(TakenTime, other.TakenTime))
+            if (!Time.SetEquals(other.Time))
             {
                 return false;
             }
@@ -157,14 +132,13 @@ namespace Model
 
         public override int GetHashCode()
         {
-            return Room.GetHashCode() ^ FreeTime.GetAltHashCode() ^ TakenTime.GetAltHashCode();
+            return Room.GetHashCode() ^ Time.GetAltHashCode();
         }
 
         public object Clone()
         {
             BookableRoom clone = new BookableRoom();
-            clone.FreeTime = FreeTime.Clone();
-            clone.TakenTime = TakenTime.Clone();
+            clone.Time = Time.Clone();
             clone.Room = (Room)Room.Clone();
             return clone;
         }
@@ -174,8 +148,8 @@ namespace Model
             StringBuilder builder = new StringBuilder();
 
             builder.AppendLine(Format.TAB + Room);
-            builder.AppendLine(Format.TAB + "Free time =");
-            foreach (TimeUnit free in FreeTime.Reverse())
+            builder.AppendLine(Format.TAB + "Bookings:");
+            foreach (TimeUnit free in Time)
             {
                 builder.AppendLine(Format.TAB + Format.TAB + free);
             }
