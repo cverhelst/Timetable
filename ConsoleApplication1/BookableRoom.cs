@@ -82,6 +82,7 @@ namespace Model
             return result;
         }
 
+        // TODO: Move to TimeUnit itself
         public bool IsCourseBooked(Course course)
         {
             foreach (TimeUnit unit in Time)

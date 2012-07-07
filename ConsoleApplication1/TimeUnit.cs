@@ -110,6 +110,16 @@ namespace Model
             }
         }
 
+        public bool Merge(TimeUnit other)
+        {
+            bool result = false;
+            if(other.IsConsecutiveWith(this)) {
+                End = other.End;
+                result = true;
+            }
+            return result;
+        }
+
         public int Duration()
         {
             return (int) End.Subtract(Start).TotalMinutes;
