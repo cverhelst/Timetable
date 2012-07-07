@@ -47,11 +47,7 @@ namespace Model
             }
             foreach (TimeUnit unit in Time)
             {
-                if (unit.AssignedCourse != null)
-                {
-                    return false;
-                }
-                if (unit.Duration() < course.Duration)
+                if (!unit.CanFit(course.Duration))
                 {
                     return false;
                 }
@@ -65,19 +61,18 @@ namespace Model
             bool result = false;
             if (CanFit(course))
             {
-                //TimeUnit before = FreeTime.Pop();
-                //SplitResult container = before.Split(course.Duration);
-                //TimeUnit taken = container.First;
-                //TimeUnit free = container.Second;
-                //taken.AssignedCourse = course;
-
-                //TakenTime.Push(taken);
-                //if (free != null)
-                //{
-                //    FreeTime.Push(free);
-                //}
-
-                //result = true;
+                foreach (TimeUnit unit in Time)
+                {
+                    if (unit.CanFit(course.Duration))
+                    {
+                        SplitResult split = unit.Split(course.Duration);
+                        split.First.AssignedCourse = course;
+                        Time.Add(split.First);
+                        Time.Add(split.Second);
+                        result = true;
+                        break;
+                    }
+                }
             }
             return result;
         }

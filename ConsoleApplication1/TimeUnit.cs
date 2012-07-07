@@ -178,6 +178,19 @@ namespace Model
         {
             return String.Format("{0} - {1} booked course: {2}", Start, End, AssignedCourse);
         }
+
+        public bool CanFit(int dur)
+        {
+            if (AssignedCourse != null)
+            {
+                return false;
+            }
+            if (Duration() < dur)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 
     public struct SplitResult
