@@ -139,6 +139,17 @@ namespace Model
             {
                 return false;
             }
+            if (AssignedCourse != null)
+            {
+                if (!AssignedCourse.Equals(other.AssignedCourse))
+                {
+                    return false;
+                }
+            }
+            else if (other.AssignedCourse != null)
+            {
+                return false;
+            }
             return true;
         }
 

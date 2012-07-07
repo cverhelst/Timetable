@@ -36,6 +36,21 @@ namespace Model
             Room = new Room();
         }
 
+        private bool AreSetsEqual(ISet<TimeUnit> first, ISet<TimeUnit> two)
+        {
+            if(first.Count != two.Count) {
+                return false;
+            }
+            foreach (TimeUnit unit in first)
+            {
+                if (!two.Contains(unit))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         public bool CanFit(Course course)
         {
             if (!Room.CanFit(course))
@@ -72,7 +87,10 @@ namespace Model
                         split.First.AssignedCourse = course;
                         Time.Remove(unit);
                         Time.Add(split.First);
-                        Time.Add(split.Second);
+                        if (split.Second != null)
+                        {
+                            Time.Add(split.Second);
+                        }
                         result = true;
                         break;
                     }
@@ -80,7 +98,6 @@ namespace Model
             }
             if (result)
             {
-
                 Time.MergeUnits();
             }
             return result;
@@ -91,7 +108,7 @@ namespace Model
         {
             foreach (TimeUnit unit in Time)
             {
-                if (unit.AssignedCourse.Equals(course))
+                if (unit.AssignedCourse != null && unit.AssignedCourse.Equals(course))
                 {
                     return true;
                 }
@@ -113,7 +130,7 @@ namespace Model
             {
                 return false;
             }
-            if (!Time.SetEquals(other.Time))
+            if (!AreSetsEqual(Time,other.Time))
             {
                 return false;
             }

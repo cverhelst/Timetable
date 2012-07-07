@@ -211,15 +211,14 @@ namespace Tests
             // Check original
 
             var units = broom1.Time.Where(unit => unit.AssignedCourse == null).ToList();
-
             Assert.AreEqual(60, units.First().Duration());
             units = broom1.Time.Where(unit => unit.AssignedCourse != null).ToList();
             Assert.IsEmpty(units);
 
             // Check clone
-            units = clone.Time.Where(unit => unit.AssignedCourse != null).ToList();
-            Assert.IsEmpty(units);
             units = clone.Time.Where(unit => unit.AssignedCourse == null).ToList();
+            Assert.IsEmpty(units);
+            units = clone.Time.Where(unit => unit.AssignedCourse != null).ToList();
             Assert.AreEqual(60, units.First().Duration());
 
         }

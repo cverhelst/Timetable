@@ -12,20 +12,25 @@ namespace Tests
     {
         private DateTime start;
         private DateTime end;
-        private TimeUnit unit;
+        private TimeUnit unit1;
+        private TimeUnit unit2;
 
         [SetUp]
         public void init()
         {
             start = DateTime.Now;
             end = start.AddHours(5);
-            unit = new TimeUnit(start, end);
+            unit1 = new TimeUnit(start, end);
+            unit2 = new TimeUnit(start, end);
         }
 
         [Test]
         public void Constructor_StartBeforeEnd_Pass()
         {
-            
+            unit1 = new TimeUnit(start, end);
+
+            Assert.AreEqual(end, unit1.End);
+            Assert.AreEqual(start, unit1.Start);
         }
 
         [Test]
@@ -33,10 +38,10 @@ namespace Tests
         {
             end = start;
 
-            unit = new TimeUnit(start, end);
+            unit1 = new TimeUnit(start, end);
 
-            Assert.AreEqual(end, unit.End);
-            Assert.AreEqual(start, unit.Start);
+            Assert.AreEqual(end, unit1.End);
+            Assert.AreEqual(start, unit1.Start);
         }
 
         // This test fail for example, replace result or delete this test to see all tests pass
@@ -54,16 +59,16 @@ namespace Tests
         public void OverlapsWith_Partly_Yes()
         {
             TimeUnit unit2 = new TimeUnit(start.AddMinutes(1), end.AddMinutes(1));
-            Assert.IsTrue(unit2.OverlapsWith(unit));
-            Assert.IsTrue(unit.OverlapsWith(unit2));
+            Assert.IsTrue(unit2.OverlapsWith(unit1));
+            Assert.IsTrue(unit1.OverlapsWith(unit2));
         }
 
         [Test]
         public void OverlapsWith_Completely_Yes()
         {
             TimeUnit unit2 = new TimeUnit(start, end);
-            Assert.IsTrue(unit.OverlapsWith(unit2));
-            Assert.IsTrue(unit2.OverlapsWith(unit));
+            Assert.IsTrue(unit1.OverlapsWith(unit2));
+            Assert.IsTrue(unit2.OverlapsWith(unit1));
         }
 
         [Test]
@@ -71,8 +76,8 @@ namespace Tests
         {
             TimeUnit unit2 = new TimeUnit(end, end.AddDays(1));
 
-            Assert.IsFalse(unit2.OverlapsWith(unit));
-            Assert.IsFalse(unit.OverlapsWith(unit2));
+            Assert.IsFalse(unit2.OverlapsWith(unit1));
+            Assert.IsFalse(unit1.OverlapsWith(unit2));
         }
 
         [Test]
@@ -80,8 +85,8 @@ namespace Tests
         {
             TimeUnit unit2 = new TimeUnit(end.AddHours(1), end.AddDays(1));
 
-            Assert.IsFalse(unit2.OverlapsWith(unit));
-            Assert.IsFalse(unit.OverlapsWith(unit2));
+            Assert.IsFalse(unit2.OverlapsWith(unit1));
+            Assert.IsFalse(unit1.OverlapsWith(unit2));
         }
 
         [Test]
@@ -89,7 +94,7 @@ namespace Tests
         {
             TimeUnit unit2 = new TimeUnit(end, end.AddDays(1));
 
-            Assert.IsTrue(unit2.IsConsecutiveWith(unit));
+            Assert.IsTrue(unit2.IsConsecutiveWith(unit1));
         }
 
         [Test]
@@ -97,7 +102,7 @@ namespace Tests
         {
             TimeUnit unit2 = new TimeUnit(end, end.AddDays(1));
 
-            Assert.IsFalse(unit.IsConsecutiveWith(unit2));
+            Assert.IsFalse(unit1.IsConsecutiveWith(unit2));
         }
 
         [Test]
@@ -105,23 +110,23 @@ namespace Tests
         {
             TimeUnit unit2 = new TimeUnit(end.AddMilliseconds(1), end.AddDays(1));
 
-            Assert.IsFalse(unit2.IsConsecutiveWith(unit));
+            Assert.IsFalse(unit2.IsConsecutiveWith(unit1));
         }
 
         [Test]
         public void Split_SmallerPiece_ReturnPieceAndRemainder()
         {
-            SplitResult split = unit.Split(1);
+            SplitResult split = unit1.Split(1);
             Split_Asserts(split, 1);
         }
 
         [Test]
         public void Split_EqualPiece_ReturnPieceAndNull()
         {
-            SplitResult split = unit.Split(unit.Duration());
+            SplitResult split = unit1.Split(unit1.Duration());
 
-            Assert.AreEqual(unit.Duration(), split.First.Duration());
-            Assert.AreEqual(unit.Start, split.First.Start);
+            Assert.AreEqual(unit1.Duration(), split.First.Duration());
+            Assert.AreEqual(unit1.Start, split.First.Start);
             Assert.IsNull(split.Second);
         }
 
@@ -129,14 +134,14 @@ namespace Tests
         [ExpectedException(typeof(ArgumentException))]
         public void Split_BiggerPiece_ArgumentException()
         {
-            SplitResult split = unit.Split(unit.Duration() + 1);
+            SplitResult split = unit1.Split(unit1.Duration() + 1);
         }
 
         private void Split_Asserts(SplitResult split, int dur)
         {
             Assert.AreEqual(dur, split.First.Duration());
-            Assert.AreEqual(unit.Start, split.First.Start);
-            Assert.AreEqual(unit.End, split.Second.End);
+            Assert.AreEqual(unit1.Start, split.First.Start);
+            Assert.AreEqual(unit1.End, split.Second.End);
 
             Assert.IsTrue(split.Second.IsConsecutiveWith(split.First));
         }
@@ -146,9 +151,9 @@ namespace Tests
         {
             Resource resource = new Resource("TV");
             Course course = new Course(10, 10, new List<Resource>() { resource }) ;
-            unit.AssignedCourse = course;
+            unit1.AssignedCourse = course;
 
-            TimeUnit clone = (TimeUnit) unit.Clone();
+            TimeUnit clone = (TimeUnit) unit1.Clone();
 
             Course course2 = new Course(20, 20, new List<Resource>());
             DateTime start2 = DateTime.Now.AddDays(1);
@@ -161,13 +166,52 @@ namespace Tests
             // mutate start
             clone.Start = start2;
 
-            Assert.AreEqual(course, unit.AssignedCourse);
-            Assert.AreEqual(start, unit.Start);
-            Assert.AreEqual(end, unit.End);
+            Assert.AreEqual(course, unit1.AssignedCourse);
+            Assert.AreEqual(start, unit1.Start);
+            Assert.AreEqual(end, unit1.End);
 
             Assert.AreEqual(course2, clone.AssignedCourse);
             Assert.AreEqual(start2, clone.Start);
             Assert.AreEqual(end2, clone.End);
+        }
+
+        [Test]
+        public void Equals_EverythingEqualNoCourse_Yes()
+        {
+            Assert.AreEqual(unit1, unit2);
+        }
+
+        [Test]
+        public void Equals_EverythingEqualWithCourse_Yes()
+        {
+            unit1.AssignedCourse = new Course();
+            unit2.AssignedCourse = new Course();
+
+            Assert.AreEqual(unit1, unit2);
+        }
+
+        [Test]
+        public void Equals_EverythingDifferentNoCourse_No()
+        {
+            unit2 = new TimeUnit(Extensions.DateTimeCreator(0, 8, 30), Extensions.DateTimeCreator(0, 9, 0));
+            Assert.AreNotEqual(unit1, unit2);
+        }
+
+        [Test]
+        public void Equals_EverythingEqualDifferentCourse_No()
+        {
+            unit1.AssignedCourse = new Course(10, 10, null);
+            unit2.AssignedCourse = new Course(20, 20, null);
+
+            Assert.AreNotEqual(unit1, unit2);
+        }
+
+        [Test]
+        public void Equals_EverythingEqualOneCourseAssigned_No()
+        {
+            unit1.AssignedCourse = new Course();
+            Assert.AreNotEqual(unit1, unit2);
+            Assert.AreNotEqual(unit2, unit1);
         }
     }
 }
