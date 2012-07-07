@@ -23,8 +23,9 @@ namespace Model
             set { _time = value == null ? new SortedSet<TimeUnit>() : value; }
         }
 
-        public BookableRoom(DateTime start, DateTime end, Room room) : this()
+        public BookableRoom(DateTime start, DateTime end, Room room) 
         {
+            Time = new SortedSet<TimeUnit>();
             Time.Add(new TimeUnit(start, end));
             Room = room;
         }
@@ -76,10 +77,11 @@ namespace Model
                         break;
                     }
                 }
-                if (result)
-                {
-                    Time.MergeUnits();
-                }
+            }
+            if (result)
+            {
+
+                Time.MergeUnits();
             }
             return result;
         }
