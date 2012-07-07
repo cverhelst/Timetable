@@ -97,7 +97,7 @@ namespace Tests
             {
                 Assert.IsTrue(table.Fit(course1));
             }
-            Assert.IsTrue(table.Days.First().Rooms.First().FreeTime.Count == 0);
+            Assert.IsTrue(table.Days.First().Rooms.First().Time.Count == 0);
 
             Course course4 = (Course) course2.Clone();
             course4.Duration = 5;

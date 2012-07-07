@@ -92,7 +92,7 @@ namespace Tests
         [Test]
         public void CanFit_NoFreeTimeLeft_No()
         {
-            broom1.FreeTime = new Stack<TimeUnit>();
+            broom1.Time = new SortedSet<TimeUnit>();
 
             // There is no Free Time left to fit the course in
             Assert.IsFalse(broom1.CanFit(course1));
@@ -106,12 +106,13 @@ namespace Tests
             // BRoom has fitted the course
             Assert.IsTrue(broom1.Fit(course1));
 
-            // This is reflected in the Free Time left of the BRoom
-            Assert.AreEqual(59, broom1.FreeTime.Peek().Duration());
-            // As well as in the Taken Time
-            Assert.AreEqual(1, broom1.TakenTime.Peek().Duration());
-            // Which has the appropriate course assigned
-            Assert.AreEqual(course1, broom1.TakenTime.Peek().AssignedCourse);
+            // And will now have a timeunit equal to the leftover time
+            var units = broom1.Time.Where(unit => unit.AssignedCourse == null).ToList();
+            Assert.AreEqual(59, units.First().Duration());
+            // As well as one for the booking
+            units = broom1.Time.Where(unit => unit.AssignedCourse != null).ToList();
+            Assert.AreEqual(1, units.First().Duration());
+            Assert.AreEqual(course1, units.First().AssignedCourse);
         }
 
         [Test]
@@ -123,11 +124,13 @@ namespace Tests
             Assert.IsTrue(broom1.Fit(course1));
 
             // But there is no Free Time left
-            Assert.IsEmpty(broom1.FreeTime);
+            var units = broom1.Time.Where(unit => unit.AssignedCourse == null).ToList();
+            Assert.IsEmpty(units);
             // And the Taken Time reflects the fit
-            Assert.AreEqual(60, broom1.TakenTime.Peek().Duration());
+            units = broom1.Time.Where(unit => unit.AssignedCourse != null).ToList();
+            Assert.AreEqual(60, units.First().Duration());
             // And has the course assigned
-            Assert.AreEqual(course1, broom1.TakenTime.Peek().AssignedCourse);
+            Assert.AreEqual(course1, units.First().AssignedCourse);
         }
 
         [Test]
@@ -139,9 +142,10 @@ namespace Tests
             Assert.IsFalse(broom1.Fit(course1));
 
             // Free Time stays equal
-            Assert.AreEqual(60, broom1.FreeTime.Peek().Duration());
-            // As does the Taken Time
-            Assert.IsEmpty(broom1.TakenTime);
+            Assert.AreEqual(60, broom1.Time.First().Duration());
+            // and the course wasn't booked
+            var units = broom1.Time.Where(unit => unit.AssignedCourse != null).ToList();
+            Assert.IsEmpty(units);
         }
 
         [Test]
@@ -171,14 +175,14 @@ namespace Tests
         {
             Assert.IsTrue(broom1.Fit(course1));
             Assert.IsTrue(broom2.Fit(course1));
-            
+
             Assert.AreEqual(broom1, broom2);
         }
 
         [Test]
         public void Equals_Empty_No()
         {
-            broom2 = new BookableRoom(start,end, new Room(23, null));
+            broom2 = new BookableRoom(start, end, new Room(23, null));
             Assert.IsFalse(broom1.Equals(broom2));
         }
 
@@ -205,12 +209,18 @@ namespace Tests
             Assert.IsTrue(clone.Fit(course1));
 
             // Check original
-            Assert.AreEqual(60, broom1.FreeTime.Peek().Duration());
-            Assert.IsEmpty(broom1.TakenTime);
+
+            var units = broom1.Time.Where(unit => unit.AssignedCourse == null).ToList();
+
+            Assert.AreEqual(60, units.First().Duration());
+            units = broom1.Time.Where(unit => unit.AssignedCourse != null).ToList();
+            Assert.IsEmpty(units);
 
             // Check clone
-            Assert.IsEmpty(clone.FreeTime);
-            Assert.AreEqual(60, clone.TakenTime.Peek().Duration());
+            units = clone.Time.Where(unit => unit.AssignedCourse != null).ToList();
+            Assert.IsEmpty(units);
+            units = clone.Time.Where(unit => unit.AssignedCourse == null).ToList();
+            Assert.AreEqual(60, units.First().Duration());
 
         }
     }

@@ -45,6 +45,8 @@ namespace Model
             {
                 return false;
             }
+
+            Time.MergeUnits();
             foreach (TimeUnit unit in Time)
             {
                 if (!unit.CanFit(course.Duration))
@@ -55,7 +57,7 @@ namespace Model
             return true;
         }
 
-        // TODO: REDO
+        // TODO: Make inner split part an extension method for cleanliness
         public bool Fit(Course course)
         {
             bool result = false;
@@ -67,11 +69,16 @@ namespace Model
                     {
                         SplitResult split = unit.Split(course.Duration);
                         split.First.AssignedCourse = course;
+                        Time.Remove(unit);
                         Time.Add(split.First);
                         Time.Add(split.Second);
                         result = true;
                         break;
                     }
+                }
+                if (result)
+                {
+                    Time.MergeUnits();
                 }
             }
             return result;

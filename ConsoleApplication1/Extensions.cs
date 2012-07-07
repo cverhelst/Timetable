@@ -38,20 +38,23 @@ namespace Model
 
         // TimeUnit specific
 
-        public static SortedSet<T> MergeUnits<T>(this SortedSet<T> setToMerge) where T : TimeUnit
+        public static void MergeUnits<T>(this ICollection<T> setToMerge) where T : TimeUnit
         {
-            SortedSet<T> set = (SortedSet<T>) setToMerge.Clone();
-            bool changed = false;
+            bool changed;
             do
             {
-                foreach (T unit in set)
+                // initialize changed to false
+                changed = false;
+                foreach (T unit in setToMerge)
                 {
-                    foreach (T toMerge in set)
+                    foreach (T toMerge in setToMerge)
                     {
+                        // find the consecutive timeunit to merge with
                         if (toMerge.IsConsecutiveWith(unit))
                         {
                             unit.Merge(toMerge);
-                            set.Remove(toMerge);
+                            setToMerge.Remove(toMerge);
+                            // make sure to break out of all the loops to start over
                             changed = true;
                             break;
                         }
@@ -61,9 +64,8 @@ namespace Model
                         break;
                     }
                 }
+                // only stop looping when no more merges are performed
             } while (changed);
-
-            return set;
         }
     }
 }

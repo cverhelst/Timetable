@@ -39,7 +39,7 @@ namespace Tests
         [Test]
         public void MergeUnits_3OrderedConsecutiveUnits_OneUnit()
         {
-            units1 = units1.MergeUnits();
+            units1.MergeUnits();
 
             Assert.AreEqual(1, units1.Count);
             Assert.AreEqual(start, units1.First().Start);
