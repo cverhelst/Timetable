@@ -163,6 +163,11 @@ namespace Model
             TimeUnit other = obj as TimeUnit;
             return Start.CompareTo(other.Start);
         }
+
+        public override string ToString()
+        {
+            return String.Format("{0} - {1}", Start, End);
+        }
     }
 
     public struct SplitResult
