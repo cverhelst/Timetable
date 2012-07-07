@@ -156,7 +156,7 @@ namespace Tests
             Assert.IsTrue(broom1.IsCourseBooked(course1));
             Assert.IsFalse(broom1.IsCourseBooked(course2));
 
-            Course course3 = new Course(1, 1, new List<Resource>());
+            Course course3 = new Course(1, 1, null);
             Assert.IsTrue(broom1.Fit(course3));
 
             Assert.IsTrue(broom1.IsCourseBooked(course1));

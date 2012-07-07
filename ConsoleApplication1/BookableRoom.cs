@@ -65,12 +65,12 @@ namespace Model
             Time.MergeUnits();
             foreach (TimeUnit unit in Time)
             {
-                if (!unit.CanFit(course.Duration))
+                if (unit.CanFit(course.Duration))
                 {
-                    return false;
+                    return true;
                 }
             }
-            return true;
+            return false;
         }
 
         // TODO: Make inner split part an extension method for cleanliness

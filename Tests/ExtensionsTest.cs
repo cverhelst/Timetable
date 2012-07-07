@@ -80,5 +80,19 @@ namespace Tests
 
             Assert.AreEqual(3, units1.Count);
         }
+
+        [Test]
+        public void MergeUnits_DontMergeBookedUnits_Pass()
+        {
+            unit3.AssignedCourse = new Course();
+            units1 = new SortedSet<TimeUnit>() { unit1, unit2, unit3 };
+            units1.MergeUnits();
+
+            Assert.AreEqual(2, units1.Count);
+            var units = units1.Where(unit => unit.AssignedCourse == null).ToList();
+            Assert.AreEqual(1, units.Count);
+            Assert.AreEqual(start, units.First().Start);
+            Assert.AreEqual(point2, units.First().End);
+        }
     }
 }

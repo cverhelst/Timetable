@@ -47,21 +47,25 @@ namespace Model
                 changed = false;
                 foreach (T unit in setToMerge)
                 {
-                    foreach (T toMerge in setToMerge)
+                    if (unit.AssignedCourse == null)
                     {
-                        // find the consecutive timeunit to merge with
-                        if (toMerge.IsConsecutiveWith(unit))
+                        foreach (T toMerge in setToMerge)
                         {
-                            unit.Merge(toMerge);
-                            setToMerge.Remove(toMerge);
-                            // make sure to break out of all the loops to start over
-                            changed = true;
+                            // find the consecutive timeunit to merge with
+                            if (toMerge.AssignedCourse == null &&
+                                toMerge.IsConsecutiveWith(unit))
+                            {
+                                unit.Merge(toMerge);
+                                setToMerge.Remove(toMerge);
+                                // make sure to break out of all the loops to start over
+                                changed = true;
+                                break;
+                            }
+                        }
+                        if (changed)
+                        {
                             break;
                         }
-                    }
-                    if (changed)
-                    {
-                        break;
                     }
                 }
                 // only stop looping when no more merges are performed
