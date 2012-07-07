@@ -50,7 +50,7 @@ namespace Tests
             course2 = new Course(40, 20, resources2);
 
             broomList1 = new List<BookableRoom>() { broom1, broom2 };
-            broomList2 = new List<BookableRoom>() { broom1 };
+            broomList2 = new List<BookableRoom>() { (BookableRoom)broom1.Clone(), (BookableRoom)broom2.Clone() };
             day1 = new Day(broomList1);
             day2 = new Day(broomList2);
         }
@@ -91,9 +91,9 @@ namespace Tests
         [Test]
         public void Fit_BusyDay_Yes()
         {
-            
+
             course1.Duration = 1;
-            Course course3 = (Course) course1.Clone();
+            Course course3 = (Course)course1.Clone();
             Assert.IsTrue(day1.Fit(course1));
             Assert.IsTrue(day1.Fit(course3));
 
@@ -101,7 +101,7 @@ namespace Tests
             Assert.IsTrue(day1.Rooms.First().IsCourseBooked(course3));
 
             Assert.IsTrue(day1.Fit(course2));
-            
+
             Assert.IsTrue(day1.Rooms[1].IsCourseBooked(course2));
         }
 
@@ -109,20 +109,22 @@ namespace Tests
         public void Fit_ToFull_Yes()
         {
             end = start.AddMinutes(5);
-            broom1 = new BookableRoom(start,end,room);
-            broom2 = new BookableRoom(end.AddMinutes(60), end.AddMinutes(65), new Room(10,resources2));
+            broom1 = new BookableRoom(start, end, room);
+            broom2 = new BookableRoom(end.AddMinutes(60), end.AddMinutes(65), new Room(10, resources2));
             course1.Duration = 1;
             course2.Duration = 1;
             course1.Students = 1;
             course2.Students = 1;
 
-            day1 = new Day(new List<BookableRoom>() { broom1, broom2});
+            day1 = new Day(new List<BookableRoom>() { broom1, broom2 });
 
-            for(int i = 0; i<5; i++) {
+            for (int i = 0; i < 5; i++)
+            {
                 Assert.IsTrue(day1.Fit(course1));
             }
             Assert.IsFalse(day1.Fit(course1));
-            for(int i = 0;i<5;i++) {
+            for (int i = 0; i < 5; i++)
+            {
                 Assert.IsTrue(day1.Fit(course2));
             }
             Assert.IsFalse(day1.Fit(course2));
@@ -131,10 +133,10 @@ namespace Tests
         [Test]
         public void Clone_DeepCopy()
         {
-            Day clone = (Day) day1.Clone();
+            Day clone = (Day)day1.Clone();
 
             BookableRoom broom3 = new BookableRoom(start.AddMinutes(5), start.AddMinutes(10), new Room());
-            
+
             // Mutate
             Assert.IsTrue(clone.Fit(course1));
             Assert.IsTrue(clone.IsCourseBooked(course1));
@@ -149,6 +151,45 @@ namespace Tests
         }
 
         [Test]
-        public void Equals_
+        public void Equals_EmptyIdenticalRooms_Yes()
+        {
+            Assert.AreEqual(day1, day2);
+        }
+
+        [Test]
+        public void Equals_FilledIdenticalRooms_Yes()
+        {
+            Assert.IsTrue(day1.Fit(course1));
+            Assert.IsTrue(day2.Fit(course1));
+
+            Assert.IsTrue(day1.Fit(course2));
+            Assert.IsTrue(day2.Fit(course2));
+
+            Assert.AreEqual(day1, day2);
+        }
+
+        [Test]
+        public void Equals_DifferentRooms_No()
+        {
+            day2 = new Day(new List<BookableRoom>() { new BookableRoom(start, end, new Room("test", 10, null)) });
+            Assert.AreNotEqual(day1, day2);
+        }
+
+        [Test]
+        public void Equals_OnlyOneHasBookings_No()
+        {
+            Assert.IsTrue(day1.Fit(course1));
+
+            Assert.AreNotEqual(day1, day2);
+        }
+
+        [Test]
+        public void Equals_DifferentBookings_No()
+        {
+            Assert.IsTrue(day1.Fit(course1));
+            Assert.IsTrue(day2.Fit(course2));
+
+            Assert.AreNotEqual(day1, day2);
+        }
     }
 }
