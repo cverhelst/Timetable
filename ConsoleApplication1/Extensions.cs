@@ -18,14 +18,14 @@ namespace Model
             return listToHash.OrderBy(x => x).Aggregate(0, (x, y) => x.GetHashCode() ^ y.GetHashCode());
         }
 
-        public static int GetAltHashCode<T>(this Stack<T> stackToHash) where T : IComparable
+        public static int GetAltHashCode<T>(this ISet<T> stackToHash) where T : IComparable
         {
             return stackToHash.OrderBy(x => x).Aggregate(0, (x, y) => x.GetHashCode() ^ y.GetHashCode());
         }
 
-        public static Stack<T> Clone<T>(this Stack<T> stackToClone) where T : ICloneable
+        public static ISet<T> Clone<T>(this ISet<T> setToClone) where T : ICloneable
         {
-            return new Stack<T>(stackToClone.Select(item => (T)item.Clone()).Reverse());
+            return new SortedSet<T>(setToClone.Select(item => (T)item.Clone()));
         }
 
         public static DateTime DateTimeCreator(int day, int hour, int minute)

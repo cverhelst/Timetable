@@ -62,7 +62,6 @@ namespace Model
         // TODO: REDO
         public bool Fit(Course course)
         {
-
             bool result = false;
             if (CanFit(course))
             {
@@ -138,7 +137,7 @@ namespace Model
         public object Clone()
         {
             BookableRoom clone = new BookableRoom();
-            clone.Time = Time.Clone();
+            clone.Time = (SortedSet<TimeUnit>) Time.Clone();
             clone.Room = (Room)Room.Clone();
             return clone;
         }
@@ -155,7 +154,7 @@ namespace Model
             }
 
             builder.AppendLine(Format.TAB + "Taken time=");
-            foreach (TimeUnit taken in TakenTime.Reverse())
+            foreach (TimeUnit taken in Time)
             {
                 builder.AppendLine(Format.TAB + Format.TAB + taken);
             }
