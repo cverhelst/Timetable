@@ -63,9 +63,10 @@ namespace Tests
             units1.MergeUnits();
 
             Assert.AreEqual(2, units1.Count);
-            Assert.AreEqual(start, units1.First().Start);
-            Assert.AreEqual(point2, units1.First().End);
-            Assert.AreEqual(end, units1.Last().Start);
+
+            TimeUnit result = new TimeUnit(start, point2);
+            Assert.IsTrue(units1.Contains(result));
+            Assert.IsTrue(units1.Contains(unit3));
         }
 
         [Test]

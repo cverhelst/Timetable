@@ -36,21 +36,6 @@ namespace Model
             Room = new Room();
         }
 
-        private bool AreSetsEqual(ISet<TimeUnit> first, ISet<TimeUnit> two)
-        {
-            if(first.Count != two.Count) {
-                return false;
-            }
-            foreach (TimeUnit unit in first)
-            {
-                if (!two.Contains(unit))
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-
         public bool CanFit(Course course)
         {
             if (!Room.CanFit(course))
@@ -114,6 +99,22 @@ namespace Model
                 }
             }
             return false;
+        }
+
+        private bool AreSetsEqual(SortedSet<TimeUnit> first, SortedSet<TimeUnit> two)
+        {
+            if (first.Count != two.Count)
+            {
+                return false;
+            }
+            foreach (TimeUnit unit in first)
+            {
+                if (two.Contains(unit))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         public bool Equals(BookableRoom other)

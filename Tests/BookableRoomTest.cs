@@ -194,6 +194,34 @@ namespace Tests
         }
 
         [Test]
+        public void Equals_DifferentBookings_No()
+        {
+            room = new Room(20, resources1);
+            course2 = new Course(1, 20, null);
+            broom1 = new BookableRoom(start, end, room);
+            broom2 = new BookableRoom(start, end, room);
+            Assert.IsTrue(broom1.Fit(course1));
+            Assert.IsTrue(broom2.Fit(course2));
+
+            Assert.AreNotEqual(broom1, broom2);
+        }
+
+        [Test]
+        public void Equals_MultipleDifferentBookings_No()
+        {
+            room = new Room(20, resources1);
+            course2 = new Course(1, 20, null);
+            broom1 = new BookableRoom(start, end, room);
+            broom2 = new BookableRoom(start, end, room);
+
+            Assert.IsTrue(broom1.Fit(course1));
+            Assert.IsTrue(broom1.Fit(course2));
+            Assert.IsTrue(broom2.Fit(course1));
+
+            Assert.AreNotEqual(broom1, broom2);
+        }
+
+        [Test]
         public void Clone_DeepCopy()
         {
             DateTime start2 = DateTime.Now.AddDays(1);

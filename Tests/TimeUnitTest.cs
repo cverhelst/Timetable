@@ -200,7 +200,7 @@ namespace Tests
         [Test]
         public void Equals_EverythingEqualDifferentCourse_No()
         {
-            unit1.AssignedCourse = new Course(10, 10, null);
+            unit1.AssignedCourse = new Course(10, 10, new List<Resource>() { new Resource("TV")});
             unit2.AssignedCourse = new Course(20, 20, null);
 
             Assert.AreNotEqual(unit1, unit2);
@@ -212,6 +212,17 @@ namespace Tests
             unit1.AssignedCourse = new Course();
             Assert.AreNotEqual(unit1, unit2);
             Assert.AreNotEqual(unit2, unit1);
+        }
+
+        [Test]
+        public void Contains_Test()
+        {
+            List<TimeUnit> units = new List<TimeUnit>();
+            units.Add(unit1);
+            Assert.IsTrue(units.Contains(unit1));
+            unit2 = new TimeUnit(unit1.Start, unit1.Start.AddHours(8));
+
+            Assert.IsFalse(units.Contains(unit2));
         }
     }
 }

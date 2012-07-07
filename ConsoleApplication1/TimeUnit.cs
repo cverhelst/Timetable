@@ -179,15 +179,21 @@ namespace Model
             return unit;
         }
 
+        // FUCKED THIS ONE UP BAD
         public int CompareTo(object obj)
         {
             TimeUnit other = obj as TimeUnit;
-            return Start.CompareTo(other.Start);
+            return Detail().CompareTo(other.Detail());
         }
 
         public override string ToString()
         {
             return String.Format("{0} - {1} booked course: {2}", Start, End, AssignedCourse);
+        }
+
+        public string Detail()
+        {
+            return String.Format("{0}{1}{2}",Start,End,AssignedCourse);
         }
 
         public bool CanFit(int dur)
