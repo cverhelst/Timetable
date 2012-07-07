@@ -6,7 +6,7 @@ using System.Diagnostics.Contracts;
 
 namespace Model
 {
-    static class Extensions
+    public static class Extensions
     {
         // Utilities
         public static IList<T> Clone<T>(this IList<T> listToClone) where T : ICloneable
@@ -37,44 +37,6 @@ namespace Model
         }
 
         // TimeUnit specific
-
-        public static SortedSet<T> MergeUnits2<T>(this SortedSet<T> setToMerge) where T : TimeUnit
-        {
-            SortedSet<T> set = (SortedSet<T>) setToMerge.Clone();
-            int oldSize = -1;
-
-            while (set.Count != oldSize)
-            {
-                oldSize = set.Count;
-                int index = 0;
-                bool toNext = true;
-
-                while (index < set.Count)
-                {
-                    T unit = set.ElementAt(index);
-                    foreach (T toMerge in set)
-                    {
-                        if (toMerge.IsConsecutiveWith(unit))
-                        {
-                            unit.Merge(toMerge);
-                            set.Remove(toMerge);
-                            toNext = false;
-                            break;
-                        }
-                    }
-
-                    if (toNext)
-                    {
-                        index++;
-                    }
-                    else
-                    {
-                        index = 0;
-                    }
-                }
-            }
-            return set;
-        }
 
         public static SortedSet<T> MergeUnits<T>(this SortedSet<T> setToMerge) where T : TimeUnit
         {

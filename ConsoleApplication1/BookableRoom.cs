@@ -65,19 +65,19 @@ namespace Model
             bool result = false;
             if (CanFit(course))
             {
-                TimeUnit before = FreeTime.Pop();
-                SplitResult container = before.Split(course.Duration);
-                TimeUnit taken = container.First;
-                TimeUnit free = container.Second;
-                taken.AssignedCourse = course;
+                //TimeUnit before = FreeTime.Pop();
+                //SplitResult container = before.Split(course.Duration);
+                //TimeUnit taken = container.First;
+                //TimeUnit free = container.Second;
+                //taken.AssignedCourse = course;
 
-                TakenTime.Push(taken);
-                if (free != null)
-                {
-                    FreeTime.Push(free);
-                }
+                //TakenTime.Push(taken);
+                //if (free != null)
+                //{
+                //    FreeTime.Push(free);
+                //}
 
-                result = true;
+                //result = true;
             }
             return result;
         }
