@@ -174,16 +174,16 @@ namespace Model
             StringBuilder builder = new StringBuilder();
 
             builder.AppendLine(Format.TAB + Room);
-            builder.AppendLine("\tFree time =");
+            builder.AppendLine(Format.TAB + "Free time =");
             foreach (TimeUnit free in FreeTime.Reverse())
             {
-                builder.AppendFormat("\t\t{0} - {1}\n", free.Start, free.End);
+                builder.AppendLine(Format.TAB + Format.TAB + free);
             }
 
-            builder.AppendLine("\tTaken time=");
+            builder.AppendLine(Format.TAB + "Taken time=");
             foreach (TimeUnit taken in TakenTime.Reverse())
             {
-                builder.AppendFormat("\t\t{0} - {1} booked course: {2}\n", taken.Start, taken.End, taken.AssignedCourse);
+                builder.AppendLine(Format.TAB + Format.TAB + taken);
             }
 
             return builder.ToString();

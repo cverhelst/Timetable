@@ -166,7 +166,7 @@ namespace Model
 
         public override string ToString()
         {
-            return String.Format("{0} - {1}", Start, End);
+            return String.Format("{0} - {1} booked course: {2}", Start, End, AssignedCourse);
         }
     }
 
