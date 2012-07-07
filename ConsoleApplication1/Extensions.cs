@@ -38,14 +38,14 @@ namespace Model
 
         // TimeUnit specific
 
-        public static SortedSet<T> MergeUnits<T>(this SortedSet<T> setToMerge) where T : TimeUnit
+        public static SortedSet<T> MergeUnits2<T>(this SortedSet<T> setToMerge) where T : TimeUnit
         {
             SortedSet<T> set = (SortedSet<T>) setToMerge.Clone();
-            int size = setToMerge.Count;
-            int newSize = size;
+            int oldSize = -1;
 
-            while (newSize != size)
+            while (set.Count != oldSize)
             {
+                oldSize = set.Count;
                 int index = 0;
                 bool toNext = true;
 
@@ -73,6 +73,34 @@ namespace Model
                     }
                 }
             }
+            return set;
+        }
+
+        public static SortedSet<T> MergeUnits<T>(this SortedSet<T> setToMerge) where T : TimeUnit
+        {
+            SortedSet<T> set = (SortedSet<T>) setToMerge.Clone();
+            bool changed = false;
+            do
+            {
+                foreach (T unit in set)
+                {
+                    foreach (T toMerge in set)
+                    {
+                        if (toMerge.IsConsecutiveWith(unit))
+                        {
+                            unit.Merge(toMerge);
+                            set.Remove(toMerge);
+                            changed = true;
+                            break;
+                        }
+                    }
+                    if (changed)
+                    {
+                        break;
+                    }
+                }
+            } while (changed);
+
             return set;
         }
     }
