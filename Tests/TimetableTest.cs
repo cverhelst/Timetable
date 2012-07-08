@@ -17,7 +17,7 @@ namespace Tests
         private BookableRoom broom3;
         private List<BookableRoom> broomList;
         private List<BookableRoom> broomList2;
-        private Day day;
+        private Day day1;
         private Day day2;
 
         private Resource resource1;
@@ -31,7 +31,7 @@ namespace Tests
         private DateTime start;
         private DateTime end;
 
-        private Timetable table;
+        private Timetable table1;
         private Timetable table2;
 
         [SetUp]
@@ -60,17 +60,17 @@ namespace Tests
 
             broomList = new List<BookableRoom>() { broom1, broom2 };
             broomList2 = new List<BookableRoom>() { broom3 };
-            day = new Day(broomList);
+            day1 = new Day(broomList);
             day2 = new Day(broomList2);
 
-            table = new Timetable(new List<Day>() { day, day2 });
-            table2 = new Timetable(new List<Day>() { day });
+            table1 = new Timetable(new List<Day>() { day1, day2 });
+            table2 = new Timetable(new List<Day>() { day1 });
         }
 
         [Test]
         public void CanFit_CourseWillFitFirstDay_Yes()
         {
-            Assert.IsTrue(table.CanFit(course1));
+            Assert.IsTrue(table1.CanFit(course1));
         }
 
         [Test]
@@ -81,21 +81,21 @@ namespace Tests
             broom3 = new BookableRoom(end.AddMinutes(2), end.AddMinutes(7), room2);
             broomList2 = new List<BookableRoom>() { broom3 };
             day2 = new Day(broomList2);
-            table = new Timetable(new List<Day>() { day, day2 });
-            Assert.IsTrue(table.CanFit(course2));
+            table1 = new Timetable(new List<Day>() { day1, day2 });
+            Assert.IsTrue(table1.CanFit(course2));
         }
 
         [Test]
         public void CanFit_No()
         {
-            Assert.IsFalse(table.CanFit(course3));
+            Assert.IsFalse(table1.CanFit(course3));
         }
 
         [Test]
         public void Fit_EmptyDays_Yes()
         {
-            Assert.IsTrue(table.Fit(course1));
-            Assert.IsTrue(table.Days.First().IsCourseBooked(course1));
+            Assert.IsTrue(table1.Fit(course1));
+            Assert.IsTrue(table1.Days.First().IsCourseBooked(course1));
         }
 
         [Test]
@@ -104,48 +104,81 @@ namespace Tests
             // All Will Fit the first day first room
             for (int i = 0; i < 5; i++)
             {
-                Assert.IsTrue(table.Fit(course1));
+                Assert.IsTrue(table1.Fit(course1));
             }
-            var dayBooked = table.Days.Where(day => day.IsCourseBooked(course1)).ToList().First();
+            var dayBooked = table1.Days.Where(day => day.IsCourseBooked(course1)).ToList().First();
             var roomBooked = dayBooked.Rooms.Where(room => room.IsCourseBooked(course1)).ToList().First();
             Assert.AreEqual(5, roomBooked.Time.Count);
 
             Course course4 = (Course) course2.Clone();
             course4.Duration = 5;
-            Assert.IsTrue(table.Fit(course4));
+            Assert.IsTrue(table1.Fit(course4));
 
-            dayBooked = table.Days.Where(day => day.IsCourseBooked(course4)).ToList().First();
+            dayBooked = table1.Days.Where(day => day.IsCourseBooked(course4)).ToList().First();
             roomBooked = dayBooked.Rooms.Where(room => room.IsCourseBooked(course4)).ToList().First();
             Assert.AreEqual(1, roomBooked.Time.Count);
 
             for (int i = 0; i < 5; i++)
             {
-                Assert.IsTrue(table.Fit(course2));
+                Assert.IsTrue(table1.Fit(course2));
             }
 
-            dayBooked = table.Days.Where(day => day.IsCourseBooked(course2)).ToList().First();
+            dayBooked = table1.Days.Where(day => day.IsCourseBooked(course2)).ToList().First();
             roomBooked = dayBooked.Rooms.Where(room => room.IsCourseBooked(course2)).ToList().First();
             Assert.AreEqual(5, roomBooked.Time.Count);
 
-            Assert.IsFalse(table.CanFit(course1));
-            Assert.IsFalse(table.CanFit(course4));
-            Assert.IsFalse(table.CanFit(course2));
+            Assert.IsFalse(table1.CanFit(course1));
+            Assert.IsFalse(table1.CanFit(course4));
+            Assert.IsFalse(table1.CanFit(course2));
         }
 
         [Test]
         public void Clone_DeepCopy()
         {
-            Timetable clone = (Timetable) table.Clone();
+            Timetable clone = (Timetable) table1.Clone();
             
             // Mutate
             Assert.IsTrue(clone.Days.First().Fit(course1));
             clone.Days.Add(new Day(new List<BookableRoom>()));
 
-            Assert.IsFalse(table.Days.First().IsCourseBooked(course1));
-            Assert.AreEqual(2, table.Days.Count);
+            Assert.IsFalse(table1.Days.First().IsCourseBooked(course1));
+            Assert.AreEqual(2, table1.Days.Count);
 
             Assert.IsTrue(clone.Days.First().IsCourseBooked(course1));
             Assert.AreEqual(3, clone.Days.Count);
+        }
+
+        [Test]
+        public void Equals_BothEmpty_Yes()
+        {
+            table1 = new Timetable(null);
+            table2 = new Timetable(null);
+            Assert.AreEqual(table1, table2);
+        }
+
+        [Test]
+        public void Equals_SameDays_Yes()
+        {
+            day1 = new Day(broomList);
+            day2 = new Day(broomList);
+
+            table1 = new Timetable(new List<Day>() { day1 });
+            table2 = new Timetable(new List<Day>() { day2 });
+
+            Assert.AreEqual(table1, table2);
+        }
+
+        [Test]
+        public void Equals_DifferentDays_No()
+        {
+            table1 = new Timetable(new List<Day>() { day2 });
+            Assert.AreNotEqual(table1, table2);
+        }
+
+        [Test]
+        public void Equals_DifferentAmountOfDays_No()
+        {
+            Assert.AreNotEqual(table1, table2);
         }
     }
 }

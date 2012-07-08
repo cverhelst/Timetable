@@ -96,7 +96,7 @@ namespace Model
             {
                 return false;
             }
-            return obj.Equals(other);
+            return Equals(other);
         }
 
         public override int GetHashCode()
