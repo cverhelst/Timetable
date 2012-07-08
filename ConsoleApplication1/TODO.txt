@@ -1,6 +1,0 @@
-﻿Day : Is it good to allow duplicate rooms ?
-	-> Bookable room automatically contains all allowed hours to book it ( consecutive or not )
-
-Make every CanFit method return the spot or the parameters needed to know where it will fit so FIT can use this information
-
-Clone : use Memberwiseclone for value types
