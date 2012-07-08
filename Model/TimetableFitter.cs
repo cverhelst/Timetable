@@ -8,7 +8,7 @@ namespace Model
     public class TimetableFitter
     {
         private Timetable _availabilityTimetable;
-        private List<Timetable> _generatedTables;
+        private HashSet<Timetable> _generatedTables;
         private List<Course> _courses;
 
         public Timetable AvailabilityTimetable
@@ -17,15 +17,15 @@ namespace Model
             set { _availabilityTimetable = value; }
         }
 
-        public List<Timetable> GeneratedTables
+        public HashSet<Timetable> GeneratedTables
         {
             get { return _generatedTables; }
-            set { _generatedTables = value == null ? new List<Timetable>() : value; }
+            set { _generatedTables = value == null ? new HashSet<Timetable>() : value; }
         }
 
         public TimetableFitter()
         {
-            GeneratedTables = new List<Timetable>();
+            GeneratedTables = new HashSet<Timetable>();
         }
 
         public List<Course> Courses
@@ -44,7 +44,8 @@ namespace Model
             Course course1 = new Course("Mathematics", 5, 5, resources);
             Course course2 = new Course("French", 5, 15, null);
             Course course3 = new Course("Programming", 5, 30, null);
-            List<Course> courses = new List<Course>() { course1, course2, course3 };
+            //List<Course> courses = new List<Course>() { course1, course2, course3 };
+            List<Course> courses = new List<Course>() { course1, course3 };
             return courses;
         }
 
@@ -66,8 +67,8 @@ namespace Model
             List<BookableRoom> rooms2 = new List<BookableRoom>() { book2 };
 
             // Days
-            Day day1 = new Day(1,rooms1);
-            Day day2 = new Day(2,rooms2);
+            Day day1 = new Day(1, rooms1);
+            Day day2 = new Day(2, rooms2);
 
             // Timetable
             Timetable timetable = new Timetable(new List<Day>() { day1, day2 });
