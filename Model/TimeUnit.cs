@@ -169,7 +169,7 @@ namespace Model
 
         public override int GetHashCode()
         {
-            return Start.GetHashCode() ^ End.GetHashCode();
+            return Start.GetHashCode() ^ End.GetHashCode() ^ AssignedCourse.GetHashCode();
         }
 
         public object Clone()

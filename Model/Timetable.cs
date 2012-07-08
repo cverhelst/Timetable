@@ -69,5 +69,34 @@ namespace Model
             }
             return builder.ToString();
         }
+
+        public bool Equals(Timetable other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+            if(Days.Count != other.Days.Count) {
+                return false;
+            }
+            foreach (Day day in Days)
+            {
+                if(
+            }
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            Timetable other = obj as Timetable;
+            if (other == null)
+            {
+                return false;
+            }
+            return obj.Equals(other);
+        } 
     }
 }

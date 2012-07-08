@@ -87,7 +87,7 @@
     <None Include="NUnit\nunit.core.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleApplication1\Model.csproj">
+    <ProjectReference Include="..\Model\Model.csproj">
       <Project>{BBA88885-55D7-4F4D-8AC4-AA7AD6F991BD}</Project>
       <Name>Model</Name>
     </ProjectReference>
