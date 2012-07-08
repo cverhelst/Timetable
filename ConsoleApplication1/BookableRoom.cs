@@ -176,12 +176,6 @@ namespace Model
                 builder.AppendLine(Format.TAB + Format.TAB + free);
             }
 
-            builder.AppendLine(Format.TAB + "Taken time=");
-            foreach (TimeUnit taken in Time)
-            {
-                builder.AppendLine(Format.TAB + Format.TAB + taken);
-            }
-
             return builder.ToString();
         }
 

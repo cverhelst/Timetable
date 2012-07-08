@@ -217,12 +217,46 @@ namespace Tests
         [Test]
         public void Contains_Test()
         {
-            List<TimeUnit> units = new List<TimeUnit>();
+            SortedSet<TimeUnit> units = new SortedSet<TimeUnit>();
             units.Add(unit1);
             Assert.IsTrue(units.Contains(unit1));
-            unit2 = new TimeUnit(unit1.Start, unit1.Start.AddHours(8));
 
+            unit2 = new TimeUnit(unit1.Start, unit1.Start.AddHours(8));
             Assert.IsFalse(units.Contains(unit2));
+        }
+
+        [Test]
+        public void CompareTo_LaterStart_LaterOrder()
+        {
+            unit1 = new TimeUnit(start, end);
+            unit2 = new TimeUnit(start.AddMinutes(1), end);
+            Assert.Greater(0,unit1.CompareTo(unit2));
+        }
+
+        [Test]
+        public void CompareTo_8h30Before10h00_Yes()
+        {
+            unit1 = new TimeUnit(Extensions.DateTimeCreator(0, 8, 30), Extensions.DateTimeCreator(0, 12, 0));
+            unit2 = new TimeUnit(Extensions.DateTimeCreator(0, 10, 0), Extensions.DateTimeCreator(0, 12, 0));
+            Assert.Greater(0, unit1.CompareTo(unit2));
+        }
+
+        [Test]
+        public void CompareTo_SameStart_ShortestFirst()
+        {
+            unit1 = new TimeUnit(start, end);
+            unit2 = new TimeUnit(start, end.AddHours(1));
+            Assert.Greater(0, unit1.CompareTo(unit2));
+        }
+
+        [Test]
+        public void CompareTo_SameStartSameLength_AlphabeticalAccordingToCourseName()
+        {
+            unit1 = new TimeUnit(start, end);
+            unit1.AssignedCourse = new Course("A", 10, 10, null);
+            unit2 = new TimeUnit(start, end);
+            unit2.AssignedCourse = new Course("Z", 10, 10, null);
+            Assert.Greater(0, unit1.CompareTo(unit2));
         }
     }
 }

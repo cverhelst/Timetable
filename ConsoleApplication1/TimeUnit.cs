@@ -179,10 +179,12 @@ namespace Model
             return unit;
         }
 
-        // FUCKED THIS ONE UP BAD
+        // Orders first according to Start time, afterwards End time, afterwards on Assigned Course's properties
+        // The shortest TimeUnit will be ordered before another TimeUnit that has the same Start time
         public int CompareTo(object obj)
         {
             TimeUnit other = obj as TimeUnit;
+            Console.Out.WriteLine(other.Detail());
             return Detail().CompareTo(other.Detail());
         }
 
@@ -193,7 +195,7 @@ namespace Model
 
         public string Detail()
         {
-            return String.Format("{0}{1}{2}",Start,End,AssignedCourse);
+            return String.Format("{0}{1}{2}",Start.ToString("HH:mm:ss"),End.ToString("HH:mm:ss"),AssignedCourse);
         }
 
         public bool CanFit(int dur)
