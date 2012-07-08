@@ -184,7 +184,6 @@ namespace Model
         public int CompareTo(object obj)
         {
             TimeUnit other = obj as TimeUnit;
-            Console.Out.WriteLine(other.Detail());
             return Detail().CompareTo(other.Detail());
         }
 
