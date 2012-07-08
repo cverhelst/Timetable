@@ -64,7 +64,7 @@ namespace Tests
             day2 = new Day(broomList2);
 
             table = new Timetable(new List<Day>() { day, day2 });
-            table = new Timetable(new List<Day>() { day });
+            table2 = new Timetable(new List<Day>() { day });
         }
 
         [Test]
