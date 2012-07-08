@@ -79,10 +79,10 @@ namespace Model
             if(Days.Count != other.Days.Count) {
                 return false;
             }
-            foreach (Day day in Days)
-            {
-                if(
+            if(!Days.UnorderedEquals(other.Days)) {
+                return false;
             }
+            return true;
         }
 
         public override bool Equals(object obj)
@@ -97,6 +97,11 @@ namespace Model
                 return false;
             }
             return obj.Equals(other);
-        } 
+        }
+
+        public override int GetHashCode()
+        {
+            return Days.GetHashCode();
+        }
     }
 }

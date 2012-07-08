@@ -32,6 +32,7 @@ namespace Tests
         private DateTime end;
 
         private Timetable table;
+        private Timetable table2;
 
         [SetUp]
         public void init()
@@ -63,6 +64,7 @@ namespace Tests
             day2 = new Day(broomList2);
 
             table = new Timetable(new List<Day>() { day, day2 });
+            table = new Timetable(new List<Day>() { day });
         }
 
         [Test]
