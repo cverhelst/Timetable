@@ -109,7 +109,7 @@ namespace Model
             }
             foreach (TimeUnit unit in first)
             {
-                if (two.Contains(unit))
+                if (!two.Contains(unit))
                 {
                     return false;
                 }
