@@ -14,7 +14,7 @@ namespace Model
         public Room Room
         {
             get { return (Room)_room.Clone(); }
-            private set { _room = value == null ? new Room() : value; }
+            private set { _room = value == null ? new Room() : (Room) value.Clone(); }
         }
 
         public SortedSet<TimeUnit> Time

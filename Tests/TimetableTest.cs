@@ -10,7 +10,8 @@ namespace Tests
     [TestFixture]
     class TimetableTest
     {
-        private Room room;
+        private Room room1;
+        private Room room2;
         private BookableRoom broom1;
         private BookableRoom broom2;
         private BookableRoom broom3;
@@ -42,14 +43,15 @@ namespace Tests
             resources1 = new List<Resource>() { resource1, resource2 };
             resources2 = new List<Resource>() { resource3 };
 
-            room = new Room(10, resources1);
+            room1 = new Room(10, resources1);
+            room2 = new Room(10, resources2);
 
             start = DateTime.Now;
             end = start.AddMinutes(5);
 
-            broom1 = new BookableRoom(start, end, room);
-            broom2 = new BookableRoom(end.AddMinutes(1), end.AddMinutes(6), new Room(10, resources2));
-            broom3 = new BookableRoom(end.AddMinutes(2), end.AddMinutes(7), new Room(20, resources2));
+            broom1 = new BookableRoom(start, end, room1);
+            broom2 = new BookableRoom(end.AddMinutes(1), end.AddMinutes(6), room2);
+            broom3 = new BookableRoom(end.AddMinutes(2), end.AddMinutes(7), room2);
 
             course1 = new Course(1, 10, resources1);
             course2 = new Course(1, 10, resources2);
@@ -73,6 +75,11 @@ namespace Tests
         public void CanFit_CourseWillFitOnlyInLastDay_Yes()
         {
             course2.Students = 20;
+            room2.Seats = 20;
+            broom3 = new BookableRoom(end.AddMinutes(2), end.AddMinutes(7), room2);
+            broomList2 = new List<BookableRoom>() { broom3 };
+            day2 = new Day(broomList2);
+            table = new Timetable(new List<Day>() { day, day2 });
             Assert.IsTrue(table.CanFit(course2));
         }
 
@@ -97,17 +104,26 @@ namespace Tests
             {
                 Assert.IsTrue(table.Fit(course1));
             }
-            Assert.IsTrue(table.Days.First().Rooms.First().Time.Count == 0);
+            var dayBooked = table.Days.Where(day => day.IsCourseBooked(course1)).ToList().First();
+            var roomBooked = dayBooked.Rooms.Where(room => room.IsCourseBooked(course1)).ToList().First();
+            Assert.AreEqual(5, roomBooked.Time.Count);
 
             Course course4 = (Course) course2.Clone();
             course4.Duration = 5;
             Assert.IsTrue(table.Fit(course4));
-            
+
+            dayBooked = table.Days.Where(day => day.IsCourseBooked(course4)).ToList().First();
+            roomBooked = dayBooked.Rooms.Where(room => room.IsCourseBooked(course4)).ToList().First();
+            Assert.AreEqual(1, roomBooked.Time.Count);
 
             for (int i = 0; i < 5; i++)
             {
                 Assert.IsTrue(table.Fit(course2));
             }
+
+            dayBooked = table.Days.Where(day => day.IsCourseBooked(course2)).ToList().First();
+            roomBooked = dayBooked.Rooms.Where(room => room.IsCourseBooked(course2)).ToList().First();
+            Assert.AreEqual(5, roomBooked.Time.Count);
 
             Assert.IsFalse(table.CanFit(course1));
             Assert.IsFalse(table.CanFit(course4));
