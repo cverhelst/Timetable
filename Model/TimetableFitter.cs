@@ -113,10 +113,15 @@ namespace Model
             }
             else
             {
-                if (!GeneratedTables.Contains(timetable))
-                {
-                    GeneratedTables.Add(timetable);
+                
+                bool present = false;
+                foreach(Timetable table in GeneratedTables) {
+                    if(table.Equals(timetable)) {
+                        present = true;
+                    }
                 }
+                bool added = GeneratedTables.Add(timetable);
+                Console.Out.WriteLine(String.Format("Items was already present? {0} and was added? {1}", present, added));
             }
         }
     }

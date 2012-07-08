@@ -97,7 +97,7 @@ namespace Model
             {
                 return false;
             }
-            if (Rooms.Except(other.Rooms).Any())
+            if (!Rooms.UnorderedEquals(other.Rooms))
             {
                 return false;
             }

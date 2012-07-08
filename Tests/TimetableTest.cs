@@ -196,6 +196,18 @@ namespace Tests
             Assert.IsFalse(set.Add((Timetable)table1.Clone()));
 
             Assert.IsTrue(set.Add(table2));
+            Timetable table3 = new Timetable(new List<Day>() { day1, day2 });
+            Assert.IsFalse(set.Add(table3));
+
+            Timetable table4 = new Timetable(new List<Day>() { (Day) day1.Clone(), (Day) day2.Clone() });
+            Assert.IsFalse(set.Add(table4));
+
+            Timetable table5 = (Timetable) table4.Clone();
+            Timetable table6 = (Timetable) table4.Clone();
+            table5.Fit(course1);
+            table6.Fit(course1);
+            Assert.IsTrue(set.Add(table5));
+            Assert.IsFalse(set.Add(table6));
         }
     }
 }
