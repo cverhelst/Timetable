@@ -154,7 +154,7 @@ namespace Model
 
         public override int GetHashCode()
         {
-            return Room.GetHashCode() ^ Time.GetAltHashCode();
+            return Room.GetHashCode() ^ Time.GetHashCodeOrderedCollection();
         }
 
         public object Clone()

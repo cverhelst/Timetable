@@ -101,7 +101,7 @@ namespace Model
 
         public override int GetHashCode()
         {
-            return Days.GetHashCode();
+            return Days.GetHashCodeUnorderedCollection();
         }
     }
 }

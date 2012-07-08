@@ -14,9 +14,14 @@ namespace Model
             return listToClone.Select(item => (T)item.Clone()).ToList();
         }
 
-        public static int GetAltHashCode<T>(this ICollection<T> listToHash) where T : IComparable
+        public static int GetHashCodeOrderedCollection<T>(this ICollection<T> listToHash) where T : IComparable
         {
             return listToHash.OrderBy(x => x).Aggregate(0, (x, y) => x.GetHashCode() ^ y.GetHashCode());
+        }
+
+        public static int GetHashCodeUnorderedCollection<T>(this ICollection<T> listToHash)
+        {
+            return listToHash.Aggregate(0, (x, y) => x.GetHashCode() * y.GetHashCode());
         }
 
         public static ISet<T> Clone<T>(this ISet<T> setToClone) where T : ICloneable

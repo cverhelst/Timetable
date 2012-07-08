@@ -180,5 +180,22 @@ namespace Tests
         {
             Assert.AreNotEqual(table1, table2);
         }
+
+        [Test]
+        public void Equals_Clone_Yes()
+        {
+            Assert.AreEqual(table1, (Timetable) table1.Clone());
+        }
+
+        [Test]
+        public void Equals_InHashSet()
+        {
+            HashSet<Timetable> set = new HashSet<Timetable>();
+            Assert.IsTrue(set.Add(table1));
+            Assert.IsFalse(set.Add(table1));
+            Assert.IsFalse(set.Add((Timetable)table1.Clone()));
+
+            Assert.IsTrue(set.Add(table2));
+        }
     }
 }

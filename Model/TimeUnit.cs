@@ -131,11 +131,11 @@ namespace Model
             {
                 return false;
             }
-            if (!Start.Equals(other.Start))
+            if (!Start.ToString("HH:mm:ss").Equals(other.Start.ToString("HH:mm:ss")))
             {
                 return false;
             }
-            if (!End.Equals(other.End))
+            if (!End.ToString("HH:mm:ss").Equals(other.End.ToString("HH:mm:ss")))
             {
                 return false;
             }

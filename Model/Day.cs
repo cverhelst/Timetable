@@ -120,7 +120,7 @@ namespace Model
 
         public override int GetHashCode()
         {
-            return Rooms.GetAltHashCode();
+            return Rooms.GetHashCodeOrderedCollection();
         }
     }
 }

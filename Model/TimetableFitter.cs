@@ -112,7 +112,10 @@ namespace Model
             }
             else
             {
-                GeneratedTables.Add(timetable);
+                if (!GeneratedTables.Contains(timetable))
+                {
+                    GeneratedTables.Add(timetable);
+                }
             }
         }
     }
