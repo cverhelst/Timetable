@@ -22,6 +22,9 @@ namespace Tests
         private SortedSet<TimeUnit> units1;
         private SortedSet<TimeUnit> units2;
 
+        private List<int> list1;
+        private List<int> list2;
+
         [SetUp]
         public void init()
         {
@@ -36,6 +39,9 @@ namespace Tests
 
             units1 = new SortedSet<TimeUnit>() { unit1, unit2, unit3 };
             units2 = new SortedSet<TimeUnit>();
+
+            list1 = new List<int>() { 1, 2, 3, 4 };
+            list2 = new List<int>() { 1, 2, 3, 4 };
         }
 
         [Test]
@@ -94,6 +100,49 @@ namespace Tests
             Assert.AreEqual(1, units.Count);
             Assert.AreEqual(start, units.First().Start);
             Assert.AreEqual(point2, units.First().End);
+        }
+
+        [Test]
+        public void UnorderedEquals_SameOrderSameUniqueContents_Yes()
+        {
+            Assert.IsTrue(list1.UnorderedEquals(list2));
+        }
+
+        [Test]
+        public void UnorderedEquals_DifferentOrderSameUniqueContents_Yes()
+        {
+            list2 = new List<int>() { 1, 2, 4, 3 };
+            Assert.IsTrue(list1.UnorderedEquals(list2));
+        }
+
+        [Test]
+        public void UnorderedEquals_SameContentsWithDuplicates_Yes()
+        {
+            list1 = new List<int>() { 1, 1, 2, 3 };
+            list2 = new List<int>() { 1, 1, 2, 3 };
+            Assert.IsTrue(list1.UnorderedEquals(list2));
+        }
+
+        [Test]
+        public void UnorderedEquals_DifferentContentsWithDuplicates_No()
+        {
+            list1 = new List<int>() { 1, 1, 2, 3 };
+            list2 = new List<int>() { 1, 2, 2, 3 };
+            Assert.IsFalse(list1.UnorderedEquals(list2));
+        }
+
+        [Test]
+        public void UnorderedEquals_DifferentContentsSameLength_No()
+        {
+            list2 = new List<int>() { 1, 2, 3, 11 };
+            Assert.IsFalse(list1.UnorderedEquals(list2));
+        }
+
+        [Test]
+        public void UnorderedEquals_SameContentsDifferentFrequencies_No()
+        {
+            list2 = new List<int>() { 1, 2, 3, 4, 4 };
+            Assert.IsFalse(list1.UnorderedEquals(list2));
         }
     }
 }
