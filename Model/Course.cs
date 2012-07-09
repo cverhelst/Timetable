@@ -81,9 +81,10 @@ namespace Model
             return false;
         }
 
+        // Name, Duration and Students
         public override int GetHashCode()
         {
-            return Students.GetHashCode() ^ Duration.GetHashCode();
+            return Extensions.HashCodeTemplate(new List<Object>() { Name, Duration, Students });
         }
 
         public object Clone()

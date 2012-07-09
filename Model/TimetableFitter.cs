@@ -44,8 +44,7 @@ namespace Model
             Course course1 = new Course("Mathematics", 5, 5, resources);
             Course course2 = new Course("French", 5, 15, null);
             Course course3 = new Course("Programming", 5, 30, null);
-            //List<Course> courses = new List<Course>() { course1, course2, course3 };
-            List<Course> courses = new List<Course>() { course1, course3 };
+            List<Course> courses = new List<Course>() { course1, course2, course3 };
             return courses;
         }
 

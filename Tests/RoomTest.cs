@@ -189,9 +189,21 @@ namespace Tests
         }
 
         [Test]
-        public void GetHashCode_ResourcesListMixedOrder_Yes() 
+        public void GetHashCode_Clone_SameHashCode() 
         {
+            room2 = (Room) room1.Clone();
+            Assert.AreEqual(room1, room2);
             Assert.AreEqual(room1.GetHashCode(), room2.GetHashCode());
+        }
+
+        [Test]
+        public void GetHashCode_DifferentFields_DifferentHashCode()
+        {
+            room1 = new Room("Test", 2, new List<Resource>() { resource1 });
+            room2 = new Room("Test2",3,null);
+
+            Assert.AreNotEqual(room1, room2);
+            Assert.AreNotEqual(room1.GetHashCode(), room2.GetHashCode());
         }
     }
 }

@@ -67,7 +67,7 @@ namespace Tests
         [Test]
         public void Clone_DeepCopy()
         {
-            Course clone = (Course) course1.Clone();
+            Course clone = (Course)course1.Clone();
             Assert.AreEqual(course1, clone);
 
             // Mutate
@@ -91,12 +91,21 @@ namespace Tests
         }
 
         [Test]
-        public void GetHashCode_SameCourse_SameHashCode()
+        public void GetHashCode_Clone_SameHashCode()
         {
-            Course course2 = (Course) course1.Clone();
+            Course course2 = (Course)course1.Clone();
 
             Assert.AreEqual(course1, course2);
             Assert.AreEqual(course1.GetHashCode(), course2.GetHashCode());
+        }
+
+        [Test]
+        public void GetHashCode_DifferentFields_DifferentHashCode()
+        {
+            Course course2 = new Course("Test", 11, 12, null);
+
+            Assert.AreNotEqual(course1, course2);
+            Assert.AreNotEqual(course1.GetHashCode(), course2.GetHashCode());
         }
     }
 }

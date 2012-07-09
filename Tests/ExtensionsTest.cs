@@ -148,9 +148,11 @@ namespace Tests
         [Test]
         public void GetHashCodeOrderedCollection_SameOrder_SameHashCode()
         {
+            
             List<TimeUnit> time = new List<TimeUnit>() { unit1, unit2, unit3 };
             List<TimeUnit> time2 = new List<TimeUnit>() { unit1, unit2, unit3 };
 
+            Assert.AreNotEqual(0, time.GetHashCodeUnorderedCollection());
             Assert.AreEqual(time.GetHashCodeOrderedCollection(), time2.GetHashCodeOrderedCollection());
 
             SortedSet<TimeUnit> time3 = new SortedSet<TimeUnit>() { unit1, unit2, unit3 };
@@ -181,6 +183,45 @@ namespace Tests
             HashSet<TimeUnit> time6 = new HashSet<TimeUnit>() { unit1, unit2, unit3 };
 
             Assert.AreEqual(time5.GetHashCodeOrderedCollection(), time6.GetHashCodeOrderedCollection());
+        }
+
+        [Test]
+        public void GetHashCodeUnorderedCollection_Same_SameHashCode()
+        {
+            List<TimeUnit> time = new List<TimeUnit>() { unit1, unit2, unit3 };
+            List<TimeUnit> time2 = new List<TimeUnit>() { unit1, unit2, unit3 };
+
+            Assert.AreNotEqual(0, time.GetHashCodeUnorderedCollection());
+            Assert.AreEqual(time.GetHashCodeUnorderedCollection(), time2.GetHashCodeUnorderedCollection());
+
+            SortedSet<TimeUnit> time3 = new SortedSet<TimeUnit>() { unit1, unit2, unit3 };
+            SortedSet<TimeUnit> time4 = new SortedSet<TimeUnit>() { unit1, unit2, unit3 };
+
+            Assert.AreEqual(time3.GetHashCodeUnorderedCollection(), time4.GetHashCodeUnorderedCollection());
+
+            HashSet<TimeUnit> time5 = new HashSet<TimeUnit>() { unit1, unit2, unit3 };
+            HashSet<TimeUnit> time6 = new HashSet<TimeUnit>() { unit1, unit2, unit3 };
+
+            Assert.AreEqual(time5.GetHashCodeUnorderedCollection(), time6.GetHashCodeUnorderedCollection());
+        }
+
+        [Test]
+        public void GetHashCodeUnorderedCollection_DifferentOrder_SameHashCode()
+        {
+            List<TimeUnit> time = new List<TimeUnit>() { unit3, unit2, unit1 };
+            List<TimeUnit> time2 = new List<TimeUnit>() { unit1, unit2, unit3 };
+
+            Assert.AreEqual(time.GetHashCodeUnorderedCollection(), time2.GetHashCodeUnorderedCollection());
+
+            SortedSet<TimeUnit> time3 = new SortedSet<TimeUnit>() { unit3, unit2, unit1 };
+            SortedSet<TimeUnit> time4 = new SortedSet<TimeUnit>() { unit1, unit2, unit3 };
+
+            Assert.AreEqual(time3.GetHashCodeUnorderedCollection(), time4.GetHashCodeUnorderedCollection());
+
+            HashSet<TimeUnit> time5 = new HashSet<TimeUnit>() { unit3, unit2, unit1 };
+            HashSet<TimeUnit> time6 = new HashSet<TimeUnit>() { unit1, unit2, unit3 };
+
+            Assert.AreEqual(time5.GetHashCodeUnorderedCollection(), time6.GetHashCodeUnorderedCollection());
         }
     }
 }

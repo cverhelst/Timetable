@@ -169,8 +169,7 @@ namespace Model
 
         public override int GetHashCode()
         {
-            int courseHash = AssignedCourse != null ? AssignedCourse.GetHashCode() : 1;
-            return Start.GetHashCode() ^ End.GetHashCode() ^ courseHash;
+            return Extensions.HashCodeTemplate(new List<Object>() { Start.ToString("HH:mm:ss"), End.ToString("HH:mm:ss"), AssignedCourse });
         }
 
         public object Clone()

@@ -89,7 +89,7 @@ namespace Model
 
         public override int GetHashCode()
         {
-            return Name.GetHashCode() ^ Seats.GetHashCode() ^ Resources.GetHashCodeOrderedCollection();
+            return Extensions.HashCodeTemplate(new List<Object>() { Name, Seats });
         }
 
         public object Clone()

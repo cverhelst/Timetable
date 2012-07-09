@@ -191,5 +191,23 @@ namespace Tests
 
             Assert.AreNotEqual(day1, day2);
         }
+
+        [Test]
+        public void GetHashCode_Clone_SameHashCode()
+        {
+            day2 = (Day)day1.Clone();
+
+            Assert.AreEqual(day1, day2);
+            Assert.AreEqual(day1.GetHashCode(), day2.GetHashCode());
+        }
+
+        [Test]
+        public void GetHashCode_DifferentFields_DifferentHashCode()
+        {
+            day1 = new Day(new List<BookableRoom>() { broom1 });
+            day2 = new Day(new List<BookableRoom>() { broom2 });
+            Assert.AreNotEqual(day1, day2);
+            Assert.AreNotEqual(day1.GetHashCode(), day2.GetHashCode());
+        }
     }
 }

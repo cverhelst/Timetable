@@ -250,5 +250,23 @@ namespace Tests
             Assert.AreEqual(60, units.First().Duration());
 
         }
+
+        [Test]
+        public void GetHashCode_Clone_SameHashCode()
+        {
+            broom2 = (BookableRoom) broom1.Clone();
+
+            Assert.AreEqual(broom1, broom2);
+            Assert.AreEqual(broom1.GetHashCode(), broom2.GetHashCode());
+        }
+
+        [Test]
+        public void GetHashCode_DifferentFields_DifferentHashCode()
+        {
+            broom2 = new BookableRoom(start.AddMinutes(1), end.AddMinutes(1), new Room("Test", 11, null));
+
+            Assert.AreNotEqual(broom1, broom2);
+            Assert.AreNotEqual(broom1.GetHashCode(), broom2.GetHashCode());
+        }
     }
 }

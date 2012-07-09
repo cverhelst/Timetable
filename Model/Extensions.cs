@@ -16,12 +16,12 @@ namespace Model
 
         public static int GetHashCodeOrderedCollection<T>(this ICollection<T> listToHash) where T : IComparable
         { 
-            return listToHash.OrderBy(x => x).Aggregate(0, (x, y) => x.GetHashCode() ^ y.GetHashCode());
+            return listToHash.OrderBy(x => x).Aggregate(17, (x, y) => x * 23 + y.GetHashCode());
         }
 
         public static int GetHashCodeUnorderedCollection<T>(this ICollection<T> listToHash)
         {
-            return listToHash.Aggregate(0, (x, y) => x.GetHashCode() * y.GetHashCode());
+            return listToHash.Aggregate(17, (x, y) => x.GetHashCode() * y.GetHashCode());
         }
 
         public static ISet<T> Clone<T>(this ISet<T> setToClone) where T : ICloneable
@@ -29,11 +29,39 @@ namespace Model
             return new SortedSet<T>(setToClone.Select(item => (T)item.Clone()));
         }
 
+        // Static method
         public static DateTime DateTimeCreator(int day, int hour, int minute)
         {
             DateTime now = DateTime.Now;
             DateTime to = new DateTime(now.Year, now.Month, (day % 365) + 1, hour, minute, 0);
             return to;
+        }
+
+        // Static method
+        public static int HashCodeTemplate(List<Object> fields)
+        {
+            return HashCodeTemplate(fields, new List<int>());
+        }
+
+        public static int HashCodeTemplate(List<Object> fields, List<int> hashCodes)
+        {
+            int hash = 17;
+            foreach (Object field in fields)
+            {
+                if (field != null)
+                {
+                    hash = hash * 23 + field.GetHashCode();
+                }
+                else
+                {
+                    hash = hash * 23 + 17;
+                }
+            }
+            foreach (int hashCode in hashCodes)
+            {
+                hash = hash * 23 + hashCode;
+            }
+            return hash;
         }
 
         public static bool UnorderedEquals<T>(this ICollection<T> a, ICollection<T> b)

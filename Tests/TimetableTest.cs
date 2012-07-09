@@ -209,5 +209,21 @@ namespace Tests
             Assert.IsTrue(set.Add(table5));
             Assert.IsFalse(set.Add(table6));
         }
+
+        [Test]
+        public void GetHashCode_Clone_SameHashCode()
+        {
+            table2 = (Timetable) table1.Clone();
+
+            Assert.AreEqual(table1, table2);
+            Assert.AreEqual(table1.GetHashCode(), table2.GetHashCode());
+        }
+
+        [Test]
+        public void GetHashCode_DifferentFields_DifferentHashCode()
+        {
+            Assert.AreNotEqual(table1, table2);
+            Assert.AreNotEqual(table1.GetHashCode(), table2.GetHashCode());
+        }
     }
 }

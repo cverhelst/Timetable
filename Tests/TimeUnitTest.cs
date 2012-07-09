@@ -150,15 +150,15 @@ namespace Tests
         public void Clone_DeepCopy()
         {
             Resource resource = new Resource("TV");
-            Course course = new Course(10, 10, new List<Resource>() { resource }) ;
+            Course course = new Course(10, 10, new List<Resource>() { resource });
             unit1.AssignedCourse = course;
 
-            TimeUnit clone = (TimeUnit) unit1.Clone();
+            TimeUnit clone = (TimeUnit)unit1.Clone();
 
             Course course2 = new Course(20, 20, new List<Resource>());
             DateTime start2 = DateTime.Now.AddDays(1);
             DateTime end2 = start2.AddHours(1);
-            
+
             // mutate course
             clone.AssignedCourse = course2;
             // mutate end
@@ -200,7 +200,7 @@ namespace Tests
         [Test]
         public void Equals_EverythingEqualDifferentCourse_No()
         {
-            unit1.AssignedCourse = new Course(10, 10, new List<Resource>() { new Resource("TV")});
+            unit1.AssignedCourse = new Course(10, 10, new List<Resource>() { new Resource("TV") });
             unit2.AssignedCourse = new Course(20, 20, null);
 
             Assert.AreNotEqual(unit1, unit2);
@@ -230,7 +230,7 @@ namespace Tests
         {
             unit1 = new TimeUnit(start, end);
             unit2 = new TimeUnit(start.AddMinutes(1), end);
-            Assert.Greater(0,unit1.CompareTo(unit2));
+            Assert.Greater(0, unit1.CompareTo(unit2));
         }
 
         [Test]
@@ -257,6 +257,29 @@ namespace Tests
             unit2 = new TimeUnit(start, end);
             unit2.AssignedCourse = new Course("Z", 10, 10, null);
             Assert.Greater(0, unit1.CompareTo(unit2));
+        }
+
+        [Test]
+        public void GetHashCode_Clone_SameHashCode()
+        {
+            unit1 = new TimeUnit(start, end);
+            unit1.AssignedCourse = new Course("Test", 10, 10, new List<Resource>() { new Resource("TV") });
+            TimeUnit unit = (TimeUnit)unit1.Clone();
+
+            Assert.AreEqual(unit, unit1);
+            Assert.AreEqual(unit.GetHashCode(), unit1.GetHashCode());
+        }
+
+        [Test]
+        public void GetHashCode_DifferentFields_DifferentHashCode()
+        {
+            unit1 = new TimeUnit(start, end);
+            unit1.AssignedCourse = new Course("Test", 10, 10, new List<Resource>() { new Resource("TV") });
+            unit2 = new TimeUnit(start.AddMinutes(1), end.AddMinutes(1));
+            unit2.AssignedCourse = new Course("T", 10, 10, new List<Resource>() { new Resource("TV") });
+
+            Assert.AreNotEqual(unit1, unit2);
+            Assert.AreNotEqual(unit1.GetHashCode(), unit2.GetHashCode());
         }
     }
 }
