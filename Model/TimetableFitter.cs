@@ -8,7 +8,6 @@ namespace Model
     {
         private Timetable _availabilityTimetable;
         private HashSet<Timetable> _generatedTables;
-        private List<Course> _courses;
 
         public Timetable AvailabilityTimetable
         {
@@ -25,12 +24,6 @@ namespace Model
         public TimetableFitter()
         {
             GeneratedTables = new HashSet<Timetable>();
-        }
-
-        public List<Course> Courses
-        {
-            get { return _courses; }
-            set { _courses = value == null ? new List<Course>() : value; }
         }
 
         public List<Course> generateDefaultCourses()
@@ -93,7 +86,7 @@ namespace Model
         ///         fit is not found:
         ///             try the next course in the list of courses
         /// </summary>
-        public void FitCourses(List<Course> courses, Timetable timetable)
+        public bool FitCourses(List<Course> courses, Timetable timetable)
         {
             if (courses.Any())
             {
@@ -127,6 +120,12 @@ namespace Model
                 string output = String.Format("Item was already present? {0} and was added? {1}", present, added);
                 Console.Out.WriteLine(output);
             }
+            return courses.Any();
+        }
+
+        public void SquizedFitCourses(List<Course> courses, Timetable timetable)
+        {
+
         }
     }
 }
