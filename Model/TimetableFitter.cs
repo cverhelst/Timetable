@@ -40,11 +40,11 @@ namespace Model
             List<Resource> resources = new List<Resource>() { resource1 };
 
             // Courses
-            Course course1 = new Course("Mathematics", 5, 5, resources);
-            Course course2 = new Course("French", 5, 15, null);
-            Course course3 = new Course("Programming", 5, 30, null);
-            Course course4 = new Course("English", 15, 10, resources);
-            Course course5 = new Course("English 2", 20, 5, resources);
+            Course course1 = new Course("Mathematics", 4*60, 5, resources);
+            Course course2 = new Course("French", 2*60, 15, null);
+            Course course3 = new Course("Programming", 4*60, 30, null);
+            Course course4 = new Course("English", 1*60+30, 10, resources);
+            Course course5 = new Course("English 2", 2*60, 5, resources);
             List<Course> courses = new List<Course>() { course1, course2, course3, course4, course5 };
             return courses;
         }
@@ -63,7 +63,7 @@ namespace Model
 
             // Set Room avalability
             BookableRoom book1 = new BookableRoom(Extensions.DateTimeCreator(0, 8, 30), Extensions.DateTimeCreator(0, 14, 0), room1);
-            BookableRoom book2 = new BookableRoom(Extensions.DateTimeCreator(0, 10, 30), Extensions.DateTimeCreator(0, 16, 0), room2);
+            BookableRoom book2 = new BookableRoom(Extensions.DateTimeCreator(0, 10, 30), Extensions.DateTimeCreator(0, 13, 0), room2);
             BookableRoom book3 = new BookableRoom(Extensions.DateTimeCreator(0, 8, 30), Extensions.DateTimeCreator(0, 14, 0), room3);
             List<BookableRoom> rooms1 = new List<BookableRoom>() { (BookableRoom)book1.Clone(), (BookableRoom)book2.Clone() };
             List<BookableRoom> rooms2 = new List<BookableRoom>() { (BookableRoom)book2.Clone(), (BookableRoom)book3.Clone() };
