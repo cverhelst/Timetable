@@ -131,6 +131,21 @@ namespace Tests
         }
 
         [Test]
+        public void Fit_OnlyOnce()
+        {
+            broom1 = new BookableRoom(start, end, room);
+            broom2 = (BookableRoom)broom1.Clone();
+
+            broomList1 = new List<BookableRoom>() { broom1, broom2 };
+            day1 = new Day(broomList1);
+
+            Assert.IsTrue(day1.Fit(course1));
+
+            var fits = day1.Rooms.Where(roomX => roomX.IsCourseBooked(course1)).ToList();
+            Assert.AreEqual(1, fits.Count);
+        }
+
+        [Test]
         public void Clone_DeepCopy()
         {
             Day clone = (Day)day1.Clone();
