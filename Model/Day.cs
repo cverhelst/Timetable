@@ -46,6 +46,7 @@ namespace Model
                 if (room.Fit(course))
                 {
                     result = true;
+                    break;
                 }
             }
             return result;

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Model
 {
@@ -44,7 +43,9 @@ namespace Model
             Course course1 = new Course("Mathematics", 5, 5, resources);
             Course course2 = new Course("French", 5, 15, null);
             Course course3 = new Course("Programming", 5, 30, null);
-            List<Course> courses = new List<Course>() { course1, course2, course3 };
+            Course course4 = new Course("English", 15, 10, resources);
+            Course course5 = new Course("English 2", 20, 5, resources);
+            List<Course> courses = new List<Course>() { course1, course2, course3, course4, course5 };
             return courses;
         }
 
@@ -58,19 +59,23 @@ namespace Model
             // Rooms
             Room room1 = new Room("001", 15, resources);
             Room room2 = new Room("112", 30, null);
+            Room room3 = new Room("110", 35, resources);
 
             // Set Room avalability
             BookableRoom book1 = new BookableRoom(Extensions.DateTimeCreator(0, 8, 30), Extensions.DateTimeCreator(0, 14, 0), room1);
             BookableRoom book2 = new BookableRoom(Extensions.DateTimeCreator(0, 10, 30), Extensions.DateTimeCreator(0, 16, 0), room2);
-            List<BookableRoom> rooms1 = new List<BookableRoom>() { book1 };
-            List<BookableRoom> rooms2 = new List<BookableRoom>() { book2 };
+            BookableRoom book3 = new BookableRoom(Extensions.DateTimeCreator(0, 8, 30), Extensions.DateTimeCreator(0, 14, 0), room3);
+            List<BookableRoom> rooms1 = new List<BookableRoom>() { (BookableRoom)book1.Clone(), (BookableRoom)book2.Clone() };
+            List<BookableRoom> rooms2 = new List<BookableRoom>() { (BookableRoom)book2.Clone(), (BookableRoom)book3.Clone() };
+            List<BookableRoom> rooms3 = new List<BookableRoom>() { (BookableRoom)book1.Clone(), (BookableRoom)book3.Clone() };
 
             // Days
             Day day1 = new Day(1, rooms1);
             Day day2 = new Day(2, rooms2);
+            Day day3 = new Day(3, rooms3);
 
             // Timetable
-            Timetable timetable = new Timetable(new List<Day>() { day1, day2 });
+            Timetable timetable = new Timetable(new List<Day>() { day1, day2, day3 });
 
             return timetable;
         }
@@ -119,7 +124,8 @@ namespace Model
                     }
                 }
                 bool added = GeneratedTables.Add(timetable);
-                Console.Out.WriteLine(String.Format("Items was already present? {0} and was added? {1}", present, added));
+                string output = String.Format("Item was already present? {0} and was added? {1}", present, added);
+                Console.Out.WriteLine(output);
             }
         }
     }
