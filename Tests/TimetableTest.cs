@@ -131,6 +131,20 @@ namespace Tests
             Assert.IsFalse(table1.CanFit(course4));
             Assert.IsFalse(table1.CanFit(course2));
         }
+        [Test]
+        public void Fit_OnlyOnce()
+        {
+            broomList = new List<BookableRoom>() { broom1 };
+            broomList2 = new List<BookableRoom>() { (BookableRoom) broom1.Clone() };
+            day1 = new Day(broomList);
+            day2 = new Day(broomList2);
+
+            table1 = new Timetable(new List<Day>() { day1, day2 });
+            Assert.IsTrue(table1.Fit(course1));
+
+            var fits = table1.Days.Where(day => day.IsCourseBooked(course1)).ToList();
+            Assert.AreEqual(1, fits.Count);
+        }
 
         [Test]
         public void Clone_DeepCopy()
