@@ -123,9 +123,28 @@ namespace Model
             return courses.Any();
         }
 
-        public void SquizedFitCourses(List<Course> courses, Timetable timetable)
+        public void SquizedFitCourses(List<Course> courses, Timetable timetable, int resolution)
         {
-
+            TimeSpan diff = new TimeSpan(0, resolution, 0);
+            foreach (Day day in timetable.Days)
+            {
+                foreach (BookableRoom room in day.Rooms)
+                {
+                    foreach (TimeUnit time in room.Time)
+                    {
+                        if (time.Duration() > resolution)
+                        {
+                            time.End = time.End.Subtract(diff);
+                            Timetable clone = (Timetable)timetable.Clone();
+                            bool allCoursesFitted = FitCourses(courses, clone);
+                            if (!allCoursesFitted)
+                            {
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
