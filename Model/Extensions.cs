@@ -15,7 +15,7 @@ namespace Model
         }
 
         public static int GetHashCodeOrderedCollection<T>(this ICollection<T> listToHash) where T : IComparable
-        {
+        { 
             return listToHash.OrderBy(x => x).Aggregate(0, (x, y) => x.GetHashCode() ^ y.GetHashCode());
         }
 

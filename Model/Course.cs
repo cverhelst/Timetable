@@ -83,7 +83,7 @@ namespace Model
 
         public override int GetHashCode()
         {
-            return Students.GetHashCode() ^ Duration.GetHashCode() ^ RequiredResources.GetHashCode();
+            return Students.GetHashCode() ^ Duration.GetHashCode();
         }
 
         public object Clone()

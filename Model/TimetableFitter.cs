@@ -113,7 +113,6 @@ namespace Model
             }
             else
             {
-                
                 bool present = false;
                 foreach(Timetable table in GeneratedTables) {
                     if(table.Equals(timetable)) {

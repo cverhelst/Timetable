@@ -144,5 +144,43 @@ namespace Tests
             list2 = new List<int>() { 1, 2, 3, 4, 4 };
             Assert.IsFalse(list1.UnorderedEquals(list2));
         }
+
+        [Test]
+        public void GetHashCodeOrderedCollection_SameOrder_SameHashCode()
+        {
+            List<TimeUnit> time = new List<TimeUnit>() { unit1, unit2, unit3 };
+            List<TimeUnit> time2 = new List<TimeUnit>() { unit1, unit2, unit3 };
+
+            Assert.AreEqual(time.GetHashCodeOrderedCollection(), time2.GetHashCodeOrderedCollection());
+
+            SortedSet<TimeUnit> time3 = new SortedSet<TimeUnit>() { unit1, unit2, unit3 };
+            SortedSet<TimeUnit> time4 = new SortedSet<TimeUnit>() { unit1, unit2, unit3 };
+
+            Assert.AreEqual(time3.GetHashCodeOrderedCollection(), time4.GetHashCodeOrderedCollection());
+
+            HashSet<TimeUnit> time5 = new HashSet<TimeUnit>() { unit1, unit2, unit3 };
+            HashSet<TimeUnit> time6 = new HashSet<TimeUnit>() { unit1, unit2, unit3 };
+
+            Assert.AreEqual(time5.GetHashCodeOrderedCollection(), time6.GetHashCodeOrderedCollection());
+        }
+
+        [Test]
+        public void GetHashCodeOrderedCollection_DifferentOrder_SameHashCode()
+        {
+            List<TimeUnit> time = new List<TimeUnit>() { unit3, unit2, unit1 };
+            List<TimeUnit> time2 = new List<TimeUnit>() { unit1, unit2, unit3 };
+
+            Assert.AreEqual(time.GetHashCodeOrderedCollection(), time2.GetHashCodeOrderedCollection());
+
+            SortedSet<TimeUnit> time3 = new SortedSet<TimeUnit>() { unit3, unit2, unit1 };
+            SortedSet<TimeUnit> time4 = new SortedSet<TimeUnit>() { unit1, unit2, unit3 };
+
+            Assert.AreEqual(time3.GetHashCodeOrderedCollection(), time4.GetHashCodeOrderedCollection());
+
+            HashSet<TimeUnit> time5 = new HashSet<TimeUnit>() { unit3, unit2, unit1 };
+            HashSet<TimeUnit> time6 = new HashSet<TimeUnit>() { unit1, unit2, unit3 };
+
+            Assert.AreEqual(time5.GetHashCodeOrderedCollection(), time6.GetHashCodeOrderedCollection());
+        }
     }
 }

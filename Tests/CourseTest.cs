@@ -89,5 +89,14 @@ namespace Tests
             Assert.AreEqual(3, clone.RequiredResources.Count);
             Assert.AreEqual("Test", clone.Name);
         }
+
+        [Test]
+        public void GetHashCode_SameCourse_SameHashCode()
+        {
+            Course course2 = (Course) course1.Clone();
+
+            Assert.AreEqual(course1, course2);
+            Assert.AreEqual(course1.GetHashCode(), course2.GetHashCode());
+        }
     }
 }
