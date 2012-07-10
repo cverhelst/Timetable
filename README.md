@@ -1,6 +1,6 @@
 # Project Timetable
 
-This is a small project that will try to offer a *brute-forced* solution to the problem consists of:
+This is a small project that will try to offer a *brute-forced* solution to the problem consisting of:
 
 * Courses
 * Rooms
