@@ -111,10 +111,6 @@ namespace Model
             {
                 return false;
             }
-            if (other.Time.Count != Time.Count)
-            {
-                return false;
-            }
             if (!Time.UnorderedEquals(other.Time))
             {
                 return false;
@@ -194,11 +190,14 @@ namespace Model
         }
     }
 
-    public class BookableRoomBookedTimeEquality : EqualityComparer<BookableRoom>
+    public class BookableRoomBookedTimeEquality : IEqualityComparer<BookableRoom>
     {
         public override bool Equals(BookableRoom r1, BookableRoom r2)
         {
-
+            if (r1 == null || r2 == null)
+            {
+                return false;
+            }
             if (!r1.Room.Equals(r2))
             {
                 return false;
