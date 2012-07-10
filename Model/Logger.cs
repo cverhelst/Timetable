@@ -30,5 +30,10 @@ namespace Model
             // Close the stream:
             log.Close();
         }
+
+        public static void Reset()
+        {
+            File.Delete("logfile.txt");
+        }
     }
 }

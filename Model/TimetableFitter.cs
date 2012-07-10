@@ -38,7 +38,8 @@ namespace Model
             Course course3 = new Course("Programming", 4 * 60, 30, null);
             Course course4 = new Course("English", 1 * 60 + 30, 10, resources);
             Course course5 = new Course("English 2", 2 * 60, 5, resources);
-            List<Course> courses = new List<Course>() { course1, course2, course3, course4, course5 };
+            //List<Course> courses = new List<Course>() { course1, course2, course3, course4, course5 };
+            List<Course> courses = new List<Course>() { course1 };
             return courses;
         }
 
@@ -88,6 +89,7 @@ namespace Model
         /// </summary>
         public bool FitCourses(List<Course> courses, Timetable timetable)
         {
+            int before = GeneratedTables.Count;
             if (courses.Any())
             {
                 foreach (Course course in courses)
@@ -110,19 +112,19 @@ namespace Model
             }
             else
             {
-                bool present = false;
-                foreach (Timetable table in GeneratedTables)
-                {
-                    if (table.Equals(timetable))
-                    {
-                        present = true;
-                    }
-                }
+                //bool present = false;
+                //foreach (Timetable table in GeneratedTables)
+                //{
+                //    if (table.Equals(timetable))
+                //    {
+                //        present = true;
+                //    }
+                //}
                 bool added = GeneratedTables.Add(timetable);
-                string output = String.Format("Item was already present? {0} and was added? {1}", present, added);
-                Console.Out.WriteLine(output);
+                //string output = String.Format("Item was already present? {0} and was added? {1}", present, added);
+                //Console.Out.WriteLine(output);
             }
-            return courses.Any();
+            return before < GeneratedTables.Count;
         }
 
         public void SqueezedFitCourses(List<Course> courses, Timetable timetable, int resolution)
@@ -140,13 +142,16 @@ namespace Model
                              select time );
                 // and find the one that has the largest duration.
                 TimeUnit max = timeUnits.Aggregate((x, y) => x.Duration() > y.Duration() ? x : y);
+                Logger.Log(String.Format("TimeUnit {0} ", max));
                 // If this timeunit's duration is large enough the be squeezed, then squeeze.
                 if (max.Shorten(resolution))
                 {
+                    Logger.Log(String.Format("has been shortened to {0}", max));
                     Timetable clone = (Timetable)timetable.Clone();
                     // We need to know if all the courses got fitted with this version of the timetable.
                     allCoursesFitted = FitCourses(courses, clone);
                 }
+                Logger.Log("could not be shortened further");
             }
         }
 
