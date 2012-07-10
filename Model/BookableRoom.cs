@@ -192,7 +192,7 @@ namespace Model
 
     public class BookableRoomBookedTimeEquality : IEqualityComparer<BookableRoom>
     {
-        public override bool Equals(BookableRoom r1, BookableRoom r2)
+        public bool Equals(BookableRoom r1, BookableRoom r2)
         {
             if (r1 == null || r2 == null)
             {
@@ -209,7 +209,7 @@ namespace Model
             return true;
         }
 
-        public override int GetHashCode(BookableRoom room)
+        public int GetHashCode(BookableRoom room)
         {
             return Extensions.HashCodeTemplate(new List<Object>() { room.Room }, new List<int>() { room.Time.Where(unit => unit.AssignedCourse != null).ToList().GetHashCodeOrderedCollection() });
         }
