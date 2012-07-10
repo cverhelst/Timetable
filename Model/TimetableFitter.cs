@@ -38,8 +38,8 @@ namespace Model
             Course course3 = new Course("Programming", 4 * 60, 30, null);
             Course course4 = new Course("English", 1 * 60 + 30, 10, resources);
             Course course5 = new Course("English 2", 2 * 60, 5, resources);
-            //List<Course> courses = new List<Course>() { course1, course2, course3, course4, course5 };
-            List<Course> courses = new List<Course>() { course1 };
+            List<Course> courses = new List<Course>() { course1, course2, course3, course4, course5 };
+            //List<Course> courses = new List<Course>() { course1 };
             return courses;
         }
 
@@ -155,7 +155,7 @@ namespace Model
             }
         }
 
-        private void PushedFitCourses(List<Course> courses, Timetable timetable, int resolution)
+        public void PushedFitCourses(List<Course> courses, Timetable timetable, int resolution)
         {
             bool allCoursesFitted = false;
 
@@ -167,10 +167,11 @@ namespace Model
                     foreach (TimeUnit time in room.Time)
                     {
                         // And should the timeunit's duration be large enough to be squeezed, we will squeeze it.
+                        Timetable clone = (Timetable)timetable.Clone();
                         if (time.Shorten(resolution))
                         {
                             // And try to fit the courses again.
-                            Timetable clone = (Timetable)timetable.Clone();
+                            clone = (Timetable)timetable.Clone();
                             allCoursesFitted = FitCourses(courses, clone);
                             // In the event that not all courses got fitted, we will backtrack this last squeeze and move on
                             // to the next timeunit.

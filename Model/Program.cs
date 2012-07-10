@@ -12,7 +12,7 @@ namespace Model
             Logger.Reset();
             TimetableFitter timeFitter = new TimetableFitter();
             //timeFitter.FitCourses(timeFitter.generateDefaultCourses(), timeFitter.generateDefaultTimeTable());
-            timeFitter.SqueezedFitCourses(timeFitter.generateDefaultCourses(), timeFitter.generateDefaultTimeTable(),30);
+            timeFitter.PushedFitCourses(timeFitter.generateDefaultCourses(), timeFitter.generateDefaultTimeTable(),30);
             Console.BufferWidth = 250;
             foreach (Timetable table in timeFitter.GeneratedTables)
             {

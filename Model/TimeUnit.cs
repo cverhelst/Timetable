@@ -210,7 +210,7 @@ namespace Model
 
         public string Detail()
         {
-            return String.Format("{0}{1}{2}",Start.ToString("HH:mm:ss"),End.ToString("HH:mm:ss"),AssignedCourse);
+            return String.Format("{0}{1}{2}",Start.ToString("HH:mm:ss"),End.ToString("HH:mm:ss"),AssignedCourse == null ? "" : AssignedCourse.DetailedInfo());
         }
 
         public bool CanFit(int dur)

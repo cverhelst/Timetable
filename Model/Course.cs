@@ -74,7 +74,8 @@ namespace Model
             }
             if (Students == other.Students
                 && Duration == other.Duration
-                && RequiredResources.SequenceEqual(other.RequiredResources))
+                && RequiredResources.SequenceEqual(other.RequiredResources)
+                && Name == other.Name)
             {
                 return true;
             }
@@ -94,7 +95,12 @@ namespace Model
 
         public override string ToString()
         {
-            return DetailedInfo();
+            return SimpleInfo();
+        }
+
+        public string SimpleInfo()
+        {
+            return Name;
         }
 
         public string DetailedInfo()

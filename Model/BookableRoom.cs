@@ -117,6 +117,22 @@ namespace Model
             return true;
         }
 
+        private bool AreBookedTimesEqual(SortedSet<TimeUnit> first, SortedSet<TimeUnit> two)
+        {
+            if (first.Count != two.Count)
+            {
+                return false;
+            }
+            foreach (TimeUnit unit in first)
+            {
+                if (unit.AssignedCourse != null && !two.Contains(unit))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         public bool Equals(BookableRoom other)
         {
             if (other == null)
@@ -131,7 +147,7 @@ namespace Model
             {
                 return false;
             }
-            if (!AreSetsEqual(Time,other.Time))
+            if (!AreBookedTimesEqual(Time, other.Time))
             {
                 return false;
             }
@@ -167,13 +183,37 @@ namespace Model
 
         public override string ToString()
         {
+            return SimpleInfo();
+        }
+
+        public string SimpleInfo()
+        {
+            StringBuilder builder = new StringBuilder();
+
+            builder.AppendLine(Format.TAB + Room.Name);
+            builder.AppendLine(Format.TAB + Format.TAB + "Bookings:");
+
+            foreach (TimeUnit unit in Time)
+            {
+                builder.AppendLine(Format.TAB + Format.TAB + Format.TAB + 
+                    unit.Start.ToString("HH:mm:ss") +
+                    "-" +
+                    unit.End.ToString("HH:mm:ss") +
+                    " Course: " +
+                    unit.AssignedCourse);
+            }
+            return builder.ToString();
+        }
+
+        public string DetailedInfo()
+        {
             StringBuilder builder = new StringBuilder();
 
             builder.AppendLine(Format.TAB + Room);
             builder.AppendLine(Format.TAB + "Bookings:");
-            foreach (TimeUnit free in Time)
+            foreach (TimeUnit unit in Time)
             {
-                builder.AppendLine(Format.TAB + Format.TAB + free);
+                builder.AppendLine(Format.TAB + Format.TAB + unit);
             }
 
             return builder.ToString();
