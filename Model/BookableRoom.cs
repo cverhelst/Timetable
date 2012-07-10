@@ -14,7 +14,7 @@ namespace Model
         public Room Room
         {
             get { return (Room)_room.Clone(); }
-            private set { _room = value == null ? new Room() : (Room) value.Clone(); }
+            private set { _room = value == null ? new Room() : (Room)value.Clone(); }
         }
 
         public SortedSet<TimeUnit> Time
@@ -23,7 +23,7 @@ namespace Model
             set { _time = value == null ? new SortedSet<TimeUnit>() : value; }
         }
 
-        public BookableRoom(DateTime start, DateTime end, Room room) 
+        public BookableRoom(DateTime start, DateTime end, Room room)
         {
             Time = new SortedSet<TimeUnit>();
             Time.Add(new TimeUnit(start, end));
@@ -144,7 +144,7 @@ namespace Model
         public object Clone()
         {
             BookableRoom clone = new BookableRoom();
-            clone.Time = (SortedSet<TimeUnit>) Time.Clone();
+            clone.Time = (SortedSet<TimeUnit>)Time.Clone();
             clone.Room = (Room)Room.Clone();
             return clone;
         }
@@ -163,7 +163,7 @@ namespace Model
 
             foreach (TimeUnit unit in Time)
             {
-                builder.AppendLine(Format.TAB + Format.TAB + Format.TAB + 
+                builder.AppendLine(Format.TAB + Format.TAB + Format.TAB +
                     unit.Start.ToString("HH:mm:ss") +
                     "-" +
                     unit.End.ToString("HH:mm:ss") +
@@ -192,5 +192,44 @@ namespace Model
             BookableRoom other = obj as BookableRoom;
             return Room.CompareTo(other.Room);
         }
+    }
+
+    public class BookableRoomBookedTimeEquality : EqualityComparer<BookableRoom>
+    {
+        public override bool Equals(BookableRoom r1, BookableRoom r2)
+        {
+
+            if (!r1.Room.Equals(r2))
+            {
+                return false;
+            }
+            if (!AreBookedTimesEqual(r1.Time, r2.Time))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public override int GetHashCode(BookableRoom room)
+        {
+            return Extensions.HashCodeTemplate(new List<Object>() { room.Room }, new List<int>() { room.Time.Where(unit => unit.AssignedCourse != null).ToList().GetHashCodeOrderedCollection() });
+        }
+
+        private bool AreBookedTimesEqual(SortedSet<TimeUnit> first, SortedSet<TimeUnit> two)
+        {
+            if (first.Count != two.Count)
+            {
+                return false;
+            }
+            foreach (TimeUnit unit in first)
+            {
+                if (unit.AssignedCourse != null && !two.Contains(unit))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
     }
 }
