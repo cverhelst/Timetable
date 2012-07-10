@@ -171,7 +171,7 @@ namespace Tests
         }
 
         [Test]
-        public void Equals_Booked_Yes()
+        public void Equals_BothBookedTheSame_IsEqual()
         {
             Assert.IsTrue(broom1.Fit(course1));
             Assert.IsTrue(broom2.Fit(course1));
@@ -180,21 +180,21 @@ namespace Tests
         }
 
         [Test]
-        public void Equals_Empty_No()
+        public void Equals_EmptyAndDifferences_IsNotEqual()
         {
             broom2 = new BookableRoom(start, end, new Room(23, null));
             Assert.IsFalse(broom1.Equals(broom2));
         }
 
         [Test]
-        public void Equals_Booked_No()
+        public void Equals_OneHasBooked_IsNotEqual()
         {
             Assert.IsTrue(broom2.Fit(course1));
             Assert.IsFalse(broom1.Equals(broom2));
         }
 
         [Test]
-        public void Equals_DifferentBookings_No()
+        public void Equals_DifferentBookings_IsNotEqual()
         {
             room = new Room(20, resources1);
             course1 = new Course(1, 10, resources1);
@@ -205,6 +205,21 @@ namespace Tests
             Assert.IsTrue(broom2.Fit(course2));
 
             Assert.AreNotEqual(broom1,broom2);
+        }
+
+        [Test]
+        public void Equals_SameBookingsDifferentFreeTime_IsNotEqual()
+        {
+            room = new Room(20, resources1);
+            course1 = new Course(1, 10, resources1);
+            broom1 = new BookableRoom(start, end, room);
+            broom2 = new BookableRoom(start, end.AddMinutes(5), room);
+
+            Assert.IsTrue(broom1.Fit(course1));
+            Assert.IsTrue(broom2.Fit(course1));
+
+            Assert.AreNotEqual(broom1, broom2);
+
         }
 
         [Test]

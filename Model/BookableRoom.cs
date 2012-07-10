@@ -101,38 +101,6 @@ namespace Model
             return false;
         }
 
-        private bool AreSetsEqual(SortedSet<TimeUnit> first, SortedSet<TimeUnit> two)
-        {
-            if (first.Count != two.Count)
-            {
-                return false;
-            }
-            foreach (TimeUnit unit in first)
-            {
-                if (!two.Contains(unit))
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        private bool AreBookedTimesEqual(SortedSet<TimeUnit> first, SortedSet<TimeUnit> two)
-        {
-            if (first.Count != two.Count)
-            {
-                return false;
-            }
-            foreach (TimeUnit unit in first)
-            {
-                if (unit.AssignedCourse != null && !two.Contains(unit))
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-
         public bool Equals(BookableRoom other)
         {
             if (other == null)
@@ -147,7 +115,7 @@ namespace Model
             {
                 return false;
             }
-            if (!AreBookedTimesEqual(Time, other.Time))
+            if (!Time.UnorderedEquals(other.Time))
             {
                 return false;
             }
