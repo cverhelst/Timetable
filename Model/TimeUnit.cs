@@ -120,6 +120,22 @@ namespace Model
             return result;
         }
 
+        public bool Shorten(int minutes)
+        {
+            if (Duration() > minutes)
+            {
+                TimeSpan diff = new TimeSpan(0, minutes, 0);
+                End = End.Subtract(diff);
+                return true;
+            }
+            return false;
+        }
+
+        public void Lengthen(int minutes)
+        {
+            End = End.AddMinutes(minutes);
+        }
+
         public int Duration()
         {
             return (int) End.Subtract(Start).TotalMinutes;

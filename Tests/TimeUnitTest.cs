@@ -147,6 +147,24 @@ namespace Tests
         }
 
         [Test]
+        public void Shorten_Test()
+        {
+            unit1 = new TimeUnit(Extensions.DateTimeCreator(0, 8, 30), Extensions.DateTimeCreator(0, 9, 30));
+            unit1.Shorten(30);
+
+            Assert.AreEqual(30, unit1.Duration());
+        }
+
+        [Test]
+        public void Lengthen_Test()
+        {
+            unit1 = new TimeUnit(Extensions.DateTimeCreator(0, 8, 30), Extensions.DateTimeCreator(0, 9, 30));
+            unit1.Lengthen(30);
+
+            Assert.AreEqual(90, unit1.Duration());
+        }
+
+        [Test]
         public void Clone_DeepCopy()
         {
             Resource resource = new Resource("TV");
