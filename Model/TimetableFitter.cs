@@ -33,11 +33,11 @@ namespace Model
             List<Resource> resources = new List<Resource>() { resource1 };
 
             // Courses
-            Course course1 = new Course("Mathematics", 4*60, 5, resources);
-            Course course2 = new Course("French", 2*60, 15, null);
-            Course course3 = new Course("Programming", 4*60, 30, null);
-            Course course4 = new Course("English", 1*60+30, 10, resources);
-            Course course5 = new Course("English 2", 2*60, 5, resources);
+            Course course1 = new Course("Mathematics", 4 * 60, 5, resources);
+            Course course2 = new Course("French", 2 * 60, 15, null);
+            Course course3 = new Course("Programming", 4 * 60, 30, null);
+            Course course4 = new Course("English", 1 * 60 + 30, 10, resources);
+            Course course5 = new Course("English 2", 2 * 60, 5, resources);
             List<Course> courses = new List<Course>() { course1, course2, course3, course4, course5 };
             return courses;
         }
@@ -111,8 +111,10 @@ namespace Model
             else
             {
                 bool present = false;
-                foreach(Timetable table in GeneratedTables) {
-                    if(table.Equals(timetable)) {
+                foreach (Timetable table in GeneratedTables)
+                {
+                    if (table.Equals(timetable))
+                    {
                         present = true;
                     }
                 }
@@ -123,22 +125,57 @@ namespace Model
             return courses.Any();
         }
 
-        public void SquizedFitCourses(List<Course> courses, Timetable timetable, int resolution)
+        public void SqueezedFitCourses(List<Course> courses, Timetable timetable, int resolution)
         {
+            bool allCoursesFitted = true;
             TimeSpan diff = new TimeSpan(0, resolution, 0);
+
+            // We will keep squeezing the timetable as long as all the courses got fitted.
+            while (allCoursesFitted)
+            {
+                // First we will get all the timeunits that exist in the timetable
+                IEnumerable<TimeUnit> timeUnits =
+                    (from day in timetable.Days
+                         from room in day.Rooms
+                             from time in room.Time
+                             select time );
+                // and find the one that has the largest duration.
+                TimeUnit max = timeUnits.Aggregate((x, y) => x.Duration() > y.Duration() ? x : y);
+                // If this timeunit's duration is large enough the be squeezed, then squeeze.
+                if (max.Duration() > resolution)
+                {
+                    max.End = max.End.Subtract(diff);
+                    Timetable clone = (Timetable)timetable.Clone();
+                    // We need to know if all the courses got fitted with this version of the timetable.
+                    allCoursesFitted = FitCourses(courses, clone);
+                }
+            }
+        }
+
+        private void PushedFitCourses(List<Course> courses, Timetable timetable, int resolution)
+        {
+            bool allCoursesFitted = false;
+            TimeSpan diff = new TimeSpan(0, resolution, 0);
+
+            // We will traverse the timetable one timeunit at a time.
             foreach (Day day in timetable.Days)
             {
                 foreach (BookableRoom room in day.Rooms)
                 {
                     foreach (TimeUnit time in room.Time)
                     {
+                        // And should the timeunit's duration be large enough to be squeezed, we will squeeze it.
                         if (time.Duration() > resolution)
                         {
+                            // And try to fit the courses again.
                             time.End = time.End.Subtract(diff);
                             Timetable clone = (Timetable)timetable.Clone();
-                            bool allCoursesFitted = FitCourses(courses, clone);
+                            allCoursesFitted = FitCourses(courses, clone);
+                            // In the event that not all courses got fitted, we will backtrack this last squeeze and move on
+                            // to the next timeunit.
                             if (!allCoursesFitted)
                             {
+                                time.End.Add(diff);
                                 break;
                             }
                         }
