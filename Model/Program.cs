@@ -12,8 +12,8 @@ namespace Model
             Logger.Reset();
             TimetableFitter timeFitter = new TimetableFitter();
             //timeFitter.FitCourses(timeFitter.generateDefaultCourses(), timeFitter.generateDefaultTimeTable());
-            timeFitter.PushedFitCourses(timeFitter.generateDefaultCourses(), timeFitter.generateDefaultTimeTable(), 30);
-            //timeFitter.SqueezedFitCourses(timeFitter.generateDefaultCourses(), timeFitter.generateDefaultTimeTable(), 30);
+            //timeFitter.PushedFitCourses(timeFitter.generateDefaultCourses(), timeFitter.generateDefaultTimeTable(), 30);
+            timeFitter.SqueezedFitCourses(timeFitter.generateDefaultCourses(), timeFitter.generateDefaultTimeTable(), 30);
             Console.BufferWidth = 250;
             IEnumerable<Timetable> uniques = timeFitter.GeneratedTables.Distinct(new TimetableBookedTimeEquality()).Select( t => t.RemoveAllFreeTime()).OrderBy(x => x.ToString());
             int index = 1;

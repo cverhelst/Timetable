@@ -8,18 +8,20 @@ namespace Model
 {
     public class Logger
     {
+        public static string FILENAME = "tables.log";
+
         public static void Log(string output)
         {
             // Create a writer and open the file:
             StreamWriter log;
 
-            if (!File.Exists("logfile.txt"))
+            if (!File.Exists(FILENAME))
             {
-                log = new StreamWriter("logfile.txt");
+                log = new StreamWriter(FILENAME);
             }
             else
             {
-                log = File.AppendText("logfile.txt");
+                log = File.AppendText(FILENAME);
             }
 
             // Write to the file:
@@ -33,7 +35,7 @@ namespace Model
 
         public static void Reset()
         {
-            File.Delete("logfile.txt");
+            File.Delete(FILENAME);
         }
     }
 }

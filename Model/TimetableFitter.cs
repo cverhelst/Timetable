@@ -133,6 +133,7 @@ namespace Model
                      from time in room.Time
                      select time);
                 // and find the one that has the largest duration.
+                timeUnits = timeUnits.Where(unit => unit.Duration() > resolution);
                 TimeUnit max = timeUnits.Aggregate((x, y) => x.Duration() > y.Duration() ? x : y);
                 Logger.Log(String.Format("TimeUnit {0} ", max));
                 // If this timeunit's duration is large enough the be squeezed, then squeeze.
