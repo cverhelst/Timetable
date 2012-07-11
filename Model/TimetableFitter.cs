@@ -23,7 +23,7 @@ namespace Model
 
         public TimetableFitter()
         {
-            GeneratedTables = new HashSet<Timetable>(new TimetableBookedTimeEquality());
+            GeneratedTables = new HashSet<Timetable>();
         }
 
         public List<Course> generateDefaultCourses()

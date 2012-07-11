@@ -50,6 +50,24 @@ namespace Model
             return result;
         }
 
+        public Timetable RemoveAllFreeTime()
+        {
+            Timetable clone = (Timetable)Clone();
+            Timetable result = new Timetable(
+                            (from day in clone.Days
+                             select new Day(
+                             day.Number,
+                                 (from room in day.Rooms
+                                  select new BookableRoom(
+                                          new SortedSet<TimeUnit>((from unit in room.Time
+                                                                   where unit.AssignedCourse != null
+                                                                   select unit)),
+                                      room.Room)
+                                     ).ToList())).ToList()
+                            );
+            return result;
+        }
+
         public object Clone()
         {
             Timetable clone = new Timetable((List<Day>)Days.Clone());
@@ -109,26 +127,7 @@ namespace Model
 
     public class TimetableBookedTimeEquality : IEqualityComparer<Timetable>
     {
-        public Timetable RemoveAllFreeTime(Timetable t)
-        {
-            Timetable clone = (Timetable)t.Clone();
-            Timetable result = new Timetable(
-                            (List<Day>)
-                            from day in clone.Days
-                            select new Day(
-                            day.Number,
-                            (List<BookableRoom>)
-                                (from room in day.Rooms
-                                 select new BookableRoom(
-                                     (SortedSet<TimeUnit>)
-                                         (from unit in room.Time
-                                          where unit.AssignedCourse != null
-                                          select unit),
-                                     room.Room)
-                                    ))
-                            );
-            return result;
-        }
+        
 
         public bool Equals(Timetable x, Timetable y)
         {
@@ -140,8 +139,8 @@ namespace Model
             {
                 return false;
             }
-            x = RemoveAllFreeTime(x);
-            y = RemoveAllFreeTime(y);
+            x = x.RemoveAllFreeTime();
+            y = y.RemoveAllFreeTime();
             if(x.Equals(y)) {
                 return true;
             }
@@ -150,7 +149,7 @@ namespace Model
 
         public int GetHashCode(Timetable t)
         {
-            t = RemoveAllFreeTime(t);
+            t = t.RemoveAllFreeTime();
             return t.GetHashCode();
         }
     }
