@@ -15,10 +15,14 @@ namespace Model
             timeFitter.PushedFitCourses(timeFitter.generateDefaultCourses(), timeFitter.generateDefaultTimeTable(), 30);
             Console.BufferWidth = 250;
             IEnumerable<Timetable> uniques = timeFitter.GeneratedTables.Distinct(new TimetableBookedTimeEquality()).Select( t => t.RemoveAllFreeTime());
-            foreach (Timetable table in uniques)
+            SortedSet<Timetable> s = new SortedSet<Timetable>(uniques);
+            int index = 1;
+            foreach (Timetable table in s)
             {
-                Console.Out.Write(table.ToString());
-                Logger.Log(table.ToString());
+                String output = index + " " + table.ToString();
+                Console.Out.Write(output);
+                Logger.Log(output);
+                index++;
             }
 
             Console.Out.WriteLine("Generated {0} timetables", timeFitter.GeneratedTables.Count);

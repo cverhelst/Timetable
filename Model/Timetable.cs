@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Model
 {
-    public class Timetable : ICloneable
+    public class Timetable : ICloneable, IComparable
     {
         private List<Day> _days;
 
@@ -122,6 +122,12 @@ namespace Model
         public override int GetHashCode()
         {
             return Days.GetHashCodeUnorderedCollection();
+        }
+
+        public int CompareTo(object obj)
+        {
+            Timetable other = obj as Timetable;
+            return ToString().CompareTo(other.ToString());
         }
     }
 
