@@ -79,6 +79,7 @@ namespace Model
             foreach(BookableRoom room in Rooms)
             {
                 String roomInfo = room.ToString().Replace("\n", "\n" + Format.TAB);
+                roomInfo = roomInfo.TrimEnd();
                 builder.AppendLine(Format.TAB + roomInfo);
             }
             return builder.ToString();

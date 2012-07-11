@@ -33,11 +33,11 @@ namespace Model
             List<Resource> resources = new List<Resource>() { resource1 };
 
             // Courses
-            Course course1 = new Course("Mathematics", 4 * 60, 5, resources);
+            Course course1 = new Course("Mathematics", 4 * 60, 5, null);
             Course course2 = new Course("French", 2 * 60, 15, null);
             Course course3 = new Course("Programming", 4 * 60, 30, null);
-            Course course4 = new Course("English", 1 * 60 + 30, 10, resources);
-            Course course5 = new Course("English 2", 2 * 60, 5, resources);
+            Course course4 = new Course("English", 1 * 60 + 30, 10, null);
+            Course course5 = new Course("English 2", 2 * 60, 5, null);
             List<Course> courses = new List<Course>() { course1, course2, course3, course4, course5 };
             //List<Course> courses = new List<Course>() { course1 };
             return courses;
@@ -51,14 +51,14 @@ namespace Model
             List<Resource> resources = new List<Resource>() { resource1 };
 
             // Rooms
-            Room room1 = new Room("001", 15, resources);
+            Room room1 = new Room("001", 30, resources);
             Room room2 = new Room("112", 30, null);
             Room room3 = new Room("110", 35, resources);
 
             // Set Room avalability
-            BookableRoom book1 = new BookableRoom(Extensions.DateTimeCreator(0, 8, 30), Extensions.DateTimeCreator(0, 14, 0), room1);
-            BookableRoom book2 = new BookableRoom(Extensions.DateTimeCreator(0, 10, 30), Extensions.DateTimeCreator(0, 13, 0), room2);
-            BookableRoom book3 = new BookableRoom(Extensions.DateTimeCreator(0, 8, 30), Extensions.DateTimeCreator(0, 14, 0), room3);
+            BookableRoom book1 = new BookableRoom(Extensions.DateTimeCreator(0, 8, 30), Extensions.DateTimeCreator(0, 16, 0), room1);
+            BookableRoom book2 = new BookableRoom(Extensions.DateTimeCreator(0, 8, 30), Extensions.DateTimeCreator(0, 16, 0), room2);
+            BookableRoom book3 = new BookableRoom(Extensions.DateTimeCreator(0, 8, 30), Extensions.DateTimeCreator(0, 16, 0), room3);
             List<BookableRoom> rooms1 = new List<BookableRoom>() { (BookableRoom)book1.Clone(), (BookableRoom)book2.Clone() };
             List<BookableRoom> rooms2 = new List<BookableRoom>() { (BookableRoom)book2.Clone(), (BookableRoom)book3.Clone() };
             List<BookableRoom> rooms3 = new List<BookableRoom>() { (BookableRoom)book1.Clone(), (BookableRoom)book3.Clone() };
@@ -112,9 +112,9 @@ namespace Model
             }
             else
             {
-                 bool added = GeneratedTables.Add(timetable);
-                 string output = String.Format("Item was added? {0}", added);
-                 Console.Out.WriteLine(output);
+                bool added = GeneratedTables.Add(timetable);
+                string output = String.Format("Item was added? {0}", added);
+                Console.Out.WriteLine(output);
             }
             return before < GeneratedTables.Count;
         }
@@ -129,9 +129,9 @@ namespace Model
                 // First we will get all the timeunits that exist in the timetable
                 IEnumerable<TimeUnit> timeUnits =
                     (from day in timetable.Days
-                         from room in day.Rooms
-                             from time in room.Time
-                             select time );
+                     from room in day.Rooms
+                     from time in room.Time
+                     select time);
                 // and find the one that has the largest duration.
                 TimeUnit max = timeUnits.Aggregate((x, y) => x.Duration() > y.Duration() ? x : y);
                 Logger.Log(String.Format("TimeUnit {0} ", max));
@@ -159,9 +159,10 @@ namespace Model
                     foreach (TimeUnit time in room.Time)
                     {
                         // And should the timeunit's duration be large enough to be squeezed, we will squeeze it.
-                        Timetable clone = (Timetable)timetable.Clone();
-                        if (time.Shorten(resolution))
+
+                        while (time.Shorten(resolution))
                         {
+                            Timetable clone = (Timetable)timetable.Clone();
                             // And try to fit the courses again.
                             clone = (Timetable)timetable.Clone();
                             allCoursesFitted = FitCourses(courses, clone);
@@ -173,6 +174,7 @@ namespace Model
                                 break;
                             }
                         }
+
                     }
                 }
             }

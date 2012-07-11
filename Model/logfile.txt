@@ -1,0 +1,4488 @@
+11/07/2012 12:07:05
+1 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-12:00:00 Course: English 2
+          12:00:00-14:00:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+2 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-12:00:00 Course: English 2
+          12:00:00-14:00:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+3 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-12:00:00 Course: French
+          12:00:00-14:00:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+4 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-12:00:00 Course: French
+          12:00:00-14:00:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+5 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-12:30:00 Course: French
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+6 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+7 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-12:30:00 Course: English 2
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+8 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+9 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: English 2
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+10 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: French
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+11 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-12:30:00 Course: French
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+12 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+13 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-12:30:00 Course: English 2
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+14 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+15 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: English 2
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+16 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: French
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+17 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-12:00:00 Course: English
+          12:00:00-14:00:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+18 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-12:00:00 Course: English
+          12:00:00-14:00:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+19 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-12:30:00 Course: French
+          12:30:00-14:00:00 Course: English
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+20 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-12:30:00 Course: French
+          12:30:00-14:00:00 Course: English
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+21 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-12:00:00 Course: French
+          12:00:00-16:00:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+22 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-12:00:00 Course: French
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+23 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Programming
+          14:00:00-16:00:00 Course: French
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+24 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+25 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-12:00:00 Course: English
+          12:00:00-16:00:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+26 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-12:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+27 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Programming
+          14:30:00-16:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+28 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+29 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:00:00 Course: English
+          14:00:00-16:00:00 Course: French
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+30 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+31 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: French
+          14:30:00-16:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+32 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: French
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+33 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-12:00:00 Course: French
+          12:00:00-16:00:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+34 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-12:00:00 Course: French
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+35 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Mathematics
+          14:00:00-16:00:00 Course: French
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+36 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+37 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-12:00:00 Course: English
+          12:00:00-16:00:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+38 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-12:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+39 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Mathematics
+          14:30:00-16:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+40 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+41 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:00:00 Course: English
+          14:00:00-16:00:00 Course: French
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+42 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+43 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: French
+          14:30:00-16:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+44 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: French
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+45 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-12:00:00 Course: English
+          12:00:00-14:00:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+46 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-12:00:00 Course: English
+          12:00:00-14:00:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+47 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-12:30:00 Course: English 2
+          12:30:00-14:00:00 Course: English
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+48 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-12:30:00 Course: English 2
+          12:30:00-14:00:00 Course: English
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+49 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-12:00:00 Course: English 2
+          12:00:00-16:00:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+50 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-12:00:00 Course: English 2
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+51 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Programming
+          14:00:00-16:00:00 Course: English 2
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+52 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+53 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-12:00:00 Course: English
+          12:00:00-16:00:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+54 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-12:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+55 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Programming
+          14:30:00-16:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+56 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+57 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:00:00 Course: English
+          14:00:00-16:00:00 Course: English 2
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+58 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+59 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: English 2
+          14:30:00-16:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+60 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Mathematics
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: English 2
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+61 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-12:00:00 Course: English 2
+          12:00:00-16:00:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+62 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-12:00:00 Course: English 2
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+63 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Mathematics
+          14:00:00-16:00:00 Course: English 2
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+64 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+65 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-12:00:00 Course: English
+          12:00:00-16:00:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+66 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-12:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+67 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Mathematics
+          14:30:00-16:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+68 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+69 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:00:00 Course: English
+          14:00:00-16:00:00 Course: English 2
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+70 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+71 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: English 2
+          14:30:00-16:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+72 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Programming
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: English 2
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+73 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:00:00 Course: English
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-12:30:00 Course: French
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+74 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:00:00 Course: English
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+75 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:00:00 Course: English
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-12:30:00 Course: English 2
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+76 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:00:00 Course: English
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+77 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:00:00 Course: English
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: English 2
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+78 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:00:00 Course: English
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: French
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+79 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-12:00:00 Course: French
+          12:00:00-16:00:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+80 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-12:00:00 Course: French
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+81 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Programming
+          14:00:00-16:00:00 Course: French
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+82 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+83 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-12:00:00 Course: English
+          12:00:00-16:00:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+84 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-12:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+85 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Programming
+          14:30:00-16:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+86 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+87 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:00:00 Course: English
+          14:00:00-16:00:00 Course: French
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+88 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+89 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: French
+          14:30:00-16:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+90 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: French
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+91 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-12:00:00 Course: English 2
+          12:00:00-16:00:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+92 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-12:00:00 Course: English 2
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+93 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Programming
+          14:00:00-16:00:00 Course: English 2
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+94 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+95 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-12:00:00 Course: English
+          12:00:00-16:00:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+96 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-12:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+97 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Programming
+          14:30:00-16:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+98 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Programming
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+99 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:00:00 Course: English
+          14:00:00-16:00:00 Course: English 2
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+100 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+101 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: English 2
+          14:30:00-16:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+102 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: English 2
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+103 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:00:00 Course: English
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-12:30:00 Course: French
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+104 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:00:00 Course: English
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+105 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:00:00 Course: English
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-12:30:00 Course: English 2
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+106 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:00:00 Course: English
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+107 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:00:00 Course: English
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: English 2
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+108 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:00:00 Course: English
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: French
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+109 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-12:00:00 Course: French
+          12:00:00-16:00:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+110 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-12:00:00 Course: French
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+111 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Mathematics
+          14:00:00-16:00:00 Course: French
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+112 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+113 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-12:00:00 Course: English
+          12:00:00-16:00:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+114 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-12:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+115 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Mathematics
+          14:30:00-16:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+116 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+          10:30:00-14:30:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+117 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:00:00 Course: English
+          14:00:00-16:00:00 Course: French
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+118 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: French
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+119 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: French
+          14:30:00-16:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+120 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: English 2
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: French
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+121 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-12:00:00 Course: English 2
+          12:00:00-16:00:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+122 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-12:00:00 Course: English 2
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+123 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Mathematics
+          14:00:00-16:00:00 Course: English 2
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+124 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+          10:00:00-14:00:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+125 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-12:00:00 Course: English
+          12:00:00-16:00:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+126 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-12:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+127 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Mathematics
+          14:30:00-16:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+128 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+          10:30:00-14:30:00 Course: Mathematics
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+129 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:00:00 Course: English
+          14:00:00-16:00:00 Course: English 2
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+130 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:30:00 Course: English 2
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+131 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: English 2
+          14:30:00-16:00:00 Course: English
+    
+  
+  Day 2
+      112
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+
+11/07/2012 12:07:05
+132 -------------------------------
+Timetable
+  Day 1
+      001
+        Bookings:
+          08:30:00-12:30:00 Course: Programming
+          12:30:00-14:30:00 Course: French
+    
+      112
+        Bookings:
+          08:30:00-12:30:00 Course: Mathematics
+          12:30:00-14:30:00 Course: English 2
+    
+  
+  Day 2
+      112
+        Bookings:
+          08:30:00-10:00:00 Course: English
+    
+      110
+        Bookings:
+    
+  
+  Day 3
+      001
+        Bookings:
+    
+      110
+        Bookings:
+    
+  
+
+

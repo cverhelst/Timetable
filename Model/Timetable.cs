@@ -79,11 +79,11 @@ namespace Model
             StringBuilder builder = new StringBuilder();
 
             builder.AppendLine(Format.DIVIDER);
-            builder.AppendLine("Timetable");
+            builder.Append("Timetable\n" + Format.TAB);
             foreach (Day day in Days)
             {
                 String dayInfo = day.ToString().Replace("\n", "\n" + Format.TAB);
-                builder.AppendLine(Format.TAB + dayInfo);
+                builder.Append(dayInfo);
             }
             return builder.ToString();
         }
