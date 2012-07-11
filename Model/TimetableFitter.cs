@@ -112,17 +112,9 @@ namespace Model
             }
             else
             {
-                bool present = false;
-                foreach (Timetable table in GeneratedTables)
-                {
-                    if (table.Equals(timetable))
-                    {
-                        present = true;
-                    }
-                }
-                bool added = GeneratedTables.Add(timetable);
-                //string output = String.Format("Item was already present? {0} and was added? {1}", present, added);
-                //Console.Out.WriteLine(output);
+                 bool added = GeneratedTables.Add(timetable);
+                 string output = String.Format("Item was added? {0}", added);
+                 Console.Out.WriteLine(output);
             }
             return before < GeneratedTables.Count;
         }
