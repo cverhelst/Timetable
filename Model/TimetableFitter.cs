@@ -23,7 +23,7 @@ namespace Model
 
         public TimetableFitter()
         {
-            GeneratedTables = new HashSet<Timetable>();
+            GeneratedTables = new HashSet<Timetable>(new TimetableBookedTimeEquality());
         }
 
         public List<Course> generateDefaultCourses()
@@ -112,14 +112,14 @@ namespace Model
             }
             else
             {
-                //bool present = false;
-                //foreach (Timetable table in GeneratedTables)
-                //{
-                //    if (table.Equals(timetable))
-                //    {
-                //        present = true;
-                //    }
-                //}
+                bool present = false;
+                foreach (Timetable table in GeneratedTables)
+                {
+                    if (table.Equals(timetable))
+                    {
+                        present = true;
+                    }
+                }
                 bool added = GeneratedTables.Add(timetable);
                 //string output = String.Format("Item was already present? {0} and was added? {1}", present, added);
                 //Console.Out.WriteLine(output);

@@ -30,6 +30,12 @@ namespace Model
             Room = room;
         }
 
+        public BookableRoom(SortedSet<TimeUnit> time, Room room)
+        {
+            Time = time;
+            Room = room;
+        }
+
         public BookableRoom()
         {
             Time = new SortedSet<TimeUnit>();

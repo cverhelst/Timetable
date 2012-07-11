@@ -62,7 +62,7 @@ namespace Model
 
             builder.AppendLine(Format.DIVIDER);
             builder.AppendLine("Timetable");
-            foreach(Day day in Days)
+            foreach (Day day in Days)
             {
                 String dayInfo = day.ToString().Replace("\n", "\n" + Format.TAB);
                 builder.AppendLine(Format.TAB + dayInfo);
@@ -76,10 +76,12 @@ namespace Model
             {
                 return false;
             }
-            if(Days.Count != other.Days.Count) {
+            if (Days.Count != other.Days.Count)
+            {
                 return false;
             }
-            if(!Days.UnorderedEquals(other.Days)) {
+            if (!Days.UnorderedEquals(other.Days))
+            {
                 return false;
             }
             return true;
@@ -102,6 +104,54 @@ namespace Model
         public override int GetHashCode()
         {
             return Days.GetHashCodeUnorderedCollection();
+        }
+    }
+
+    public class TimetableBookedTimeEquality : IEqualityComparer<Timetable>
+    {
+        public Timetable RemoveAllFreeTime(Timetable t)
+        {
+            Timetable clone = (Timetable)t.Clone();
+            Timetable result = new Timetable(
+                            (List<Day>)
+                            from day in clone.Days
+                            select new Day(
+                            day.Number,
+                            (List<BookableRoom>)
+                                (from room in day.Rooms
+                                 select new BookableRoom(
+                                     (SortedSet<TimeUnit>)
+                                         (from unit in room.Time
+                                          where unit.AssignedCourse != null
+                                          select unit),
+                                     room.Room)
+                                    ))
+                            );
+            return result;
+        }
+
+        public bool Equals(Timetable x, Timetable y)
+        {
+            if (x == null && y == null)
+            {
+                return true;
+            }
+            if (x == null || y == null)
+            {
+                return false;
+            }
+            x = RemoveAllFreeTime(x);
+            y = RemoveAllFreeTime(y);
+            if(x.Equals(y)) {
+                return true;
+            }
+            return false;
+        }
+
+        public int GetHashCode(Timetable t)
+        {
+            t = RemoveAllFreeTime(t);
+            return t.GetHashCode();
         }
     }
 }
