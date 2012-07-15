@@ -6,13 +6,13 @@ namespace Model
 {
     public class TimetableFitter
     {
-        private Timetable _availabilityTimetable;
+        private HashSet<Timetable> _uniquelyGeneratedTables;
         private HashSet<Timetable> _generatedTables;
 
-        public Timetable AvailabilityTimetable
+        public HashSet<Timetable> UniquelyGeneratedTables
         {
-            get { return _availabilityTimetable; }
-            set { _availabilityTimetable = value; }
+            get { return _uniquelyGeneratedTables; }
+            set { _uniquelyGeneratedTables = value == null ? new HashSet<Timetable>() : value; ; }
         }
 
         public HashSet<Timetable> GeneratedTables
@@ -24,6 +24,7 @@ namespace Model
         public TimetableFitter()
         {
             GeneratedTables = new HashSet<Timetable>();
+            UniquelyGeneratedTables = new HashSet<Timetable>();
         }
 
         public List<Course> generateDefaultCourses()
@@ -74,6 +75,17 @@ namespace Model
             return timetable;
         }
 
+        public HashSet<Timetable> getUniques(HashSet<Timetable> tables)
+        {
+            return new HashSet<Timetable>(tables.Distinct(new TimetableBookedTimeEquality()).Select(t => t.RemoveAllFreeTime()).OrderBy(x => x.ToString()));
+        }
+
+        public void ClearTables()
+        {
+            GeneratedTables.Clear();
+            UniquelyGeneratedTables.Clear();
+        }
+
         /// <summary>
         /// list of courses
         /// timetable
@@ -87,7 +99,7 @@ namespace Model
         ///         fit is not found:
         ///             try the next course in the list of courses
         /// </summary>
-        public bool FitCourses(List<Course> courses, Timetable timetable)
+        private bool FitCourses(List<Course> courses, Timetable timetable)
         {
             int before = GeneratedTables.Count;
             if (courses.Any())
@@ -119,8 +131,16 @@ namespace Model
             return before < GeneratedTables.Count;
         }
 
+        public void NormalFitCourses(List<Course> courses, Timetable timetable)
+        {
+            ClearTables();
+            FitCourses(courses, timetable);
+            UniquelyGeneratedTables = getUniques(GeneratedTables);
+        }
+
         public void SqueezedFitCourses(List<Course> courses, Timetable timetable, int resolution)
         {
+            ClearTables();
             bool allCoursesFitted = true;
 
             // We will keep squeezing the timetable as long as all the courses got fitted.
@@ -135,21 +155,20 @@ namespace Model
                 // and find the one that has the largest duration.
                 timeUnits = timeUnits.Where(unit => unit.Duration() > resolution);
                 TimeUnit max = timeUnits.Aggregate((x, y) => x.Duration() > y.Duration() ? x : y);
-                Logger.Log(String.Format("TimeUnit {0} ", max));
                 // If this timeunit's duration is large enough the be squeezed, then squeeze.
                 if (max.Shorten(resolution))
                 {
-                    Logger.Log(String.Format("has been shortened to {0}", max));
                     Timetable clone = (Timetable)timetable.Clone();
                     // We need to know if all the courses got fitted with this version of the timetable.
                     allCoursesFitted = FitCourses(courses, clone);
                 }
-                Logger.Log("could not be shortened further");
             }
+            UniquelyGeneratedTables = getUniques(GeneratedTables);
         }
 
         public void PushedFitCourses(List<Course> courses, Timetable timetable, int resolution)
         {
+            ClearTables();
             bool allCoursesFitted = false;
 
             // We will traverse the timetable one timeunit at a time.
@@ -179,6 +198,7 @@ namespace Model
                     }
                 }
             }
+            UniquelyGeneratedTables = getUniques(GeneratedTables);
         }
     }
 }
