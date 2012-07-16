@@ -200,5 +200,35 @@ namespace Model
             }
             UniquelyGeneratedTables = getUniques(GeneratedTables);
         }
+
+        public GeneratedTables PushedFitCoursesWrapperWithReturn(List<Course> courses, Timetable timetable, int resolution)
+        {
+            PushedFitCourses(courses, timetable, resolution);
+            return new GeneratedTables(GeneratedTables.ToList(), UniquelyGeneratedTables.ToList());
+        }
+
+        public GeneratedTables FlatSqueezedFitCoursesWrapperWithReturn(List<Course> courses, Timetable timetable, int resolution)
+        {
+            FlatSqueezedFitCourses(courses, timetable, resolution);
+            return new GeneratedTables(GeneratedTables.ToList(), UniquelyGeneratedTables.ToList());
+        }
+
+        public GeneratedTables NormalFitCoursesWrapperWithReturn(List<Course> courses, Timetable timetable)
+        {
+            NormalFitCourses(courses, timetable);
+            return new GeneratedTables(GeneratedTables.ToList(), UniquelyGeneratedTables.ToList());
+        }
+    }
+
+    public class GeneratedTables
+    {
+        public List<Timetable> All { get; set; }
+        public List<Timetable> Unique { get; set; }
+
+        public GeneratedTables(List<Timetable> all, List<Timetable> unique)
+        {
+            All = all;
+            Unique = unique;
+        }
     }
 }
