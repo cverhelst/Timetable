@@ -36,9 +36,14 @@ namespace View_ASP
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            TimeFitter.SqueezedFitCourses(TimeFitter.generateDefaultCourses(), TimeFitter.generateDefaultTimeTable(), 30);
+            TimeFitter.FlatSqueezedFitCourses(TimeFitter.generateDefaultCourses(), TimeFitter.generateDefaultTimeTable(), 30);
             TimetableSourceChanged();
             SetCount();
+        }
+
+        protected void WhichTimetables_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TimetableSourceChanged();
         }
 
         private void SetCount()
@@ -58,11 +63,6 @@ namespace View_ASP
                 DataListTables.DataSource = TimeFitter.UniquelyGeneratedTables;
             }
             DataListTables.DataBind();
-        }
-
-        protected void WhichTimetables_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            TimetableSourceChanged();
         }
     }
 }

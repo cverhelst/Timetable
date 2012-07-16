@@ -138,7 +138,7 @@ namespace Model
             UniquelyGeneratedTables = getUniques(GeneratedTables);
         }
 
-        public void SqueezedFitCourses(List<Course> courses, Timetable timetable, int resolution)
+        public void FlatSqueezedFitCourses(List<Course> courses, Timetable timetable, int resolution)
         {
             ClearTables();
             bool allCoursesFitted = true;

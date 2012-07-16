@@ -41,7 +41,7 @@ namespace Model
                     break;
                 case "Squeezed":
                     timeFitter.GeneratedTables.Clear();
-                    timeFitter.SqueezedFitCourses(timeFitter.generateDefaultCourses(), timeFitter.generateDefaultTimeTable(), 30);
+                    timeFitter.FlatSqueezedFitCourses(timeFitter.generateDefaultCourses(), timeFitter.generateDefaultTimeTable(), 30);
                     break;
                 default:
                     timeFitter.GeneratedTables.Clear();

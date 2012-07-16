@@ -292,3 +292,29 @@ div.accountInfo
     text-align: right;
     padding-right: 10px;
 }
+
+/* Timetable Specifics  
+----------------------------------------------------------*/
+div.Timetable 
+{
+    background-color:#C6DEFF;
+    margin:20px;
+    padding:10px
+}
+span
+{
+    font-weight:bold;
+    color:Black;
+}
+
+span.BookedTime 
+{
+    background-color: #FF7F50;
+    padding:2px;
+}
+
+span.FreeTime 
+{
+    background-color:#357EC7;
+    padding:2px;
+}

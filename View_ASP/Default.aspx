@@ -28,14 +28,16 @@
         <asp:Button ID="Button1" runat="server" Text="Normal" onclick="Button1_Click" />
         <asp:Button ID="Button2" runat="server" Text="Pushed" onclick="Button2_Click" />
         <asp:Button ID="Button3" runat="server" Text="Squeezed" onclick="Button3_Click" />
+
         <hr />
-        <asp:Label ID="Label1" runat="server" Text="Timetables"></asp:Label>
+
         <asp:Label ID="LabelAllCount" runat="server" Text=""></asp:Label>
         <asp:Label ID="LabelUniqueCount" runat="server" Text=""></asp:Label>
         <asp:DataList ID="DataListTables" runat="server">
             <%--Timetable --%>
             <ItemTemplate>
-            <h1>Timetable <%# Container.ItemIndex %></h1>
+                <div class="Timetable">
+                <h1>Timetable <%# Container.ItemIndex %></h1>
                 <asp:DataList ID="DataListDays" runat="server" DataSource='<%# DataBinder.Eval(Container.DataItem,"Days") %>'>
                     <%--Day --%>
                     <ItemTemplate>
@@ -51,19 +53,18 @@
                                         Text='<%# DataBinder.Eval(Container.DataItem,"AssignedCourse") != null ? DataBinder.Eval(Container.DataItem,"AssignedCourse") : "Unbooked" %>' 
                                         Width="<%# ((TimeUnit)Container.DataItem as TimeUnit).Duration() %>" 
                                         ToolTip="<%# Container.DataItem.ToString() %>"
-                                        BackColor='<%# DataBinder.Eval(Container.DataItem,"AssignedCourse") != null ? System.Drawing.Color.Coral : System.Drawing.Color.SkyBlue %>'
-                                        Font-Bold="true">
-                                        </asp:Label>
+                                        CssClass='<%# DataBinder.Eval(Container.DataItem,"AssignedCourse") != null ? "BookedTime" : "FreeTime" %>'
+                                        ></asp:Label>
                                      </ItemTemplate>
                                 </asp:Repeater>
                             </ItemTemplate>
                         </asp:DataList>
                     </ItemTemplate>
-                
-                
                 </asp:DataList>
+                </div>
             </ItemTemplate>
         </asp:DataList>
+
     </ContentTemplate>
     </asp:UpdatePanel>
 </asp:Content>
