@@ -94,6 +94,15 @@ namespace View_ASP {
         protected global::System.Web.UI.WebControls.Label LabelUniqueCount;
         
         /// <summary>
+        /// DataPager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataPager DataPager1;
+        
+        /// <summary>
         /// ListViewTables control.
         /// </summary>
         /// <remarks>

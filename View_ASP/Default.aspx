@@ -20,7 +20,8 @@
         <ContentTemplate>
         
             <asp:RadioButtonList id="WhichTimetables" runat="server" 
-                onselectedindexchanged="WhichTimetables_SelectedIndexChanged" AutoPostBack="true">
+                onselectedindexchanged="WhichTimetables_SelectedIndexChanged"
+                AutoPostBack="true">
                 <asp:ListItem Selected="True">All</asp:ListItem>
                 <asp:ListItem>Unique</asp:ListItem>
              </asp:RadioButtonList>
@@ -34,19 +35,19 @@
             <asp:Label ID="LabelAllCount" runat="server" Text=""></asp:Label>
             <asp:Label ID="LabelUniqueCount" runat="server" Text=""></asp:Label>
 
-            
-
-            <asp:ListView ID="ListViewTables" runat="server" 
-                ItemPlaceholderID="TimetablePlaceholder">
-                <%--Timetable --%>
-                <LayoutTemplate>
-                    <asp:DataPager ID="DataPager1" runat="server" OnPreRender="DataPager_PreRender" PagedControlID="ListViewTables" PageSize="3">
+            <asp:DataPager ID="DataPager1" runat="server" OnPreRender="DataPager_PreRender" PagedControlID="ListViewTables" PageSize="3">
                 <Fields>
                     <asp:NextPreviousPagerField ShowFirstPageButton="True" ShowNextPageButton="False" />
                     <asp:NumericPagerField />
                     <asp:NextPreviousPagerField ShowLastPageButton="True" ShowPreviousPageButton="False" />
                 </Fields>
             </asp:DataPager>
+
+            <asp:ListView ID="ListViewTables" runat="server" 
+                ItemPlaceholderID="TimetablePlaceholder">
+                <%--Timetable --%>
+                <LayoutTemplate>
+                    
                     <asp:PlaceHolder ID="TimetablePlaceholder" runat="server"></asp:PlaceHolder>
                     
                 </LayoutTemplate>

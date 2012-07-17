@@ -23,7 +23,8 @@ namespace View_ASP
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ScriptManager1.RegisterAsyncPostBackControl(WhichTimetables);
+            // Causes not to load session vars
+            //ScriptManager1.RegisterAsyncPostBackControl(WhichTimetables);
             
             if (IsPostBack)
             {
