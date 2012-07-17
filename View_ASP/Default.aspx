@@ -33,11 +33,26 @@
 
             <asp:Label ID="LabelAllCount" runat="server" Text=""></asp:Label>
             <asp:Label ID="LabelUniqueCount" runat="server" Text=""></asp:Label>
-            <asp:DataList ID="DataListTables" runat="server">
+
+            
+
+            <asp:ListView ID="ListViewTables" runat="server" 
+                ItemPlaceholderID="TimetablePlaceholder">
                 <%--Timetable --%>
+                <LayoutTemplate>
+                    <asp:DataPager ID="DataPager1" runat="server" OnPreRender="DataPager_PreRender" PagedControlID="ListViewTables" PageSize="3">
+                <Fields>
+                    <asp:NextPreviousPagerField ShowFirstPageButton="True" ShowNextPageButton="False" />
+                    <asp:NumericPagerField />
+                    <asp:NextPreviousPagerField ShowLastPageButton="True" ShowPreviousPageButton="False" />
+                </Fields>
+            </asp:DataPager>
+                    <asp:PlaceHolder ID="TimetablePlaceholder" runat="server"></asp:PlaceHolder>
+                    
+                </LayoutTemplate>
                 <ItemTemplate>
                     <div class="Timetable">
-                    <h1>Timetable <%# Container.ItemIndex %></h1>
+                    <h1>Timetable <%# Container.DataItemIndex %></h1>
                     <asp:DataList ID="DataListDays" runat="server" DataSource='<%# DataBinder.Eval(Container.DataItem,"Days") %>'>
                         <%--Day --%>
                         <ItemTemplate>
@@ -63,7 +78,15 @@
                     </asp:DataList>
                     </div>
                 </ItemTemplate>
-            </asp:DataList>
+            </asp:ListView>
+
+            <asp:DataPager ID="DataPager2" runat="server" OnPreRender="DataPager_PreRender" PagedControlID="ListViewTables" PageSize="3">
+                <Fields>
+                    <asp:NextPreviousPagerField ShowFirstPageButton="True" ShowNextPageButton="False" />
+                    <asp:NumericPagerField />
+                    <asp:NextPreviousPagerField ShowLastPageButton="True" ShowPreviousPageButton="False" />
+                </Fields>
+            </asp:DataPager>
 
         </ContentTemplate>
     </asp:UpdatePanel>

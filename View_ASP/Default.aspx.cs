@@ -17,13 +17,14 @@ namespace View_ASP
         protected void Page_Init(object sender, EventArgs e)
         {
             TimeFitter = new TimetableFitter();
+            All = new List<Timetable>();
+            Unique = new List<Timetable>();
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             ScriptManager1.RegisterAsyncPostBackControl(WhichTimetables);
-            DataListTables.DataSource = All;
-            DataListTables.DataBind();
+            
             if (IsPostBack)
             {
                 LoadSession();
@@ -36,7 +37,8 @@ namespace View_ASP
             GeneratedTables result = TimeFitter.NormalFitCoursesWrapperWithReturn(TimeFitter.generateDefaultCourses(), TimeFitter.generateDefaultTimeTable());
             All = result.All;
             Unique = result.Unique;
-            TimetableSourceChanged();
+            BindTimetables();
+            SetCount();
             SaveSession();
         }
 
@@ -45,7 +47,8 @@ namespace View_ASP
             GeneratedTables result = TimeFitter.PushedFitCoursesWrapperWithReturn(TimeFitter.generateDefaultCourses(), TimeFitter.generateDefaultTimeTable(), 30);
             All = result.All;
             Unique = result.Unique;
-            TimetableSourceChanged();
+            BindTimetables();
+            SetCount();
             SaveSession();
         }
 
@@ -54,14 +57,22 @@ namespace View_ASP
             GeneratedTables result = TimeFitter.FlatSqueezedFitCoursesWrapperWithReturn(TimeFitter.generateDefaultCourses(), TimeFitter.generateDefaultTimeTable(), 30);
             All = result.All;
             Unique = result.Unique;
-            TimetableSourceChanged();
+            BindTimetables();
+            SetCount();
             SaveSession();
         }
 
         protected void WhichTimetables_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TimetableSourceChanged();
+            BindTimetables();
+            SetCount();
             UpdatePanel1.Update();
+        }
+
+        protected void DataPager_PreRender(object sender, EventArgs e)
+        {
+            BindTimetables();
+            SetCount();
         }
 
         private void SaveSession()
@@ -82,19 +93,17 @@ namespace View_ASP
             LabelUniqueCount.Text = "and " + Unique.Count + " are unique when looking at booked only";
         }
 
-        private void TimetableSourceChanged()
+        private void BindTimetables()
         {
             if (WhichTimetables.SelectedItem.Text == "All")
             {
-                DataListTables.DataSource = All;
+                ListViewTables.DataSource = All;
             }
             else
             {
-                DataListTables.DataSource = Unique;
+                ListViewTables.DataSource = Unique;
             }
-            DataListTables.DataBind();
-
-            SetCount();
+            ListViewTables.DataBind();
         }
     }
 }
